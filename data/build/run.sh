@@ -1,2 +1,1 @@
-make -j8
-./hard_shadow_fov --model="/home/ysheng/Dataset/general_models/airplane_0337.off" --output="airplane" --cam_pitch=30 --model_rot=-45 --fov=90 --render_touch --render_mask
+./hard_shadow --model="/home/sheng30/Dataset/SSN/human_models/combine_female_genesis3_basic_claudia_duchess_Fashion_Model_Pose_01.obj" --output="airplane" --cam_pitch=30 --model_rot=-45  --render_touch --render_mask --render_shadow

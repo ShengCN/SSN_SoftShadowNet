@@ -11,6 +11,7 @@ import matplotlib.pyplot as plt
 import shutil
 import cv2
 import random
+import csv
 
 def sketch(normal, depth):
     normal_img, depth_img = cv2.imread(normal), cv2.imread(depth)
@@ -29,8 +30,8 @@ def worker(input_param):
     os.makedirs(output_folder, exist_ok=True)
     
     newest_prefix = get_newest_prefix(output_folder)
-    # os.system('build/hard_shadow --model={} --model_id={} --output={} --gpu={} --resume={} --cam_pitch={} --model_rot={} --render_mask --render_normal --render_depth --render_ground --render_shadow --render_touch'.format(model, model_id, output_folder, gpu, resume,cam_pitch, model_rot))
-    os.system('../build/hard_shadow --model={} --model_id={} --output={} --gpu={} --resume={} --cam_pitch={} --model_rot={} --render_touch'.format(model, model_id, output_folder, gpu, False,cam_pitch, model_rot))
+    os.system('../build/hard_shadow --model={} --model_id={} --output={} --gpu={} --resume={} --cam_pitch={} --model_rot={} --render_mask --render_normal --render_depth --render_ground --render_shadow --render_touch'.format(model, model_id, output_folder, gpu, resume, cam_pitch, model_rot))
+    # os.system('../build/hard_shadow --model={} --model_id={} --output={} --gpu={} --resume={} --cam_pitch={} --model_rot={} --render_touch'.format(model, model_id, output_folder, gpu, False,cam_pitch, model_rot))
     # os.system('build/hard_shadow --model={} --model_id={} --output={} --gpu={} --resume={} --cam_pitch={} --model_rot={} --render_mask --render_normal --render_depth --render_ground --render_touch'.format(model, model_id, output_folder, gpu, resume,cam_pitch, model_rot))
               
 def base_compute(param):
@@ -237,40 +238,34 @@ def render(args, model_files):
     os.makedirs(touch_out, exist_ok=True)
     
     for i, mf in enumerate(tqdm(model_files)):
-        if i < args.start_id or i >= args.end_id:
-            continue
-
         if args.base:
             render_bases(args, [mf])
         else:
-            render_shadows(args, [mf], i)
+            render_shadows(args, [mf], i + args.start_id)
             copy_channels(args, [mf])
     
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Process some integers.')
     parser.add_argument('--gpu', default=0, type=int, help='GPU device')
-    parser.add_argument('--num', default=88, type=int, help='How many models?')
     parser.add_argument('--start_id', default=0, type=int, help='Current running example start id?')
     parser.add_argument('--end_id', default=20, type=int, help='Current running example end id?')
     parser.add_argument("--resume", help="skip the rendered image", action="store_true")
     parser.add_argument("--cam_pitch", type=str,help="list of camera pitch")
     parser.add_argument("--model_rot", type=str, help="list of model rotation")
-    parser.add_argument("--model_folder", type=str, help="model folder")
     parser.add_argument("--out_folder", type=str, help="dataset output folder")
     parser.add_argument("--base", default=False, action='store_true', help="render_base")
+    parser.add_argument("--csv", type=str, help="dataset csv file")
+
     args = parser.parse_args()
 
     print('parameters: {}'.format(args))
-
-    model_folder = args.model_folder
-    model_files = [os.path.join(model_folder, f) for f in os.listdir(model_folder) if os.path.isfile(os.path.join(model_folder, f))]
-    print('There are {} model files'.format(len(model_files)))
-    model_files.sort()
-
-    end = min(len(model_files), args.num)
-    random.seed(19920208)
-    model_files = random.sample(model_files, end)
     
+    with open(args.csv) as f:
+        reader = csv.reader(f, delimiter=',')
+        model_ds = [row for row in reader]
+
+    model_files = [f for f,c in model_ds]
+    model_files = model_files[args.start_id:args.end_id]
     print('Will render {} files'.format(len(model_files)))
     begin = time.time()
     render(args, model_files)
