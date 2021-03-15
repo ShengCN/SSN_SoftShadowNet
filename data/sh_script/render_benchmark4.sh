@@ -1,0 +1,2 @@
+python render_dataset.py --gpu=1 --num=27 --start_id=12 --end_id=13 --resume --cam_pitch=22,17 --model_rot=25,11 --model_folder="/home/ysheng/Dataset/benchmark_ds/models/general" --out_folder="/home/ysheng/Dataset/benchmark_ds/net_shadow_gt/general" 
+python render_dataset.py --gpu=1 --num=27 --start_id=12 --end_id=13 --resume --base --cam_pitch=22,17 --model_rot=25,11 --model_folder="/home/ysheng/Dataset/benchmark_ds/models/general" --out_folder="/home/ysheng/Dataset/benchmark_ds/net_shadow_gt/general" 

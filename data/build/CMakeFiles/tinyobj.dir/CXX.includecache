@@ -1,0 +1,40 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/ysheng/Documents/cpu_hard_shadow_renderer/cpu_hard_shadow_renderer_src/tinyobjloader/tiny_obj_loader.cc
+tiny_obj_loader.h
+/home/ysheng/Documents/cpu_hard_shadow_renderer/cpu_hard_shadow_renderer_src/tinyobjloader/tiny_obj_loader.h
+
+/home/ysheng/Documents/cpu_hard_shadow_renderer/cpu_hard_shadow_renderer_src/tinyobjloader/tiny_obj_loader.h
+map
+-
+string
+-
+vector
+-
+cassert
+-
+cctype
+-
+cmath
+-
+cstddef
+-
+cstdlib
+-
+cstring
+-
+limits
+-
+utility
+-
+fstream
+-
+sstream
+-
+
