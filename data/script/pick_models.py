@@ -41,4 +41,5 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     print('parameters: {}'.format(args))
+    random.seed(19920208)
     pick_models(args.model_path, args.num, args.csv, category=args.category, replace=args.replace)
