@@ -1,4 +1,4 @@
-# Install script for directory: /home/ysheng/Documents/cpu_hard_shadow_renderer/cpu_hard_shadow_renderer_src
+# Install script for directory: /home/sheng30/Documents/paper/shadow/SSN_SoftShadowNet/data/src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/ysheng/Documents/cpu_hard_shadow_renderer/cpu_hard_shadow_renderer_src/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/sheng30/Documents/paper/shadow/SSN_SoftShadowNet/data/buildd/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

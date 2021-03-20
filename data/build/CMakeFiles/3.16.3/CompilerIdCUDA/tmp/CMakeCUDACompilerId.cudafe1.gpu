@@ -1,0 +1,101 @@
+typedef char __nv_bool;
+# 209 "/usr/lib/gcc/x86_64-linux-gnu/9/include/stddef.h" 3
+typedef unsigned long size_t;
+#include "crt/device_runtime.h"
+# 254 "/usr/include/x86_64-linux-gnu/c++/9/bits/c++config.h" 3
+typedef unsigned long _ZSt6size_t;
+# 75 "/usr/include/cuda_device_runtime_api.h" 3
+___device__(static  __no_sc__) enum cudaError cudaMalloc(void **, size_t);
+# 80 "/usr/include/cuda_device_runtime_api.h" 3
+___device__(static  __no_sc__) enum cudaError cudaFuncGetAttributes(struct cudaFuncAttributes *, const void *);
+# 85 "/usr/include/cuda_device_runtime_api.h" 3
+___device__(static  __no_sc__) enum cudaError cudaDeviceGetAttribute(int *, enum cudaDeviceAttr, int);
+# 90 "/usr/include/cuda_device_runtime_api.h" 3
+___device__(static  __no_sc__) enum cudaError cudaGetDevice(int *);
+# 95 "/usr/include/cuda_device_runtime_api.h" 3
+___device__(static  __no_sc__) enum cudaError cudaOccupancyMaxActiveBlocksPerMultiprocessor(int *, const void *, int, size_t);
+# 100 "/usr/include/cuda_device_runtime_api.h" 3
+___device__(static  __no_sc__) enum cudaError cudaOccupancyMaxActiveBlocksPerMultiprocessorWithFlags(int *, const void *, int, size_t, unsigned);
+#include "common_functions.h"
+# 75 "/usr/include/cuda_device_runtime_api.h" 3
+___device__(static  __no_sc__) enum cudaError cudaMalloc(
+# 75 "/usr/include/cuda_device_runtime_api.h" 3
+void **p, 
+# 75 "/usr/include/cuda_device_runtime_api.h" 3
+size_t s){
+# 76 "/usr/include/cuda_device_runtime_api.h" 3
+{
+# 77 "/usr/include/cuda_device_runtime_api.h" 3
+return cudaErrorUnknown;
+# 78 "/usr/include/cuda_device_runtime_api.h" 3
+}}
+# 80 "/usr/include/cuda_device_runtime_api.h" 3
+___device__(static  __no_sc__) enum cudaError cudaFuncGetAttributes(
+# 80 "/usr/include/cuda_device_runtime_api.h" 3
+struct cudaFuncAttributes *p, 
+# 80 "/usr/include/cuda_device_runtime_api.h" 3
+const void *c){
+# 81 "/usr/include/cuda_device_runtime_api.h" 3
+{
+# 82 "/usr/include/cuda_device_runtime_api.h" 3
+return cudaErrorUnknown;
+# 83 "/usr/include/cuda_device_runtime_api.h" 3
+}}
+# 85 "/usr/include/cuda_device_runtime_api.h" 3
+___device__(static  __no_sc__) enum cudaError cudaDeviceGetAttribute(
+# 85 "/usr/include/cuda_device_runtime_api.h" 3
+int *value, 
+# 85 "/usr/include/cuda_device_runtime_api.h" 3
+enum cudaDeviceAttr attr, 
+# 85 "/usr/include/cuda_device_runtime_api.h" 3
+int device){
+# 86 "/usr/include/cuda_device_runtime_api.h" 3
+{
+# 87 "/usr/include/cuda_device_runtime_api.h" 3
+return cudaErrorUnknown;
+# 88 "/usr/include/cuda_device_runtime_api.h" 3
+}}
+# 90 "/usr/include/cuda_device_runtime_api.h" 3
+___device__(static  __no_sc__) enum cudaError cudaGetDevice(
+# 90 "/usr/include/cuda_device_runtime_api.h" 3
+int *device){
+# 91 "/usr/include/cuda_device_runtime_api.h" 3
+{
+# 92 "/usr/include/cuda_device_runtime_api.h" 3
+return cudaErrorUnknown;
+# 93 "/usr/include/cuda_device_runtime_api.h" 3
+}}
+# 95 "/usr/include/cuda_device_runtime_api.h" 3
+___device__(static  __no_sc__) enum cudaError cudaOccupancyMaxActiveBlocksPerMultiprocessor(
+# 95 "/usr/include/cuda_device_runtime_api.h" 3
+int *numBlocks, 
+# 95 "/usr/include/cuda_device_runtime_api.h" 3
+const void *func, 
+# 95 "/usr/include/cuda_device_runtime_api.h" 3
+int blockSize, 
+# 95 "/usr/include/cuda_device_runtime_api.h" 3
+size_t dynamicSmemSize){
+# 96 "/usr/include/cuda_device_runtime_api.h" 3
+{
+# 97 "/usr/include/cuda_device_runtime_api.h" 3
+return cudaErrorUnknown;
+# 98 "/usr/include/cuda_device_runtime_api.h" 3
+}}
+# 100 "/usr/include/cuda_device_runtime_api.h" 3
+___device__(static  __no_sc__) enum cudaError cudaOccupancyMaxActiveBlocksPerMultiprocessorWithFlags(
+# 100 "/usr/include/cuda_device_runtime_api.h" 3
+int *numBlocks, 
+# 100 "/usr/include/cuda_device_runtime_api.h" 3
+const void *func, 
+# 100 "/usr/include/cuda_device_runtime_api.h" 3
+int blockSize, 
+# 100 "/usr/include/cuda_device_runtime_api.h" 3
+size_t dynamicSmemSize, 
+# 100 "/usr/include/cuda_device_runtime_api.h" 3
+unsigned flags){
+# 101 "/usr/include/cuda_device_runtime_api.h" 3
+{
+# 102 "/usr/include/cuda_device_runtime_api.h" 3
+return cudaErrorUnknown;
+# 103 "/usr/include/cuda_device_runtime_api.h" 3
+}}

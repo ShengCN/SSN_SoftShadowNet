@@ -4,13 +4,13 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/ysheng/Documents/cpu_hard_shadow_renderer/cpu_hard_shadow_renderer_src/tinyobjloader/tiny_obj_loader.cc" "/home/ysheng/Documents/cpu_hard_shadow_renderer/cpu_hard_shadow_renderer_src/build/CMakeFiles/tinyobj.dir/tinyobjloader/tiny_obj_loader.cc.o"
+  "/home/sheng30/Documents/paper/shadow/SSN_SoftShadowNet/data/src/tinyobjloader/tiny_obj_loader.cc" "/home/sheng30/Documents/paper/shadow/SSN_SoftShadowNet/data/buildd/CMakeFiles/tinyobj.dir/tinyobjloader/tiny_obj_loader.cc.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "../"
+  "/home/sheng30/Documents/paper/shadow/SSN_SoftShadowNet/data/src"
   )
 
 # Targets to which this target links.
