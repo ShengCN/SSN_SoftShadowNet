@@ -12,6 +12,9 @@
 #include "model_loader.h"
 #include "ppc.h"
 
+std::vector<float> fov_list = { 50,44,42,42,47,49,48,44,40,54,48,56,57,51,47,53,59,50,47,48,58,57,43,54,42,44,51,43,47,49,45,51,53,52,56,51,43,43,56,51,42,52,47,42,45,52,46,50,56,48,57,51,54,56,55,53,59,50,44,59,46,48,45,54,56,42,56,   51,49,48,50,49,43,56,45,45,44,40,54,42,50,54,40,54,58,58,43,56,58,48,58,50,44,43,48,59,53,47,41,52};
+int cur_model_id =  0;
+
 const int w = 256, h = 256;
 using namespace purdue;
 // int i_begin = 256 - (int)((60.0 / 90.0) * 256 * 0.5);
@@ -904,10 +907,14 @@ void render_data(const std::string model_file, const std::string output_folder) 
 			float old_focal = cur_ppc->get_focal();
 			float old_dist = glm::length(ppc_relative);
 
+            /**
 			float random_fov = pd::normal_random(60,40);
 			while(random_fov<=20 || random_fov >=140) {
 				random_fov = pd::normal_random(60,40);
 			}
+            **/
+            float random_fov = (float)fov_list[cur_model_id % (int)fov_list.size()];
+
 			cur_ppc->set_fov(random_fov);
 			float new_focal = cur_ppc->get_focal();
 			float new_dist = old_dist / old_focal * new_focal;
@@ -1075,6 +1082,7 @@ int main(int argc, char *argv[]) {
 		dev = result["gpu"].as<int>();
 		int model_id = result["model_id"].as<int>();
 		printf("current model id: %d", model_id);
+        cur_model_id = model_id;
 		pd::engine = std::mt19937(model_id);
 		resume = result["resume"].as<bool>();
 		verbose = result["verbose"].as<bool>();

@@ -14,6 +14,7 @@ import random
 import csv
 
 def sketch(normal, depth):
+    return None
     normal_img, depth_img = cv2.imread(normal), cv2.imread(depth)
     normal_edge = cv2.Canny(normal_img, 600, 1000)
     depth_edge = cv2.Canny(depth_img, 0, 10)
@@ -28,12 +29,12 @@ def get_newest_prefix(out_folder):
 def worker(input_param):
     model,model_id, output_folder, gpu, resume, cam_pitch, model_rot = input_param
     os.makedirs(output_folder, exist_ok=True)
-    
+
     newest_prefix = get_newest_prefix(output_folder)
     os.system('../build/hard_shadow --model={} --model_id={} --output={} --gpu={} --resume={} --cam_pitch={} --model_rot={} --render_mask --render_normal --render_depth --render_ground --render_shadow --render_touch'.format(model, model_id, output_folder, gpu, resume, cam_pitch, model_rot))
     # os.system('../build/hard_shadow --model={} --model_id={} --output={} --gpu={} --resume={} --cam_pitch={} --model_rot={} --render_touch'.format(model, model_id, output_folder, gpu, False,cam_pitch, model_rot))
     # os.system('build/hard_shadow --model={} --model_id={} --output={} --gpu={} --resume={} --cam_pitch={} --model_rot={} --render_mask --render_normal --render_depth --render_ground --render_touch'.format(model, model_id, output_folder, gpu, resume,cam_pitch, model_rot))
-              
+
 def base_compute(param):
     x, y, shadow_list = param
     ret_np = np.zeros((256,256))
@@ -51,36 +52,36 @@ def multithreading_post_process(folder, output_folder, base_size=16):
         i = basename[basename.find(ibli_) + len(ibli_):basename.find('_iblj')]
         j = basename[basename.find(iblj_) + len(iblj_):basename.find('_shadow')]
         return i,j
-    
+
     os.makedirs(output_folder, exist_ok=True)
     if not os.path.exists(folder):
         print('{} not exist'.format(folder))
-        return 
+        return
 
     files = [join(folder, f) for f in os.listdir(folder) if (os.path.isfile(join(folder, f))) and (f.find('shadow.png') != -1)]
     i_list, j_list = set(),set()
     pitch_rot_list = set()
-    
+
     for f in tqdm(files):
         i,j = get_ibl_i_j(f)
         i_list.add(int(i))
         j_list.add(int(j))
         pitch_rot = f[:f.find('ibli')-1]
         pitch_rot_list.add(pitch_rot)
-    
+
     pitch_rot_list = list(pitch_rot_list)
     i_list, j_list = list(i_list), list(j_list)
     i_list.sort()
     j_list.sort()
-    
+
     max_i, min_i = i_list[-1], i_list[0]
-    min_j, max_j, j_diff = j_list[0], j_list[-1], j_list[1]-j_list[0]    
+    min_j, max_j, j_diff = j_list[0], j_list[-1], j_list[1]-j_list[0]
     print(max_i, min_i, max_j, min_j)
-    
+
     x_iter, y_iter = (max_i-min_i)//base_size,(max_j-min_j)//base_size
     base_iter = base_size//j_diff
     print(x_iter, y_iter)
-    
+
     group_np = np.zeros((256,256, x_iter, y_iter))
     input_list = []
     for pitch_rot in pitch_rot_list:
@@ -88,11 +89,11 @@ def multithreading_post_process(folder, output_folder, base_size=16):
         output_path = os.path.join(output_folder, '{}_shadow.npy'.format(base_pitch_rot))
         if os.path.exists(output_path):
             continue
-        
+
         for xi in tqdm(range(x_iter)):
             for yi in range(y_iter):
                 tuple_input = [xi, yi]
-                
+
                 shaodw_list = [os.path.join('{}_ibli_{}_iblj_{}_shadow.png'.format(pitch_rot, min_i + xi * base_size + i * j_diff, min_j + yi * base_size + j * j_diff))
                                for i in range(base_iter)
                                for j in range(base_iter)]
@@ -106,17 +107,17 @@ def multithreading_post_process(folder, output_folder, base_size=16):
                 x,y, base_np = base[0], base[1], base[2]
                 group_np[:,:,x,y] = base_np * base_weight
                 print("Finished: {} \r".format(float(i) / task_num), flush=True, end='')
-        
+
         np.save(output_path, group_np)
     del group_np
 
 def render_shadows(args, model_files, model_id):
     dataset_out = args.out_folder
-    cache_folder = join(dataset_out, 'cache') 
+    cache_folder = join(dataset_out, 'cache')
     ds_root = os.path.join(cache_folder, 'shadow_output')
     output_list = []
 
-    for i, f in enumerate(tqdm(model_files)):  
+    for i, f in enumerate(tqdm(model_files)):
         model_fname = os.path.splitext(os.path.basename(f))[0]
         out_folder = os.path.join(ds_root, model_fname)
         output_list.append(out_folder)
@@ -143,23 +144,23 @@ def render_bases(args, model_files):
     base_output_list = []
     output_list = []
 
-    cache_folder = join(dataset_out, 'cache') 
+    cache_folder = join(dataset_out, 'cache')
     ds_root = os.path.join(cache_folder, 'shadow_output')
     base_ds_root = join(dataset_out, 'base')
-    
-    for i, f in tqdm(enumerate(model_files)):        
+
+    for i, f in tqdm(enumerate(model_files)):
         model_fname = os.path.splitext(os.path.basename(f))[0]
         out_folder = os.path.join(ds_root, model_fname)
         output_list.append(out_folder)
 
         base_output_folder = os.path.join(base_ds_root, model_fname)
         base_output_list.append(base_output_folder)
-    
+
     print('begin preparing bases')
     for i, shadow_output_folder in tqdm(enumerate(output_list)):
         print('shadow output: {}, base output: {}'.format(shadow_output_folder, base_output_list[i]))
         multithreading_post_process(shadow_output_folder, base_output_list[i])
-        
+
     print('Bases render finish, check folder {}'.format(base_ds_root))
 
 def copy_channels(args, model_files):
@@ -171,9 +172,9 @@ def copy_channels(args, model_files):
     sketch_out = join(dataset_out, 'sketch')
     touch_out = join(dataset_out, 'touch')
 
-    cache_folder = join(dataset_out, 'cache') 
+    cache_folder = join(dataset_out, 'cache')
     ds_root = join(cache_folder, 'shadow_output')
-    for i, f in tqdm(enumerate(model_files)):        
+    for i, f in tqdm(enumerate(model_files)):
         model_fname = os.path.splitext(os.path.basename(f))[0]
         out_folder = os.path.join(ds_root, model_fname)
         mask_files = [f for f in os.listdir(out_folder) if f.find('mask') != -1]
@@ -181,16 +182,16 @@ def copy_channels(args, model_files):
         heightmap_files = [f for f in os.listdir(out_folder) if f.find('heightmap') != -1]
         normal_files = [f for f in os.listdir(out_folder) if f.find('normal') != -1]
         touch_files = [f for f in os.listdir(out_folder) if f.find('touch') != -1]
-        
+
         cur_mask_out = join(mask_out, model_fname)
         os.makedirs(cur_mask_out, exist_ok=True)
-        
+
         cur_ground_out = join(ground_out, model_fname)
         os.makedirs(cur_ground_out, exist_ok=True)
-        
+
         cur_heightmap_out = join(heightmap_out, model_fname)
         os.makedirs(cur_heightmap_out, exist_ok=True)
-        
+
         cur_sketch_out = join(sketch_out, model_fname)
         os.makedirs(cur_sketch_out, exist_ok=True)
 
@@ -213,12 +214,12 @@ def copy_channels(args, model_files):
             normal = join(out_folder, mf)
             prefix = mf[:mf.find('_normal')]
             depth = join(out_folder, prefix + "_depth.png")
-            sketch_img = sketch(normal, depth)
-            plt.imsave(join(cur_sketch_out, prefix + "_sketch.png"), sketch_img)
-            
+            # sketch_img = sketch(normal, depth)
+            # plt.imsave(join(cur_sketch_out, prefix + "_sketch.png"), sketch_img)
+
 def render(args, model_files):
     dataset_out = args.out_folder
-    cache_folder = join(dataset_out, 'cache') 
+    cache_folder = join(dataset_out, 'cache')
     ds_root = os.path.join(cache_folder, 'shadow_output')
     base_ds_root = join(dataset_out, 'base')
     mask_out = join(dataset_out, 'mask')
@@ -236,14 +237,14 @@ def render(args, model_files):
     os.makedirs(sketch_out, exist_ok=True)
     os.makedirs(ground_out, exist_ok=True)
     os.makedirs(touch_out, exist_ok=True)
-    
+
     for i, mf in enumerate(tqdm(model_files)):
         if args.base:
             render_bases(args, [mf])
         else:
             render_shadows(args, [mf], i + args.start_id)
             copy_channels(args, [mf])
-    
+
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Process some integers.')
     parser.add_argument('--gpu', default=0, type=int, help='GPU device')
@@ -259,7 +260,7 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     print('parameters: {}'.format(args))
-    
+
     with open(args.csv) as f:
         reader = csv.reader(f, delimiter=',')
         model_ds = [row for row in reader]
