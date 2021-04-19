@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scene version="0.6.0">
+    <integrator type="shadow_integrator"/>
+    <sensor type="perspective">
+        <string name="fovAxis" value="x"/>
+        <float name="nearClip" value="0.100000"/>
+        <float name="farClip" value="3000.000000"/>
+        <float name="fov" value="65.000000"/>
+        <transform name="toWorld">
+            <lookAt origin="$ori" target="$target" up="$up"/>
+        </transform>
+        <sampler type="ldsampler">
+            <integer name="sampleCount" value="$samples"/>
+        </sampler>
+        <film type="hdrfilm">
+            <integer name="width" value="512"/>
+            <integer name="height" value="512"/>
+            <boolean name="banner" value="false"/>
+            <rfilter type="gaussian"/>
+        </film>
+    </sensor>
+    <emitter type="envmap">
+        <string name="filename" value="$ibl"/>
+    </emitter>
+    <bsdf type="twosided" id="background">
+        <bsdf type="diffuse">
+            <srgb name="reflectance" value="0.7 0.7 0.7"/>
+        </bsdf>
+    </bsdf>
+    <bsdf type="twosided" id="reflectance">
+        <bsdf type="diffuse">
+            <srgb name="reflectance" value="0.9 0.9 0.9"/>
+        </bsdf>
+    </bsdf>
+    <bsdf type="dielectric" id="transparent">
+        <string name="intIOR" value="acrylic glass"/>
+        <string name="extIOR" value="air"/>
+    </bsdf>
+    <shape type="obj">
+        <string name="filename" value="$ground"/>
+        <transform name="toWorld">
+            <matrix value="20.000000 0.000000 0.000000 0.000000 0.000000 20.000000 0.000000 0.000000 0.000000 0.000000 20.000000 0.000000 0.000000 0.000000 0.000000 1.000000"/>
+        </transform>
+        <ref id="reflectance"/>
+        <boolean name="ground" value="true"/>
+    </shape>
+    <shape type="obj">
+        <string name="filename" value="$model"/>
+        <transform name="toWorld">
+            <matrix value="$world"/>
+            <!-- <matrix value="0.0048338 0 0 0 0.000000 0.0048338  0.000000 0.000000 0.000000 0.000000 0.0048338 0.000000 0.000000 0.000000 0.000000 1.000000 "/> -->
+        </transform>
+        <boolean name="render_target" value="true"/>
+    </shape>
+</scene>

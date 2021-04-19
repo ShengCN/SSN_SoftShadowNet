@@ -1,1 +1,3 @@
 *.pt
+network/tensorboard_log/runs/*
+*.pyc
