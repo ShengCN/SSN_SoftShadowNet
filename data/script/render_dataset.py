@@ -12,6 +12,7 @@ import shutil
 import cv2
 import random
 import csv
+from glob import glob
 
 def sketch(normal, depth):
     return None
@@ -31,7 +32,7 @@ def worker(input_param):
     os.makedirs(output_folder, exist_ok=True)
 
     newest_prefix = get_newest_prefix(output_folder)
-    os.system('../build/hard_shadow --model={} --model_id={} --output={} --gpu={} --resume={} --cam_pitch={} --model_rot={} --render_mask --render_normal --render_depth --render_ground --render_shadow --render_touch'.format(model, model_id, output_folder, gpu, resume, cam_pitch, model_rot))
+    os.system('../build/hard_shadow --model={} --model_id={} --output={} --gpu={} --resume={} --cam_pitch={} --model_rot={} --render_mask --render_shadow --render_touch'.format(model, model_id, output_folder, gpu, resume, cam_pitch, model_rot))
     # os.system('../build/hard_shadow --model={} --model_id={} --output={} --gpu={} --resume={} --cam_pitch={} --model_rot={} --render_touch'.format(model, model_id, output_folder, gpu, False,cam_pitch, model_rot))
     # os.system('build/hard_shadow --model={} --model_id={} --output={} --gpu={} --resume={} --cam_pitch={} --model_rot={} --render_mask --render_normal --render_depth --render_ground --render_touch'.format(model, model_id, output_folder, gpu, resume,cam_pitch, model_rot))
 
@@ -167,9 +168,6 @@ def copy_channels(args, model_files):
     dataset_out = args.out_folder
 
     mask_out = join(dataset_out, 'mask')
-    ground_out = join(dataset_out, 'ground')
-    heightmap_out = join(dataset_out, 'heightmap')
-    sketch_out = join(dataset_out, 'sketch')
     touch_out = join(dataset_out, 'touch')
 
     cache_folder = join(dataset_out, 'cache')
@@ -186,36 +184,15 @@ def copy_channels(args, model_files):
         cur_mask_out = join(mask_out, model_fname)
         os.makedirs(cur_mask_out, exist_ok=True)
 
-        cur_ground_out = join(ground_out, model_fname)
-        os.makedirs(cur_ground_out, exist_ok=True)
-
-        cur_heightmap_out = join(heightmap_out, model_fname)
-        os.makedirs(cur_heightmap_out, exist_ok=True)
-
-        cur_sketch_out = join(sketch_out, model_fname)
-        os.makedirs(cur_sketch_out, exist_ok=True)
-
         cur_touch_out = join(touch_out, model_fname)
         os.makedirs(cur_touch_out, exist_ok=True)
 
         for mf in mask_files:
             shutil.copyfile(join(out_folder, mf), join(cur_mask_out, mf))
 
-        for mf in ground_files:
-            shutil.copyfile(join(out_folder, mf), join(cur_ground_out, mf))
-
-        for mf in heightmap_files:
-            shutil.copyfile(join(out_folder, mf), join(cur_heightmap_out, mf))
-
         for mf in touch_files:
             shutil.copyfile(join(out_folder, mf), join(cur_touch_out, mf))
 
-        for mf in normal_files:
-            normal = join(out_folder, mf)
-            prefix = mf[:mf.find('_normal')]
-            depth = join(out_folder, prefix + "_depth.png")
-            # sketch_img = sketch(normal, depth)
-            # plt.imsave(join(cur_sketch_out, prefix + "_sketch.png"), sketch_img)
 
 def render(args, model_files):
     dataset_out = args.out_folder
@@ -223,9 +200,6 @@ def render(args, model_files):
     ds_root = os.path.join(cache_folder, 'shadow_output')
     base_ds_root = join(dataset_out, 'base')
     mask_out = join(dataset_out, 'mask')
-    sketch_out = join(dataset_out, 'sketch')
-    ground_out = join(dataset_out, 'ground')
-    height_out = join(dataset_out, 'heightmap')
     touch_out = join(dataset_out, 'touch')
 
     os.makedirs(dataset_out, exist_ok=True)
@@ -233,15 +207,18 @@ def render(args, model_files):
     os.makedirs(ds_root, exist_ok=True)
     os.makedirs(base_ds_root, exist_ok=True)
     os.makedirs(mask_out, exist_ok=True)
-    os.makedirs(height_out, exist_ok=True)
-    os.makedirs(sketch_out, exist_ok=True)
-    os.makedirs(ground_out, exist_ok=True)
     os.makedirs(touch_out, exist_ok=True)
 
     for i, mf in enumerate(tqdm(model_files)):
         if args.base:
             render_bases(args, [mf])
         else:
+            # if base exist, skip
+            mfname = join(base_ds_root, os.path.splitext(os.path.basename(mf))[0])
+            if len(glob(join(mfname, '*'))) > 0:
+                print('base has been rendered, skip')
+                continue
+
             render_shadows(args, [mf], i + args.start_id)
             copy_channels(args, [mf])
 

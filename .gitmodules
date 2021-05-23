@@ -1,0 +1,3 @@
+[submodule "imagen"]
+	path = imagen
+	url = https://github.com/pyviz-topics/imagen.git
