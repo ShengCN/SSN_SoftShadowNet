@@ -87,7 +87,7 @@ def multithreading_post_process(folder, output_folder, base_size=16):
     input_list = []
     for pitch_rot in pitch_rot_list:
         base_pitch_rot = os.path.basename(pitch_rot)
-        output_path = os.path.join(output_folder, '{}_shadow.npy'.format(base_pitch_rot))
+        output_path = os.path.join(output_folder, '{}_shadow.npz'.format(base_pitch_rot))
         if os.path.exists(output_path):
             continue
 
@@ -109,7 +109,7 @@ def multithreading_post_process(folder, output_folder, base_size=16):
                 group_np[:,:,x,y] = base_np * base_weight
                 print("Finished: {} \r".format(float(i) / task_num), flush=True, end='')
 
-        np.save(output_path, group_np)
+        np.savez_compressed(output_path, group_np)
     del group_np
 
 def render_shadows(args, model_files, model_id):
@@ -176,9 +176,6 @@ def copy_channels(args, model_files):
         model_fname = os.path.splitext(os.path.basename(f))[0]
         out_folder = os.path.join(ds_root, model_fname)
         mask_files = [f for f in os.listdir(out_folder) if f.find('mask') != -1]
-        ground_files = [f for f in os.listdir(out_folder) if f.find('ground') != -1]
-        heightmap_files = [f for f in os.listdir(out_folder) if f.find('heightmap') != -1]
-        normal_files = [f for f in os.listdir(out_folder) if f.find('normal') != -1]
         touch_files = [f for f in os.listdir(out_folder) if f.find('touch') != -1]
 
         cur_mask_out = join(mask_out, model_fname)
