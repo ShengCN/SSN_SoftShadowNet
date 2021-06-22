@@ -4,7 +4,7 @@
 #include <string>
 #include <memory>
 
-#include "common.h"
+#include <common.h>
 
 #ifdef __CUDACC__
 #define CUDA_HOSTDEV __host__ __device__
@@ -26,6 +26,10 @@ enum class CameraMovement
 	right,
 	up,
 	down
+};
+
+struct ray {
+	glm::vec3 ro, rd;
 };
 
 class ppc

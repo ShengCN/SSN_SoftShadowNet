@@ -1,5 +1,0 @@
-/home/sheng30/Documents/paper/shadow/SSN_SoftShadowNet/data/buildd/CMakeFiles/rebuild_cache.dir
-/home/sheng30/Documents/paper/shadow/SSN_SoftShadowNet/data/buildd/CMakeFiles/edit_cache.dir
-/home/sheng30/Documents/paper/shadow/SSN_SoftShadowNet/data/buildd/CMakeFiles/hard_shadow_fov.dir
-/home/sheng30/Documents/paper/shadow/SSN_SoftShadowNet/data/buildd/CMakeFiles/hard_shadow.dir
-/home/sheng30/Documents/paper/shadow/SSN_SoftShadowNet/data/buildd/CMakeFiles/tinyobj.dir

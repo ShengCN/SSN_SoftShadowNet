@@ -5,12 +5,25 @@
 #include <glm/mat3x3.hpp>
 #include <glm/mat4x4.hpp>
 #include <glm/gtx/quaternion.hpp>
+#include <glm/gtx/transform.hpp>
+#include <glm/gtx/matrix_decompose.hpp>
+
+
+#include <algorithm>
+#include <memory>
+#include <iostream>
+#include <vector>
+#include <limits>
+#include <stdio.h>
+#include <math.h>
 #include <string>
 #include <chrono>
 #include <random>
 #include <sstream>
-#include <iostream>
 #include <unistd.h>
+#include <cuda_runtime.h>
+#include <fmt/core.h>
+#include <fmt/ranges.h>
 
 typedef std::chrono::high_resolution_clock Clock;
 
@@ -33,36 +46,6 @@ using glm::mat3;
 using glm::mat4;
 using glm::quat;
 using pd::operator *;
-
-//------- Singleton Class for Shared Variables --------//
-// src: https://stackoverflow.com/questions/1008019/c-singleton-design-pattern
-class shared_variables {
-//------- variables --------//
-public:
-	const std::string shader_folder = "Shaders/";
-	const std::string template_vs = shader_folder + "template_vs.glsl";
-	const std::string template_fs = shader_folder + "template_fs.glsl";
-	vec3 default_stl_color = glm::vec3(0.3f);
-
-public:
-	static shared_variables& instance() {
-		static shared_variables instance;
-		return instance;
-	}
-
-private:
-	shared_variables() = default;
-
-//------- constraints on copy and move --------//
-public:
-	shared_variables(shared_variables const&) = delete;
-	void operator=(shared_variables const&) = delete;
-};
-
-
-#ifndef GGV	// graphics lib global variables
-#define GGV shared_variables::instance()
-#endif // !GGV
 
 namespace purdue {
 	bool save_image(const std::string fname, unsigned int *pixels, int w, int h, int c = 4);
@@ -226,4 +209,14 @@ namespace purdue {
     inline bool exists_test (const std::string& name) {
     return ( access( name.c_str(), F_OK ) != -1 );
     }
+
+	#define gpuErrchk(ans) { gpuAssert((ans), __FILE__, __LINE__); }
+	inline void gpuAssert(cudaError_t code, const char *file, int line, bool abort = true)
+	{
+		if (code != cudaSuccess)
+		{
+			fprintf(stderr, "GPUassert: %s %s %d\n", cudaGetErrorString(code), file, line);
+			if (abort) exit(code);
+		}
+	}
 }

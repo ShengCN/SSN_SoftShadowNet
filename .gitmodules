@@ -1,0 +1,12 @@
+[submodule "data/src/Dep/glm"]
+	path = data/src/Dep/glm
+	url = https://github.com/g-truc/glm.git
+[submodule "data/src/Dep/fmt"]
+	path = data/src/Dep/fmt
+	url = https://github.com/fmtlib/fmt.git
+[submodule "data/src/Dep/stb"]
+	path = data/src/Dep/stb
+	url = https://github.com/nothings/stb.git
+[submodule "data/src/Dep/tinyobjloader"]
+	path = data/src/Dep/tinyobjloader
+	url = https://github.com/tinyobjloader/tinyobjloader.git

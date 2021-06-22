@@ -1,1 +1,0 @@
-CUDA_VISIBLE_DEVICES=1,2 python train_relight_ssn.py --resume --weight_file="human_baseline.pt" --multi_gpu --relearn --workers=120 --batch_size=120 --timers=40 --ds_folder="/home/sheng30/Dataset/SSN/demo_render_ds/human" --exp_name='human_baseline'  --lr=1e-3

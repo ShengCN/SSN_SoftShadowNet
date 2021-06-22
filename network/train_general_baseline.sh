@@ -1,1 +1,0 @@
-CUDA_VISIBLE_DEVICES=0,1,2 python -W ignore train_relight_ssn.py --multi_gpu --relearn --resume --weight_file="general_baseline.pt" --workers=200 --batch_size=200 --timers=10 --ds_folder="/home/sheng30/Dataset/SSN/demo_render_ds/general" --exp_name='general_baseline'  --lr=1e-3

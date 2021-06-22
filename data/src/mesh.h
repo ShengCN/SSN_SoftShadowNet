@@ -1,9 +1,5 @@
 #pragma once
-
-#include <vector>
-#include <algorithm>
-#include <memory>
-
+#include <common.h>
 #include "ppc.h"
 
 /*!

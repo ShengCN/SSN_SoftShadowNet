@@ -1,5 +1,5 @@
 #pragma once
-#include <memory>
+#include <common.h>
 #include "mesh.h"
 #include "tinyobjloader/tiny_obj_loader.h"
 

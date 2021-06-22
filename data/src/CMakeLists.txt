@@ -1,23 +1,41 @@
 cmake_minimum_required (VERSION 3.8)
-project (hard_shadow LANGUAGES CXX CUDA)
+project (shadow_base LANGUAGES CXX CUDA)
 
-enable_language(CUDA)
-include_directories(${PROJECT_SOURCE_DIR})
-
-add_library(tinyobj ${PROJECT_SOURCE_DIR}/tinyobjloader/tiny_obj_loader.cc)
-
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set (CMAKE_CXX_STANDARD 11)
 
-add_executable(hard_shadow main.cu common.cpp mesh.cpp model_loader.cpp ppc.cpp)
-add_executable(hard_shadow_fov force_fov.cu common.cpp mesh.cpp model_loader.cpp ppc.cpp)
 
-target_link_libraries (hard_shadow PRIVATE tinyobj)
-target_link_libraries (hard_shadow_fov PRIVATE tinyobj)
+# find_package(glfw3 3.3. REQUIRED)
+set (CMAKE_CXX_STANDARD 11)
+find_package(CUDA  REQUIRED)
+enable_language(CUDA)
 
-# target_compile_options(hard_shadow PRIVATE "${OpenMP_CXX_FLAGS}")
+# Dependencies
+add_subdirectory(Dep/glm)
+add_subdirectory(Dep/fmt)
+add_subdirectory(Dep/tinyobjloader)
 
-set_property(TARGET hard_shadow 
-             PROPERTY CUDA_SEPARABLE_COMPILATION ON)
+file(GLOB src
+    "${PROJECT_SOURCE_DIR}/*.cu"
+    "${PROJECT_SOURCE_DIR}/*.cpp"
+)
 
-set_property(TARGET hard_shadow_fov
+add_executable(shadow_base ${src}
+)
+
+target_include_directories(shadow_base PUBLIC 
+${PROJECT_SOURCE_DIR} 
+${CUDA_INCLUDE_DIRS} 
+${PROJECT_SOURCE_DIR}/Dep/fmt/include 
+${PROJECT_SOURCE_DIR}/Dep/glm 
+${PROJECT_SOURCE_DIR}/Dep
+)
+
+target_link_libraries(shadow_base PUBLIC
+glm
+fmt
+tinyobjloader
+)
+
+set_property(TARGET shadow_base 
              PROPERTY CUDA_SEPARABLE_COMPILATION ON)

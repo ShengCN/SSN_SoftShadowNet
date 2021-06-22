@@ -86,7 +86,7 @@ def multithreading_post_process(folder, output_folder, base_size=16):
     input_list = []
     for pitch_rot in pitch_rot_list:
         base_pitch_rot = os.path.basename(pitch_rot)
-        output_path = os.path.join(output_folder, '{}_shadow.npy'.format(base_pitch_rot))
+        output_path = os.path.join(output_folder, '{}_shadow.npz'.format(base_pitch_rot))
         if os.path.exists(output_path):
             continue
 
@@ -108,7 +108,8 @@ def multithreading_post_process(folder, output_folder, base_size=16):
                 group_np[:,:,x,y] = base_np * base_weight
                 print("Finished: {} \r".format(float(i) / task_num), flush=True, end='')
 
-        np.save(output_path, group_np)
+        # np.save(output_path, group_np)
+        np.savez_compressed(output_path, group_np)
     del group_np
 
 def render_shadows(args, model_files, model_id):
@@ -167,10 +168,7 @@ def copy_channels(args, model_files):
     dataset_out = args.out_folder
 
     mask_out = join(dataset_out, 'mask')
-    ground_out = join(dataset_out, 'ground')
-    heightmap_out = join(dataset_out, 'heightmap')
-    sketch_out = join(dataset_out, 'sketch')
-    touch_out = join(dataset_out, 'touch')
+    touch_out = join(dataset_out, 'ao')
 
     cache_folder = join(dataset_out, 'cache')
     ds_root = join(cache_folder, 'shadow_output')
@@ -178,22 +176,10 @@ def copy_channels(args, model_files):
         model_fname = os.path.splitext(os.path.basename(f))[0]
         out_folder = os.path.join(ds_root, model_fname)
         mask_files = [f for f in os.listdir(out_folder) if f.find('mask') != -1]
-        ground_files = [f for f in os.listdir(out_folder) if f.find('ground') != -1]
-        heightmap_files = [f for f in os.listdir(out_folder) if f.find('heightmap') != -1]
-        normal_files = [f for f in os.listdir(out_folder) if f.find('normal') != -1]
-        touch_files = [f for f in os.listdir(out_folder) if f.find('touch') != -1]
+        ao_files = [f for f in os.listdir(out_folder) if f.find('ao') != -1]
 
         cur_mask_out = join(mask_out, model_fname)
         os.makedirs(cur_mask_out, exist_ok=True)
-
-        cur_ground_out = join(ground_out, model_fname)
-        os.makedirs(cur_ground_out, exist_ok=True)
-
-        cur_heightmap_out = join(heightmap_out, model_fname)
-        os.makedirs(cur_heightmap_out, exist_ok=True)
-
-        cur_sketch_out = join(sketch_out, model_fname)
-        os.makedirs(cur_sketch_out, exist_ok=True)
 
         cur_touch_out = join(touch_out, model_fname)
         os.makedirs(cur_touch_out, exist_ok=True)
@@ -201,21 +187,8 @@ def copy_channels(args, model_files):
         for mf in mask_files:
             shutil.copyfile(join(out_folder, mf), join(cur_mask_out, mf))
 
-        for mf in ground_files:
-            shutil.copyfile(join(out_folder, mf), join(cur_ground_out, mf))
-
-        for mf in heightmap_files:
-            shutil.copyfile(join(out_folder, mf), join(cur_heightmap_out, mf))
-
-        for mf in touch_files:
+        for mf in ao_files:
             shutil.copyfile(join(out_folder, mf), join(cur_touch_out, mf))
-
-        for mf in normal_files:
-            normal = join(out_folder, mf)
-            prefix = mf[:mf.find('_normal')]
-            depth = join(out_folder, prefix + "_depth.png")
-            # sketch_img = sketch(normal, depth)
-            # plt.imsave(join(cur_sketch_out, prefix + "_sketch.png"), sketch_img)
 
 def render(args, model_files):
     dataset_out = args.out_folder
@@ -223,9 +196,6 @@ def render(args, model_files):
     ds_root = os.path.join(cache_folder, 'shadow_output')
     base_ds_root = join(dataset_out, 'base')
     mask_out = join(dataset_out, 'mask')
-    sketch_out = join(dataset_out, 'sketch')
-    ground_out = join(dataset_out, 'ground')
-    height_out = join(dataset_out, 'heightmap')
     touch_out = join(dataset_out, 'touch')
 
     os.makedirs(dataset_out, exist_ok=True)
@@ -233,9 +203,6 @@ def render(args, model_files):
     os.makedirs(ds_root, exist_ok=True)
     os.makedirs(base_ds_root, exist_ok=True)
     os.makedirs(mask_out, exist_ok=True)
-    os.makedirs(height_out, exist_ok=True)
-    os.makedirs(sketch_out, exist_ok=True)
-    os.makedirs(ground_out, exist_ok=True)
     os.makedirs(touch_out, exist_ok=True)
 
     for i, mf in enumerate(tqdm(model_files)):
