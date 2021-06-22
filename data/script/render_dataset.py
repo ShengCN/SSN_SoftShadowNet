@@ -12,6 +12,7 @@ import shutil
 import cv2
 import random
 import csv
+from glob import glob
 
 def sketch(normal, depth):
     return None
@@ -31,7 +32,7 @@ def worker(input_param):
     os.makedirs(output_folder, exist_ok=True)
 
     newest_prefix = get_newest_prefix(output_folder)
-    os.system('../build/hard_shadow --model={} --model_id={} --output={} --gpu={} --resume={} --cam_pitch={} --model_rot={} --render_mask --render_normal --render_depth --render_ground --render_shadow --render_touch'.format(model, model_id, output_folder, gpu, resume, cam_pitch, model_rot))
+    os.system('../build/hard_shadow --model={} --model_id={} --output={} --gpu={} --resume={} --cam_pitch={} --model_rot={} --render_mask --render_shadow --render_touch'.format(model, model_id, output_folder, gpu, resume, cam_pitch, model_rot))
     # os.system('../build/hard_shadow --model={} --model_id={} --output={} --gpu={} --resume={} --cam_pitch={} --model_rot={} --render_touch'.format(model, model_id, output_folder, gpu, False,cam_pitch, model_rot))
     # os.system('build/hard_shadow --model={} --model_id={} --output={} --gpu={} --resume={} --cam_pitch={} --model_rot={} --render_mask --render_normal --render_depth --render_ground --render_touch'.format(model, model_id, output_folder, gpu, resume,cam_pitch, model_rot))
 
@@ -108,7 +109,6 @@ def multithreading_post_process(folder, output_folder, base_size=16):
                 group_np[:,:,x,y] = base_np * base_weight
                 print("Finished: {} \r".format(float(i) / task_num), flush=True, end='')
 
-        # np.save(output_path, group_np)
         np.savez_compressed(output_path, group_np)
     del group_np
 
@@ -209,6 +209,12 @@ def render(args, model_files):
         if args.base:
             render_bases(args, [mf])
         else:
+            # if base exist, skip
+            mfname = join(base_ds_root, os.path.splitext(os.path.basename(mf))[0])
+            if len(glob(join(mfname, '*'))) > 0:
+                print('base has been rendered, skip')
+                continue
+
             render_shadows(args, [mf], i + args.start_id)
             copy_channels(args, [mf])
 

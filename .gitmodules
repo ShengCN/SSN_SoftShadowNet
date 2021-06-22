@@ -10,3 +10,6 @@
 [submodule "data/src/Dep/tinyobjloader"]
 	path = data/src/Dep/tinyobjloader
 	url = https://github.com/tinyobjloader/tinyobjloader.git
+[submodule "imagen"]
+	path = imagen
+	url = https://github.com/pyviz-topics/imagen.git
