@@ -30,6 +30,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/Render_DS/mesh.cpp" "/home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/build/CMakeFiles/shadow_base.dir/Render_DS/mesh.cpp.o"
   "/home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/Render_DS/model_loader.cpp" "/home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/build/CMakeFiles/shadow_base.dir/Render_DS/model_loader.cpp.o"
   "/home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/Render_DS/ppc.cpp" "/home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/build/CMakeFiles/shadow_base.dir/Render_DS/ppc.cpp.o"
+  "/home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/arg_parse.cpp" "/home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/build/CMakeFiles/shadow_base.dir/arg_parse.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

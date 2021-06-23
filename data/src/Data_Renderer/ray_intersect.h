@@ -16,6 +16,4 @@ __host__ __device__
 void ray_aabb_intersect(const ray&r, AABB* aabb, bool& ret);
 
 __host__ __device__
-void swap(float& a, float& b);
-
-
+void swap(float &a, float &b);

@@ -21,18 +21,23 @@
 },
 {
   "directory": "/home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/build",
-  "command": "/usr/bin/c++  -DFMT_LOCALE -I/home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src -I/usr/local/cuda-11.1/include -I/home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/Dep/fmt/include -I/home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/Dep/glm -I/home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/Dep -I/home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/Dep/tinyobjloader    -std=gnu++11 -o CMakeFiles/shadow_base.dir/Render_DS/mesh.cpp.o -c /home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/Render_DS/mesh.cpp",
+  "command": "/usr/bin/c++  -DFMT_LOCALE -I/home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src -I/usr/local/cuda-11.1/include -I/home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/Dep/fmt/include -I/home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/Dep/glm -I/home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/Dep -I/home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/Dep/tinyobjloader  -g   -std=gnu++11 -o CMakeFiles/shadow_base.dir/Render_DS/mesh.cpp.o -c /home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/Render_DS/mesh.cpp",
   "file": "/home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/Render_DS/mesh.cpp"
 },
 {
   "directory": "/home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/build",
-  "command": "/usr/bin/c++  -DFMT_LOCALE -I/home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src -I/usr/local/cuda-11.1/include -I/home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/Dep/fmt/include -I/home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/Dep/glm -I/home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/Dep -I/home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/Dep/tinyobjloader    -std=gnu++11 -o CMakeFiles/shadow_base.dir/Render_DS/model_loader.cpp.o -c /home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/Render_DS/model_loader.cpp",
+  "command": "/usr/bin/c++  -DFMT_LOCALE -I/home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src -I/usr/local/cuda-11.1/include -I/home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/Dep/fmt/include -I/home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/Dep/glm -I/home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/Dep -I/home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/Dep/tinyobjloader  -g   -std=gnu++11 -o CMakeFiles/shadow_base.dir/Render_DS/model_loader.cpp.o -c /home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/Render_DS/model_loader.cpp",
   "file": "/home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/Render_DS/model_loader.cpp"
 },
 {
   "directory": "/home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/build",
-  "command": "/usr/bin/c++  -DFMT_LOCALE -I/home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src -I/usr/local/cuda-11.1/include -I/home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/Dep/fmt/include -I/home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/Dep/glm -I/home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/Dep -I/home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/Dep/tinyobjloader    -std=gnu++11 -o CMakeFiles/shadow_base.dir/Render_DS/ppc.cpp.o -c /home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/Render_DS/ppc.cpp",
+  "command": "/usr/bin/c++  -DFMT_LOCALE -I/home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src -I/usr/local/cuda-11.1/include -I/home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/Dep/fmt/include -I/home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/Dep/glm -I/home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/Dep -I/home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/Dep/tinyobjloader  -g   -std=gnu++11 -o CMakeFiles/shadow_base.dir/Render_DS/ppc.cpp.o -c /home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/Render_DS/ppc.cpp",
   "file": "/home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/Render_DS/ppc.cpp"
+},
+{
+  "directory": "/home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/build",
+  "command": "/usr/bin/c++  -DFMT_LOCALE -I/home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src -I/usr/local/cuda-11.1/include -I/home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/Dep/fmt/include -I/home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/Dep/glm -I/home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/Dep -I/home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/Dep/tinyobjloader  -g   -std=gnu++11 -o CMakeFiles/shadow_base.dir/arg_parse.cpp.o -c /home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/arg_parse.cpp",
+  "file": "/home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/arg_parse.cpp"
 },
 {
   "directory": "/home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/build",
@@ -41,17 +46,17 @@
 },
 {
   "directory": "/home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/build/Dep/fmt",
-  "command": "/usr/bin/c++  -DFMT_LOCALE -I/home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/Dep/fmt/include    -std=gnu++11 -o CMakeFiles/fmt.dir/src/format.cc.o -c /home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/Dep/fmt/src/format.cc",
+  "command": "/usr/bin/c++  -DFMT_LOCALE -I/home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/Dep/fmt/include  -g   -std=gnu++11 -o CMakeFiles/fmt.dir/src/format.cc.o -c /home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/Dep/fmt/src/format.cc",
   "file": "/home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/Dep/fmt/src/format.cc"
 },
 {
   "directory": "/home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/build/Dep/fmt",
-  "command": "/usr/bin/c++  -DFMT_LOCALE -I/home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/Dep/fmt/include    -std=gnu++11 -o CMakeFiles/fmt.dir/src/os.cc.o -c /home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/Dep/fmt/src/os.cc",
+  "command": "/usr/bin/c++  -DFMT_LOCALE -I/home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/Dep/fmt/include  -g   -std=gnu++11 -o CMakeFiles/fmt.dir/src/os.cc.o -c /home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/Dep/fmt/src/os.cc",
   "file": "/home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/Dep/fmt/src/os.cc"
 },
 {
   "directory": "/home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/build/Dep/tinyobjloader",
-  "command": "/usr/bin/c++      -std=gnu++11 -o CMakeFiles/tinyobjloader.dir/tiny_obj_loader.cc.o -c /home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/Dep/tinyobjloader/tiny_obj_loader.cc",
+  "command": "/usr/bin/c++    -g   -std=gnu++11 -o CMakeFiles/tinyobjloader.dir/tiny_obj_loader.cc.o -c /home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/Dep/tinyobjloader/tiny_obj_loader.cc",
   "file": "/home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/Dep/tinyobjloader/tiny_obj_loader.cc"
 }
 ]

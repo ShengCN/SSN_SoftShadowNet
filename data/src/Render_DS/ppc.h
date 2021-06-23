@@ -117,6 +117,8 @@ public:
 	void pan(double deg);
 	void tilt(double deg);
 	void pitch(double deg);
+	int width() {return _width;}
+	int height() {return _height;}
     
    CUDA_HOSTDEV
 	void get_ray(int u, int v, vec3& ro, vec3& rd) const {

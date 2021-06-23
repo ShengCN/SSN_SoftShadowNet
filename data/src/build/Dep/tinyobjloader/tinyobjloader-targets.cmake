@@ -48,11 +48,11 @@ set_target_properties(tinyobjloader PROPERTIES
   INTERFACE_INCLUDE_DIRECTORIES "/home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/Dep/tinyobjloader"
 )
 
-# Import target "tinyobjloader" for configuration ""
-set_property(TARGET tinyobjloader APPEND PROPERTY IMPORTED_CONFIGURATIONS NOCONFIG)
+# Import target "tinyobjloader" for configuration "Debug"
+set_property(TARGET tinyobjloader APPEND PROPERTY IMPORTED_CONFIGURATIONS DEBUG)
 set_target_properties(tinyobjloader PROPERTIES
-  IMPORTED_LINK_INTERFACE_LANGUAGES_NOCONFIG "CXX"
-  IMPORTED_LOCATION_NOCONFIG "/home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/build/Dep/tinyobjloader/libtinyobjloader.a"
+  IMPORTED_LINK_INTERFACE_LANGUAGES_DEBUG "CXX"
+  IMPORTED_LOCATION_DEBUG "/home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/build/Dep/tinyobjloader/libtinyobjloader.a"
   )
 
 # This file does not depend on other imported targets which have

@@ -2,21 +2,36 @@
 #include <common.h>
 #include <Render_DS/Render_DS.h>
 
-/* Rendering params shared by all objects */
-struct render_param{
-	int w, h;    		/* image space dimension */
-	ppc cur_ppc; 		/* render camera */
-	vec3 light_pos;     /* assume the light is point light */
-	int camera_pitch, target_rot; /* Scene Variation */ 
-}
-
 /* Compact scene representations */
 struct scene {
-	std::vector<glm::vec3> world_verts;
-	AABB world_AABB;
+	cuda_container<glm::vec3> world_verts;
+	cuda_type<AABB> world_AABB;
 	glm::vec3 render_target_center;
 	plane ground_plane;
-}
+
+	scene(std::vector<glm::vec3> &verts, AABB &world_aabb, vec3 center, plane &ground):
+	world_verts(verts),
+	world_AABB(world_aabb) {
+		render_target_center = center;
+		ground_plane = ground;
+	}
+};
+
+/* Rendering params shared by all objects */
+struct render_param {
+	ppc cur_ppc; 		/* render camera */
+	vec3 light_pos;     /* assume the light is point light */
+
+	render_param()=default;
+};
+
+struct output_param {
+	bool resume, verbose;
+	std::string ofname;
+	image img;
+
+	output_param()=default;
+};
 
 struct pixel_pos {
 	int x, y;
@@ -28,11 +43,12 @@ struct pixel_pos {
 	}
 };
 
-void shadow_render(scene &cur_scene, render_param &cur_rp, image &out_img);
-void normal_render(scene &cur_scene, render_param &cur_rp, image &out_img);
-void depth_render(scene &cur_scene, render_param &cur_rp, image &out_img);
-void ground_render(scene &cur_scene, render_param &cur_rp, image &out_img);
-void touch_render(scene &cur_scene, render_param &cur_rp, image &out_img);
+void mask_render(scene &cur_scene, render_param &cur_rp, output_param &out);
+void shadow_render(scene &cur_scene, render_param &cur_rp, output_param &out);
+void normal_render(scene &cur_scene, render_param &cur_rp, output_param &out);
+void depth_render(scene &cur_scene, render_param &cur_rp, output_param &out);
+void ground_render(scene &cur_scene, render_param &cur_rp, output_param &out);
+void touch_render(scene &cur_scene, render_param &cur_rp, output_param &out);
 
 void shadow_render(glm::vec3* world_verts_cuda, 
 	int N, 
@@ -94,4 +110,4 @@ void touch_render(glm::vec3 *world_verts_cuda,
 				image &out_img, 
 				std::string output_fname);
 
-void render_data(const std::string model_file, const std::string output_folder);
+void render_data(const exp_params &params);

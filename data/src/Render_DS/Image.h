@@ -2,29 +2,27 @@
 #include <common.h>
 
 struct image {
-	std::vector<unsigned int> pixels;
+	std::vector<glm::vec3> pixels;
 	int w, h;
+
+	image()=default; 
+
 	image(int w, int h) :w(w), h(h) {
 		clear();
 	}
 
 	void clear() {
-		pixels.resize(w * h, 0xffffffff);
+		pixels.resize(w * h, glm::vec3(0.0f));
 	}
 
 	void set_pixel(int u, int v, vec3 p) {
 		size_t ind = (h - 1 - v) * w + u;
-		reinterpret_cast<unsigned char*>(&(pixels.at(ind)))[0] = (unsigned char)(255.0 * p.x);
-		reinterpret_cast<unsigned char*>(&(pixels.at(ind)))[1] = (unsigned char)(255.0 * p.y);
-		reinterpret_cast<unsigned char*>(&(pixels.at(ind)))[2] = (unsigned char)(255.0 * p.z);
-		reinterpret_cast<unsigned char*>(&(pixels.at(ind)))[3] = (unsigned char)(255);
+		pixels.at(ind) = p;
 	}
 
 	glm::vec3 at(int u, int v) {
 		size_t ind = (h - 1 - v) * w + u;
-		unsigned int p = pixels.at(ind);
-		glm::vec3 ret(reinterpret_cast<unsigned char*>(&(pixels.at(ind)))[0]/255.0f, reinterpret_cast<unsigned char*>(&(pixels.at(ind)))[1]/255.0f, reinterpret_cast<unsigned char*>(&(pixels.at(ind)))[2]/255.0);
-		return ret;
+		return pixels.at(ind);
 	}
 
 	bool save_image(const std::string fname);

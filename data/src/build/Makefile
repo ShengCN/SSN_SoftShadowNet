@@ -397,6 +397,33 @@ Render_DS/ppc.cpp.s:
 	$(MAKE) -f CMakeFiles/shadow_base.dir/build.make CMakeFiles/shadow_base.dir/Render_DS/ppc.cpp.s
 .PHONY : Render_DS/ppc.cpp.s
 
+arg_parse.o: arg_parse.cpp.o
+
+.PHONY : arg_parse.o
+
+# target to build an object file
+arg_parse.cpp.o:
+	$(MAKE) -f CMakeFiles/shadow_base.dir/build.make CMakeFiles/shadow_base.dir/arg_parse.cpp.o
+.PHONY : arg_parse.cpp.o
+
+arg_parse.i: arg_parse.cpp.i
+
+.PHONY : arg_parse.i
+
+# target to preprocess a source file
+arg_parse.cpp.i:
+	$(MAKE) -f CMakeFiles/shadow_base.dir/build.make CMakeFiles/shadow_base.dir/arg_parse.cpp.i
+.PHONY : arg_parse.cpp.i
+
+arg_parse.s: arg_parse.cpp.s
+
+.PHONY : arg_parse.s
+
+# target to generate assembly for a file
+arg_parse.cpp.s:
+	$(MAKE) -f CMakeFiles/shadow_base.dir/build.make CMakeFiles/shadow_base.dir/arg_parse.cpp.s
+.PHONY : arg_parse.cpp.s
+
 main.o: main.cu.o
 
 .PHONY : main.o
@@ -461,6 +488,9 @@ help:
 	@echo "... Render_DS/ppc.o"
 	@echo "... Render_DS/ppc.i"
 	@echo "... Render_DS/ppc.s"
+	@echo "... arg_parse.o"
+	@echo "... arg_parse.i"
+	@echo "... arg_parse.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

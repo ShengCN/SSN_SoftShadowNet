@@ -1,12 +1,35 @@
 
+#include "Image.h"
 #define STB_IMAGE_IMPLEMENTATION
 #include "stb/stb_image.h"
 #define STB_IMAGE_WRITE_IMPLEMENTATION
 #include "stb/stb_image_write.h"
-#include "Image.h"
 
-bool Image::save_image(const std::string fname, unsigned int *pixels, int w, int h, int c = 4){
-	return stbi_write_png(fname.c_str(), w, h, 4, pixelsi.data(), w*4);
+__host__ __device__
+glm::vec3 unsign_vec3(unsigned int v) {
+	glm::vec3 ret(0.0f);
+	ret.r = reinterpret_cast<unsigned char*>(&(ret))[0]/255.0f;
+	ret.g = reinterpret_cast<unsigned char*>(&(ret))[1]/255.0f;
+	ret.b = reinterpret_cast<unsigned char*>(&(ret))[2]/255.0f;
+	return ret;
+}
+
+__host__ __device__
+unsigned int vec3_unsign(glm::vec3 v) {
+	unsigned int ret=0xff000000;
+	reinterpret_cast<unsigned char*>(&(ret))[0] = (unsigned char)(255.0 * v.r);
+	reinterpret_cast<unsigned char*>(&(ret))[1] = (unsigned char)(255.0 * v.g);
+	reinterpret_cast<unsigned char*>(&(ret))[2] = (unsigned char)(255.0 * v.b);
+	return ret;
+}
+
+bool image::save_image(const std::string fname){
+	std::vector<unsigned int> buffer(w * h);
+	for(int i = 0; i < w * h; ++i) {
+		buffer[i] = vec3_unsign(pixels[i]);
+	}
+
+	return stbi_write_png(fname.c_str(), w, h, 4, buffer.data(), w*4);
 }
 
 __host__ __device__

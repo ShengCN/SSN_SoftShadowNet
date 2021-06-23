@@ -156,12 +156,12 @@ CMakeFiles/shadow_base.dir/all: Dep/fmt/CMakeFiles/fmt.dir/all
 CMakeFiles/shadow_base.dir/all: Dep/tinyobjloader/CMakeFiles/tinyobjloader.dir/all
 	$(MAKE) -f CMakeFiles/shadow_base.dir/build.make CMakeFiles/shadow_base.dir/depend
 	$(MAKE) -f CMakeFiles/shadow_base.dir/build.make CMakeFiles/shadow_base.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/build/CMakeFiles --progress-num=4,5,6,7,8,9,10,11,12,13 "Built target shadow_base"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/build/CMakeFiles --progress-num=4,5,6,7,8,9,10,11,12,13,14 "Built target shadow_base"
 .PHONY : CMakeFiles/shadow_base.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/shadow_base.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/build/CMakeFiles 15
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/build/CMakeFiles 16
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/shadow_base.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/build/CMakeFiles 0
 .PHONY : CMakeFiles/shadow_base.dir/rule
@@ -237,7 +237,7 @@ Dep/fmt/CMakeFiles/fmt.dir/clean:
 Dep/tinyobjloader/CMakeFiles/tinyobjloader.dir/all:
 	$(MAKE) -f Dep/tinyobjloader/CMakeFiles/tinyobjloader.dir/build.make Dep/tinyobjloader/CMakeFiles/tinyobjloader.dir/depend
 	$(MAKE) -f Dep/tinyobjloader/CMakeFiles/tinyobjloader.dir/build.make Dep/tinyobjloader/CMakeFiles/tinyobjloader.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/build/CMakeFiles --progress-num=14,15 "Built target tinyobjloader"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/build/CMakeFiles --progress-num=15,16 "Built target tinyobjloader"
 .PHONY : Dep/tinyobjloader/CMakeFiles/tinyobjloader.dir/all
 
 # Build rule for subdir invocation for target.

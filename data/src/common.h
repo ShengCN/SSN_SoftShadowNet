@@ -12,9 +12,9 @@
 #include <random>
 #include <sstream>
 #include <unistd.h>
+
 #include <fmt/core.h>
 #include <fmt/ranges.h>
-
 #include <glm/vec2.hpp>
 #include <glm/vec3.hpp>
 #include <glm/vec4.hpp>
@@ -23,8 +23,9 @@
 #include <glm/gtx/quaternion.hpp>
 #include <glm/gtx/transform.hpp>
 #include <glm/gtx/matrix_decompose.hpp>
-
-#include "Utilities/cuda_helper.h"
+#include <Utilities/cuda_helper.h>
+#include <Utilities/cxxopts.hpp>
+#include <arg_parse.h>
 
 typedef std::chrono::high_resolution_clock Clock;
 
