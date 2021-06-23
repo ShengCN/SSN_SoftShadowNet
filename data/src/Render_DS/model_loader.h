@@ -1,7 +1,6 @@
 #pragma once
 #include <common.h>
 #include "mesh.h"
-#include "tinyobjloader/tiny_obj_loader.h"
 
 enum model_type {
 	obj,
@@ -37,11 +36,6 @@ public:
 public:
 	virtual bool load_model(std::string file_path, std::shared_ptr<mesh>& m) override;
 	virtual bool save_model(std::string file_path, std::shared_ptr<mesh>& m) override;
-
-private:
-	void print_info(const tinyobj::attrib_t& attrib,
-					const std::vector<tinyobj::shape_t>& shapes,
-					const std::vector<tinyobj::material_t>& materials);
 };
 
 class off_loader:public model_loader {
@@ -54,3 +48,5 @@ public:
 	virtual bool load_model(std::string file_path, std::shared_ptr<mesh>& m) override;
 	virtual bool save_model(std::string file_path, std::shared_ptr<mesh>& m) override;
 };
+
+bool load_mesh(const std::string fname, std::shared_ptr<mesh> &m);

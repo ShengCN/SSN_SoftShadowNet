@@ -1,9 +1,4 @@
 #pragma once
-#include <iostream>
-#include <fstream>
-#include <string>
-#include <memory>
-
 #include <common.h>
 
 #ifdef __CUDACC__
@@ -32,8 +27,7 @@ struct ray {
 	glm::vec3 ro, rd;
 };
 
-class ppc
-{
+class ppc {
 public:
 	glm::vec3 _position;
 	glm::vec3 _front;

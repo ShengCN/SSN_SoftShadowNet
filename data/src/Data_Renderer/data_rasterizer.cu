@@ -21,7 +21,7 @@ void raster_hard_shadow(plane* grond_plane,
 
 		ray r; cur_ppc.get_ray(i, j, r.ro, r.rd);
 		vec3 intersect_pos;
-		if (!plane_ppc_intersect(grond_plane, r, intersect_pos)) {
+		if (!ray_plane_intersect(grond_plane, r, intersect_pos)) {
 			continue;
 		}
 
@@ -164,7 +164,7 @@ void raster_ground(plane *ground_plane, ppc cur_ppc, glm::vec3 *pixels) {
 		// compute the intersection point with the plane
 		ray cur_ray; cur_ppc.get_ray(i, j, cur_ray.ro, cur_ray.rd);
 		vec3 intersect_pos;
-		if(plane_ppc_intersect(ground_plane, cur_ray, intersect_pos)) {
+		if(ray_plane_intersect(ground_plane, cur_ray, intersect_pos)) {
 			pixels[cur_ind] = vec3(1.0f);
 		} else {
 			pixels[cur_ind] = vec3(0.0f);
@@ -187,7 +187,7 @@ void raster_height(glm::vec3 *world_verts, int N, AABB* aabb,plane *ground_plane
 
 		ray cur_ray; cur_ppc.get_ray(i, j, cur_ray.ro, cur_ray.rd);
 		vec3 intersect_pos;
-		if(plane_ppc_intersect(ground_plane, cur_ray, intersect_pos)) {
+		if(ray_plane_intersect(ground_plane, cur_ray, intersect_pos)) {
 			pixels[cur_ind] = vec3(0.0f);
 		} 		
 		
@@ -231,7 +231,7 @@ void raster_touch(glm::vec3 *world_verts, int N, AABB* aabb,plane *ground_plane,
 		bool ret = false;
 		ray r; cur_ppc.get_ray(i, j, r.ro, r.rd);
 		vec3 intersect;
-		if (!plane_ppc_intersect(ground_plane, r, intersect)) {
+		if (!ray_plane_intersect(ground_plane, r, intersect)) {
 			continue;
 		}
 		

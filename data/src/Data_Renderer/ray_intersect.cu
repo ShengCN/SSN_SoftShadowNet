@@ -1,7 +1,7 @@
 #include "ray_intersect.h"
 
 __host__ __device__
-bool plane_ppc_intersect(plane* ground_plane, ray& cur_ray, glm::vec3& intersection_pos) {
+bool ray_plane_intersect(plane* ground_plane, ray& cur_ray, glm::vec3& intersection_pos) {
 	if(glm::dot(cur_ray.rd, ground_plane->n) > 0.0f) {
 		return false;
 	}

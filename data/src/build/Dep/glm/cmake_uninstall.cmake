@@ -1,8 +1,8 @@
-if(NOT EXISTS "/home/sheng30/Documents/paper/shadow/SSN_SoftShadowNet/data/src/build/install_manifest.txt")
-  message(FATAL_ERROR "Cannot find install manifest: /home/sheng30/Documents/paper/shadow/SSN_SoftShadowNet/data/src/build/install_manifest.txt")
+if(NOT EXISTS "/home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/build/install_manifest.txt")
+  message(FATAL_ERROR "Cannot find install manifest: /home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/build/install_manifest.txt")
 endif()
 
-file(READ "/home/sheng30/Documents/paper/shadow/SSN_SoftShadowNet/data/src/build/install_manifest.txt" files)
+file(READ "/home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/build/install_manifest.txt" files)
 string(REGEX REPLACE "\n" ";" files "${files}")
 foreach(file ${files})
   message(STATUS "Uninstalling $ENV{DESTDIR}${file}")

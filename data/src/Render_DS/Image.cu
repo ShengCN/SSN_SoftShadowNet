@@ -1,37 +1,13 @@
-#pragma once
-#include <common.h>
 
-struct image {
-	std::vector<unsigned int> pixels;
-	int w, h;
-	image(int w, int h) :w(w), h(h) {
-		// pixels.resize(w * h);
-		clear();
-	}
+#define STB_IMAGE_IMPLEMENTATION
+#include "stb/stb_image.h"
+#define STB_IMAGE_WRITE_IMPLEMENTATION
+#include "stb/stb_image_write.h"
+#include "Image.h"
 
-	void clear() {
-		pixels.resize(w * h, 0xffffffff);
-	}
-
-	void set_pixel(int u, int v, vec3 p) {
-		size_t ind = (h - 1 - v) * w + u;
-		reinterpret_cast<unsigned char*>(&(pixels.at(ind)))[0] = (unsigned char)(255.0 * p.x);
-		reinterpret_cast<unsigned char*>(&(pixels.at(ind)))[1] = (unsigned char)(255.0 * p.y);
-		reinterpret_cast<unsigned char*>(&(pixels.at(ind)))[2] = (unsigned char)(255.0 * p.z);
-		reinterpret_cast<unsigned char*>(&(pixels.at(ind)))[3] = (unsigned char)(255);
-	}
-
-	glm::vec3 at(int u, int v) {
-		size_t ind = (h - 1 - v) * w + u;
-		unsigned int p = pixels.at(ind);
-		glm::vec3 ret(reinterpret_cast<unsigned char*>(&(pixels.at(ind)))[0]/255.0f, reinterpret_cast<unsigned char*>(&(pixels.at(ind)))[1]/255.0f, reinterpret_cast<unsigned char*>(&(pixels.at(ind)))[2]/255.0);
-		return ret;
-	}
-
-	bool save(const std::string fname) {
-		return pd::save_image(fname, pixels.data(), w, h);
-	}
-};
+bool Image::save_image(const std::string fname, unsigned int *pixels, int w, int h, int c = 4){
+	return stbi_write_png(fname.c_str(), w, h, 4, pixelsi.data(), w*4);
+}
 
 __host__ __device__
 void set_pixel(vec3 c, unsigned int& p) {

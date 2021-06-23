@@ -1,12 +1,11 @@
 #include "ppc.h"
-#include <sstream>
 #include <glm/common.hpp>
-#include <glm/gtx/transform.hpp>
 
 using namespace glm;
 using namespace purdue;
+
 float ppc::GetFocal() const {
-	return static_cast<float>(_width / 2) / tan(_fov / 2.0f);
+	return static_cast<float>(_width / 2) / tan(purdue::deg2rad(_fov / 2.0f));
 }
 
 ppc::ppc(int w, int h, float fov, float p_near, float p_far) :

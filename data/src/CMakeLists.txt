@@ -18,6 +18,10 @@ add_subdirectory(Dep/tinyobjloader)
 file(GLOB src
     "${PROJECT_SOURCE_DIR}/*.cu"
     "${PROJECT_SOURCE_DIR}/*.cpp"
+    "${PROJECT_SOURCE_DIR}/Data_Renderer/*.cpp"
+    "${PROJECT_SOURCE_DIR}/Data_Renderer/*.cu"
+    "${PROJECT_SOURCE_DIR}/Render_DS/*.cu"
+    "${PROJECT_SOURCE_DIR}/Render_DS/*.cpp"
 )
 
 add_executable(shadow_base ${src}

@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/sheng30/Documents/paper/shadow/SSN_SoftShadowNet/data/src
+CMAKE_SOURCE_DIR = /home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/sheng30/Documents/paper/shadow/SSN_SoftShadowNet/data/src/build
+CMAKE_BINARY_DIR = /home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -126,9 +126,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sheng30/Documents/paper/shadow/SSN_SoftShadowNet/data/src/build/CMakeFiles /home/sheng30/Documents/paper/shadow/SSN_SoftShadowNet/data/src/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/build/CMakeFiles /home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sheng30/Documents/paper/shadow/SSN_SoftShadowNet/data/src/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -208,59 +208,194 @@ tinyobjloader/fast:
 	$(MAKE) -f Dep/tinyobjloader/CMakeFiles/tinyobjloader.dir/build.make Dep/tinyobjloader/CMakeFiles/tinyobjloader.dir/build
 .PHONY : tinyobjloader/fast
 
-common.o: common.cpp.o
+Data_Renderer/data_rasterizer.o: Data_Renderer/data_rasterizer.cu.o
 
-.PHONY : common.o
-
-# target to build an object file
-common.cpp.o:
-	$(MAKE) -f CMakeFiles/shadow_base.dir/build.make CMakeFiles/shadow_base.dir/common.cpp.o
-.PHONY : common.cpp.o
-
-common.i: common.cpp.i
-
-.PHONY : common.i
-
-# target to preprocess a source file
-common.cpp.i:
-	$(MAKE) -f CMakeFiles/shadow_base.dir/build.make CMakeFiles/shadow_base.dir/common.cpp.i
-.PHONY : common.cpp.i
-
-common.s: common.cpp.s
-
-.PHONY : common.s
-
-# target to generate assembly for a file
-common.cpp.s:
-	$(MAKE) -f CMakeFiles/shadow_base.dir/build.make CMakeFiles/shadow_base.dir/common.cpp.s
-.PHONY : common.cpp.s
-
-data_rasterizer.o: data_rasterizer.cu.o
-
-.PHONY : data_rasterizer.o
+.PHONY : Data_Renderer/data_rasterizer.o
 
 # target to build an object file
-data_rasterizer.cu.o:
-	$(MAKE) -f CMakeFiles/shadow_base.dir/build.make CMakeFiles/shadow_base.dir/data_rasterizer.cu.o
-.PHONY : data_rasterizer.cu.o
+Data_Renderer/data_rasterizer.cu.o:
+	$(MAKE) -f CMakeFiles/shadow_base.dir/build.make CMakeFiles/shadow_base.dir/Data_Renderer/data_rasterizer.cu.o
+.PHONY : Data_Renderer/data_rasterizer.cu.o
 
-data_rasterizer.i: data_rasterizer.cu.i
+Data_Renderer/data_rasterizer.i: Data_Renderer/data_rasterizer.cu.i
 
-.PHONY : data_rasterizer.i
+.PHONY : Data_Renderer/data_rasterizer.i
 
 # target to preprocess a source file
-data_rasterizer.cu.i:
-	$(MAKE) -f CMakeFiles/shadow_base.dir/build.make CMakeFiles/shadow_base.dir/data_rasterizer.cu.i
-.PHONY : data_rasterizer.cu.i
+Data_Renderer/data_rasterizer.cu.i:
+	$(MAKE) -f CMakeFiles/shadow_base.dir/build.make CMakeFiles/shadow_base.dir/Data_Renderer/data_rasterizer.cu.i
+.PHONY : Data_Renderer/data_rasterizer.cu.i
 
-data_rasterizer.s: data_rasterizer.cu.s
+Data_Renderer/data_rasterizer.s: Data_Renderer/data_rasterizer.cu.s
 
-.PHONY : data_rasterizer.s
+.PHONY : Data_Renderer/data_rasterizer.s
 
 # target to generate assembly for a file
-data_rasterizer.cu.s:
-	$(MAKE) -f CMakeFiles/shadow_base.dir/build.make CMakeFiles/shadow_base.dir/data_rasterizer.cu.s
-.PHONY : data_rasterizer.cu.s
+Data_Renderer/data_rasterizer.cu.s:
+	$(MAKE) -f CMakeFiles/shadow_base.dir/build.make CMakeFiles/shadow_base.dir/Data_Renderer/data_rasterizer.cu.s
+.PHONY : Data_Renderer/data_rasterizer.cu.s
+
+Data_Renderer/ray_intersect.o: Data_Renderer/ray_intersect.cu.o
+
+.PHONY : Data_Renderer/ray_intersect.o
+
+# target to build an object file
+Data_Renderer/ray_intersect.cu.o:
+	$(MAKE) -f CMakeFiles/shadow_base.dir/build.make CMakeFiles/shadow_base.dir/Data_Renderer/ray_intersect.cu.o
+.PHONY : Data_Renderer/ray_intersect.cu.o
+
+Data_Renderer/ray_intersect.i: Data_Renderer/ray_intersect.cu.i
+
+.PHONY : Data_Renderer/ray_intersect.i
+
+# target to preprocess a source file
+Data_Renderer/ray_intersect.cu.i:
+	$(MAKE) -f CMakeFiles/shadow_base.dir/build.make CMakeFiles/shadow_base.dir/Data_Renderer/ray_intersect.cu.i
+.PHONY : Data_Renderer/ray_intersect.cu.i
+
+Data_Renderer/ray_intersect.s: Data_Renderer/ray_intersect.cu.s
+
+.PHONY : Data_Renderer/ray_intersect.s
+
+# target to generate assembly for a file
+Data_Renderer/ray_intersect.cu.s:
+	$(MAKE) -f CMakeFiles/shadow_base.dir/build.make CMakeFiles/shadow_base.dir/Data_Renderer/ray_intersect.cu.s
+.PHONY : Data_Renderer/ray_intersect.cu.s
+
+Data_Renderer/renderer.o: Data_Renderer/renderer.cu.o
+
+.PHONY : Data_Renderer/renderer.o
+
+# target to build an object file
+Data_Renderer/renderer.cu.o:
+	$(MAKE) -f CMakeFiles/shadow_base.dir/build.make CMakeFiles/shadow_base.dir/Data_Renderer/renderer.cu.o
+.PHONY : Data_Renderer/renderer.cu.o
+
+Data_Renderer/renderer.i: Data_Renderer/renderer.cu.i
+
+.PHONY : Data_Renderer/renderer.i
+
+# target to preprocess a source file
+Data_Renderer/renderer.cu.i:
+	$(MAKE) -f CMakeFiles/shadow_base.dir/build.make CMakeFiles/shadow_base.dir/Data_Renderer/renderer.cu.i
+.PHONY : Data_Renderer/renderer.cu.i
+
+Data_Renderer/renderer.s: Data_Renderer/renderer.cu.s
+
+.PHONY : Data_Renderer/renderer.s
+
+# target to generate assembly for a file
+Data_Renderer/renderer.cu.s:
+	$(MAKE) -f CMakeFiles/shadow_base.dir/build.make CMakeFiles/shadow_base.dir/Data_Renderer/renderer.cu.s
+.PHONY : Data_Renderer/renderer.cu.s
+
+Render_DS/Image.o: Render_DS/Image.cu.o
+
+.PHONY : Render_DS/Image.o
+
+# target to build an object file
+Render_DS/Image.cu.o:
+	$(MAKE) -f CMakeFiles/shadow_base.dir/build.make CMakeFiles/shadow_base.dir/Render_DS/Image.cu.o
+.PHONY : Render_DS/Image.cu.o
+
+Render_DS/Image.i: Render_DS/Image.cu.i
+
+.PHONY : Render_DS/Image.i
+
+# target to preprocess a source file
+Render_DS/Image.cu.i:
+	$(MAKE) -f CMakeFiles/shadow_base.dir/build.make CMakeFiles/shadow_base.dir/Render_DS/Image.cu.i
+.PHONY : Render_DS/Image.cu.i
+
+Render_DS/Image.s: Render_DS/Image.cu.s
+
+.PHONY : Render_DS/Image.s
+
+# target to generate assembly for a file
+Render_DS/Image.cu.s:
+	$(MAKE) -f CMakeFiles/shadow_base.dir/build.make CMakeFiles/shadow_base.dir/Render_DS/Image.cu.s
+.PHONY : Render_DS/Image.cu.s
+
+Render_DS/mesh.o: Render_DS/mesh.cpp.o
+
+.PHONY : Render_DS/mesh.o
+
+# target to build an object file
+Render_DS/mesh.cpp.o:
+	$(MAKE) -f CMakeFiles/shadow_base.dir/build.make CMakeFiles/shadow_base.dir/Render_DS/mesh.cpp.o
+.PHONY : Render_DS/mesh.cpp.o
+
+Render_DS/mesh.i: Render_DS/mesh.cpp.i
+
+.PHONY : Render_DS/mesh.i
+
+# target to preprocess a source file
+Render_DS/mesh.cpp.i:
+	$(MAKE) -f CMakeFiles/shadow_base.dir/build.make CMakeFiles/shadow_base.dir/Render_DS/mesh.cpp.i
+.PHONY : Render_DS/mesh.cpp.i
+
+Render_DS/mesh.s: Render_DS/mesh.cpp.s
+
+.PHONY : Render_DS/mesh.s
+
+# target to generate assembly for a file
+Render_DS/mesh.cpp.s:
+	$(MAKE) -f CMakeFiles/shadow_base.dir/build.make CMakeFiles/shadow_base.dir/Render_DS/mesh.cpp.s
+.PHONY : Render_DS/mesh.cpp.s
+
+Render_DS/model_loader.o: Render_DS/model_loader.cpp.o
+
+.PHONY : Render_DS/model_loader.o
+
+# target to build an object file
+Render_DS/model_loader.cpp.o:
+	$(MAKE) -f CMakeFiles/shadow_base.dir/build.make CMakeFiles/shadow_base.dir/Render_DS/model_loader.cpp.o
+.PHONY : Render_DS/model_loader.cpp.o
+
+Render_DS/model_loader.i: Render_DS/model_loader.cpp.i
+
+.PHONY : Render_DS/model_loader.i
+
+# target to preprocess a source file
+Render_DS/model_loader.cpp.i:
+	$(MAKE) -f CMakeFiles/shadow_base.dir/build.make CMakeFiles/shadow_base.dir/Render_DS/model_loader.cpp.i
+.PHONY : Render_DS/model_loader.cpp.i
+
+Render_DS/model_loader.s: Render_DS/model_loader.cpp.s
+
+.PHONY : Render_DS/model_loader.s
+
+# target to generate assembly for a file
+Render_DS/model_loader.cpp.s:
+	$(MAKE) -f CMakeFiles/shadow_base.dir/build.make CMakeFiles/shadow_base.dir/Render_DS/model_loader.cpp.s
+.PHONY : Render_DS/model_loader.cpp.s
+
+Render_DS/ppc.o: Render_DS/ppc.cpp.o
+
+.PHONY : Render_DS/ppc.o
+
+# target to build an object file
+Render_DS/ppc.cpp.o:
+	$(MAKE) -f CMakeFiles/shadow_base.dir/build.make CMakeFiles/shadow_base.dir/Render_DS/ppc.cpp.o
+.PHONY : Render_DS/ppc.cpp.o
+
+Render_DS/ppc.i: Render_DS/ppc.cpp.i
+
+.PHONY : Render_DS/ppc.i
+
+# target to preprocess a source file
+Render_DS/ppc.cpp.i:
+	$(MAKE) -f CMakeFiles/shadow_base.dir/build.make CMakeFiles/shadow_base.dir/Render_DS/ppc.cpp.i
+.PHONY : Render_DS/ppc.cpp.i
+
+Render_DS/ppc.s: Render_DS/ppc.cpp.s
+
+.PHONY : Render_DS/ppc.s
+
+# target to generate assembly for a file
+Render_DS/ppc.cpp.s:
+	$(MAKE) -f CMakeFiles/shadow_base.dir/build.make CMakeFiles/shadow_base.dir/Render_DS/ppc.cpp.s
+.PHONY : Render_DS/ppc.cpp.s
 
 main.o: main.cu.o
 
@@ -289,114 +424,6 @@ main.cu.s:
 	$(MAKE) -f CMakeFiles/shadow_base.dir/build.make CMakeFiles/shadow_base.dir/main.cu.s
 .PHONY : main.cu.s
 
-mesh.o: mesh.cpp.o
-
-.PHONY : mesh.o
-
-# target to build an object file
-mesh.cpp.o:
-	$(MAKE) -f CMakeFiles/shadow_base.dir/build.make CMakeFiles/shadow_base.dir/mesh.cpp.o
-.PHONY : mesh.cpp.o
-
-mesh.i: mesh.cpp.i
-
-.PHONY : mesh.i
-
-# target to preprocess a source file
-mesh.cpp.i:
-	$(MAKE) -f CMakeFiles/shadow_base.dir/build.make CMakeFiles/shadow_base.dir/mesh.cpp.i
-.PHONY : mesh.cpp.i
-
-mesh.s: mesh.cpp.s
-
-.PHONY : mesh.s
-
-# target to generate assembly for a file
-mesh.cpp.s:
-	$(MAKE) -f CMakeFiles/shadow_base.dir/build.make CMakeFiles/shadow_base.dir/mesh.cpp.s
-.PHONY : mesh.cpp.s
-
-model_loader.o: model_loader.cpp.o
-
-.PHONY : model_loader.o
-
-# target to build an object file
-model_loader.cpp.o:
-	$(MAKE) -f CMakeFiles/shadow_base.dir/build.make CMakeFiles/shadow_base.dir/model_loader.cpp.o
-.PHONY : model_loader.cpp.o
-
-model_loader.i: model_loader.cpp.i
-
-.PHONY : model_loader.i
-
-# target to preprocess a source file
-model_loader.cpp.i:
-	$(MAKE) -f CMakeFiles/shadow_base.dir/build.make CMakeFiles/shadow_base.dir/model_loader.cpp.i
-.PHONY : model_loader.cpp.i
-
-model_loader.s: model_loader.cpp.s
-
-.PHONY : model_loader.s
-
-# target to generate assembly for a file
-model_loader.cpp.s:
-	$(MAKE) -f CMakeFiles/shadow_base.dir/build.make CMakeFiles/shadow_base.dir/model_loader.cpp.s
-.PHONY : model_loader.cpp.s
-
-ppc.o: ppc.cpp.o
-
-.PHONY : ppc.o
-
-# target to build an object file
-ppc.cpp.o:
-	$(MAKE) -f CMakeFiles/shadow_base.dir/build.make CMakeFiles/shadow_base.dir/ppc.cpp.o
-.PHONY : ppc.cpp.o
-
-ppc.i: ppc.cpp.i
-
-.PHONY : ppc.i
-
-# target to preprocess a source file
-ppc.cpp.i:
-	$(MAKE) -f CMakeFiles/shadow_base.dir/build.make CMakeFiles/shadow_base.dir/ppc.cpp.i
-.PHONY : ppc.cpp.i
-
-ppc.s: ppc.cpp.s
-
-.PHONY : ppc.s
-
-# target to generate assembly for a file
-ppc.cpp.s:
-	$(MAKE) -f CMakeFiles/shadow_base.dir/build.make CMakeFiles/shadow_base.dir/ppc.cpp.s
-.PHONY : ppc.cpp.s
-
-ray_intersect.o: ray_intersect.cu.o
-
-.PHONY : ray_intersect.o
-
-# target to build an object file
-ray_intersect.cu.o:
-	$(MAKE) -f CMakeFiles/shadow_base.dir/build.make CMakeFiles/shadow_base.dir/ray_intersect.cu.o
-.PHONY : ray_intersect.cu.o
-
-ray_intersect.i: ray_intersect.cu.i
-
-.PHONY : ray_intersect.i
-
-# target to preprocess a source file
-ray_intersect.cu.i:
-	$(MAKE) -f CMakeFiles/shadow_base.dir/build.make CMakeFiles/shadow_base.dir/ray_intersect.cu.i
-.PHONY : ray_intersect.cu.i
-
-ray_intersect.s: ray_intersect.cu.s
-
-.PHONY : ray_intersect.s
-
-# target to generate assembly for a file
-ray_intersect.cu.s:
-	$(MAKE) -f CMakeFiles/shadow_base.dir/build.make CMakeFiles/shadow_base.dir/ray_intersect.cu.s
-.PHONY : ray_intersect.cu.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -413,27 +440,30 @@ help:
 	@echo "... uninstall"
 	@echo "... fmt"
 	@echo "... tinyobjloader"
-	@echo "... common.o"
-	@echo "... common.i"
-	@echo "... common.s"
-	@echo "... data_rasterizer.o"
-	@echo "... data_rasterizer.i"
-	@echo "... data_rasterizer.s"
+	@echo "... Data_Renderer/data_rasterizer.o"
+	@echo "... Data_Renderer/data_rasterizer.i"
+	@echo "... Data_Renderer/data_rasterizer.s"
+	@echo "... Data_Renderer/ray_intersect.o"
+	@echo "... Data_Renderer/ray_intersect.i"
+	@echo "... Data_Renderer/ray_intersect.s"
+	@echo "... Data_Renderer/renderer.o"
+	@echo "... Data_Renderer/renderer.i"
+	@echo "... Data_Renderer/renderer.s"
+	@echo "... Render_DS/Image.o"
+	@echo "... Render_DS/Image.i"
+	@echo "... Render_DS/Image.s"
+	@echo "... Render_DS/mesh.o"
+	@echo "... Render_DS/mesh.i"
+	@echo "... Render_DS/mesh.s"
+	@echo "... Render_DS/model_loader.o"
+	@echo "... Render_DS/model_loader.i"
+	@echo "... Render_DS/model_loader.s"
+	@echo "... Render_DS/ppc.o"
+	@echo "... Render_DS/ppc.i"
+	@echo "... Render_DS/ppc.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
-	@echo "... mesh.o"
-	@echo "... mesh.i"
-	@echo "... mesh.s"
-	@echo "... model_loader.o"
-	@echo "... model_loader.i"
-	@echo "... model_loader.s"
-	@echo "... ppc.o"
-	@echo "... ppc.i"
-	@echo "... ppc.s"
-	@echo "... ray_intersect.o"
-	@echo "... ray_intersect.i"
-	@echo "... ray_intersect.s"
 .PHONY : help
 
 

@@ -1,21 +1,39 @@
-Performing C++ SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
-Change Dir: /home/sheng30/Documents/paper/shadow/SSN_SoftShadowNet/data/src/build/CMakeFiles/CMakeTmp
+Compiling the CUDA compiler identification source file "CMakeCUDACompilerId.cu" failed.
+Compiler: CMAKE_CUDA_COMPILER-NOTFOUND 
+Build flags: 
+Id flags:  -v;--keep;--keep-dir;tmp
 
-Run Build Command(s):/usr/bin/make cmTC_2c64b/fast && /usr/bin/make -f CMakeFiles/cmTC_2c64b.dir/build.make CMakeFiles/cmTC_2c64b.dir/build
-make[1]: Entering directory '/home/sheng30/Documents/paper/shadow/SSN_SoftShadowNet/data/src/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_2c64b.dir/src.cxx.o
-/usr/bin/c++    -DCMAKE_HAVE_LIBC_PTHREAD   -std=gnu++11 -o CMakeFiles/cmTC_2c64b.dir/src.cxx.o -c /home/sheng30/Documents/paper/shadow/SSN_SoftShadowNet/data/src/build/CMakeFiles/CMakeTmp/src.cxx
-Linking CXX executable cmTC_2c64b
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2c64b.dir/link.txt --verbose=1
-/usr/bin/c++   -DCMAKE_HAVE_LIBC_PTHREAD    CMakeFiles/cmTC_2c64b.dir/src.cxx.o  -o cmTC_2c64b 
-/usr/bin/ld: CMakeFiles/cmTC_2c64b.dir/src.cxx.o: in function `main':
+The output was:
+No such file or directory
+
+
+Compiling the CUDA compiler identification source file "CMakeCUDACompilerId.cu" failed.
+Compiler: CMAKE_CUDA_COMPILER-NOTFOUND 
+Build flags: 
+Id flags:  -v;--keep;--keep-dir;tmp
+
+The output was:
+No such file or directory
+
+
+Performing C++ SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_8f8c6/fast && /usr/bin/make -f CMakeFiles/cmTC_8f8c6.dir/build.make CMakeFiles/cmTC_8f8c6.dir/build
+make[1]: Entering directory '/home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_8f8c6.dir/src.cxx.o
+/usr/bin/c++    -DCMAKE_HAVE_LIBC_PTHREAD   -std=gnu++11 -o CMakeFiles/cmTC_8f8c6.dir/src.cxx.o -c /home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/build/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTC_8f8c6
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8f8c6.dir/link.txt --verbose=1
+/usr/bin/c++   -DCMAKE_HAVE_LIBC_PTHREAD    CMakeFiles/cmTC_8f8c6.dir/src.cxx.o  -o cmTC_8f8c6 
+/usr/bin/ld: CMakeFiles/cmTC_8f8c6.dir/src.cxx.o: in function `main':
 src.cxx:(.text+0x46): undefined reference to `pthread_create'
 /usr/bin/ld: src.cxx:(.text+0x52): undefined reference to `pthread_detach'
 /usr/bin/ld: src.cxx:(.text+0x63): undefined reference to `pthread_join'
 collect2: error: ld returned 1 exit status
-make[1]: *** [CMakeFiles/cmTC_2c64b.dir/build.make:87: cmTC_2c64b] Error 1
-make[1]: Leaving directory '/home/sheng30/Documents/paper/shadow/SSN_SoftShadowNet/data/src/build/CMakeFiles/CMakeTmp'
-make: *** [Makefile:121: cmTC_2c64b/fast] Error 2
+make[1]: *** [CMakeFiles/cmTC_8f8c6.dir/build.make:87: cmTC_8f8c6] Error 1
+make[1]: Leaving directory '/home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/build/CMakeFiles/CMakeTmp'
+make: *** [Makefile:121: cmTC_8f8c6/fast] Error 2
 
 
 Source file was:
@@ -39,20 +57,20 @@ int main(void)
 }
 
 Determining if the function pthread_create exists in the pthreads failed with the following output:
-Change Dir: /home/sheng30/Documents/paper/shadow/SSN_SoftShadowNet/data/src/build/CMakeFiles/CMakeTmp
+Change Dir: /home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_090bf/fast && /usr/bin/make -f CMakeFiles/cmTC_090bf.dir/build.make CMakeFiles/cmTC_090bf.dir/build
-make[1]: Entering directory '/home/sheng30/Documents/paper/shadow/SSN_SoftShadowNet/data/src/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_090bf.dir/CheckFunctionExists.cxx.o
-/usr/bin/c++    -DCHECK_FUNCTION_EXISTS=pthread_create   -std=gnu++11 -o CMakeFiles/cmTC_090bf.dir/CheckFunctionExists.cxx.o -c /home/sheng30/Documents/paper/shadow/SSN_SoftShadowNet/data/src/build/CMakeFiles/CheckLibraryExists/CheckFunctionExists.cxx
-Linking CXX executable cmTC_090bf
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_090bf.dir/link.txt --verbose=1
-/usr/bin/c++   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_090bf.dir/CheckFunctionExists.cxx.o  -o cmTC_090bf  -lpthreads 
+Run Build Command(s):/usr/bin/make cmTC_1f7d6/fast && /usr/bin/make -f CMakeFiles/cmTC_1f7d6.dir/build.make CMakeFiles/cmTC_1f7d6.dir/build
+make[1]: Entering directory '/home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_1f7d6.dir/CheckFunctionExists.cxx.o
+/usr/bin/c++    -DCHECK_FUNCTION_EXISTS=pthread_create   -std=gnu++11 -o CMakeFiles/cmTC_1f7d6.dir/CheckFunctionExists.cxx.o -c /home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/build/CMakeFiles/CheckLibraryExists/CheckFunctionExists.cxx
+Linking CXX executable cmTC_1f7d6
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1f7d6.dir/link.txt --verbose=1
+/usr/bin/c++   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_1f7d6.dir/CheckFunctionExists.cxx.o  -o cmTC_1f7d6  -lpthreads 
 /usr/bin/ld: cannot find -lpthreads
 collect2: error: ld returned 1 exit status
-make[1]: *** [CMakeFiles/cmTC_090bf.dir/build.make:87: cmTC_090bf] Error 1
-make[1]: Leaving directory '/home/sheng30/Documents/paper/shadow/SSN_SoftShadowNet/data/src/build/CMakeFiles/CMakeTmp'
-make: *** [Makefile:121: cmTC_090bf/fast] Error 2
+make[1]: *** [CMakeFiles/cmTC_1f7d6.dir/build.make:87: cmTC_1f7d6] Error 1
+make[1]: Leaving directory '/home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/build/CMakeFiles/CMakeTmp'
+make: *** [Makefile:121: cmTC_1f7d6/fast] Error 2
 
 
 

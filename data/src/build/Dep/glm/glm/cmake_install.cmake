@@ -1,4 +1,4 @@
-# Install script for directory: /home/sheng30/Documents/paper/shadow/SSN_SoftShadowNet/data/src/Dep/glm/glm
+# Install script for directory: /home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/Dep/glm/glm
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

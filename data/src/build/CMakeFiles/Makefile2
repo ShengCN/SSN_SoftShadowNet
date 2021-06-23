@@ -44,10 +44,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/sheng30/Documents/paper/shadow/SSN_SoftShadowNet/data/src
+CMAKE_SOURCE_DIR = /home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/sheng30/Documents/paper/shadow/SSN_SoftShadowNet/data/src/build
+CMAKE_BINARY_DIR = /home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/build
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -152,18 +152,18 @@ Dep/tinyobjloader/clean: Dep/tinyobjloader/CMakeFiles/tinyobjloader.dir/clean
 # Target rules for target CMakeFiles/shadow_base.dir
 
 # All Build rule for target.
-CMakeFiles/shadow_base.dir/all: Dep/tinyobjloader/CMakeFiles/tinyobjloader.dir/all
 CMakeFiles/shadow_base.dir/all: Dep/fmt/CMakeFiles/fmt.dir/all
+CMakeFiles/shadow_base.dir/all: Dep/tinyobjloader/CMakeFiles/tinyobjloader.dir/all
 	$(MAKE) -f CMakeFiles/shadow_base.dir/build.make CMakeFiles/shadow_base.dir/depend
 	$(MAKE) -f CMakeFiles/shadow_base.dir/build.make CMakeFiles/shadow_base.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sheng30/Documents/paper/shadow/SSN_SoftShadowNet/data/src/build/CMakeFiles --progress-num=4,5,6,7,8,9,10,11,12 "Built target shadow_base"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/build/CMakeFiles --progress-num=4,5,6,7,8,9,10,11,12,13 "Built target shadow_base"
 .PHONY : CMakeFiles/shadow_base.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/shadow_base.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sheng30/Documents/paper/shadow/SSN_SoftShadowNet/data/src/build/CMakeFiles 14
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/build/CMakeFiles 15
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/shadow_base.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sheng30/Documents/paper/shadow/SSN_SoftShadowNet/data/src/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/build/CMakeFiles 0
 .PHONY : CMakeFiles/shadow_base.dir/rule
 
 # Convenience name for target.
@@ -183,14 +183,14 @@ CMakeFiles/shadow_base.dir/clean:
 Dep/glm/CMakeFiles/uninstall.dir/all:
 	$(MAKE) -f Dep/glm/CMakeFiles/uninstall.dir/build.make Dep/glm/CMakeFiles/uninstall.dir/depend
 	$(MAKE) -f Dep/glm/CMakeFiles/uninstall.dir/build.make Dep/glm/CMakeFiles/uninstall.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sheng30/Documents/paper/shadow/SSN_SoftShadowNet/data/src/build/CMakeFiles --progress-num= "Built target uninstall"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/build/CMakeFiles --progress-num= "Built target uninstall"
 .PHONY : Dep/glm/CMakeFiles/uninstall.dir/all
 
 # Build rule for subdir invocation for target.
 Dep/glm/CMakeFiles/uninstall.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sheng30/Documents/paper/shadow/SSN_SoftShadowNet/data/src/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/build/CMakeFiles 0
 	$(MAKE) -f CMakeFiles/Makefile2 Dep/glm/CMakeFiles/uninstall.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sheng30/Documents/paper/shadow/SSN_SoftShadowNet/data/src/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/build/CMakeFiles 0
 .PHONY : Dep/glm/CMakeFiles/uninstall.dir/rule
 
 # Convenience name for target.
@@ -210,14 +210,14 @@ Dep/glm/CMakeFiles/uninstall.dir/clean:
 Dep/fmt/CMakeFiles/fmt.dir/all:
 	$(MAKE) -f Dep/fmt/CMakeFiles/fmt.dir/build.make Dep/fmt/CMakeFiles/fmt.dir/depend
 	$(MAKE) -f Dep/fmt/CMakeFiles/fmt.dir/build.make Dep/fmt/CMakeFiles/fmt.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sheng30/Documents/paper/shadow/SSN_SoftShadowNet/data/src/build/CMakeFiles --progress-num=1,2,3 "Built target fmt"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/build/CMakeFiles --progress-num=1,2,3 "Built target fmt"
 .PHONY : Dep/fmt/CMakeFiles/fmt.dir/all
 
 # Build rule for subdir invocation for target.
 Dep/fmt/CMakeFiles/fmt.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sheng30/Documents/paper/shadow/SSN_SoftShadowNet/data/src/build/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/build/CMakeFiles 3
 	$(MAKE) -f CMakeFiles/Makefile2 Dep/fmt/CMakeFiles/fmt.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sheng30/Documents/paper/shadow/SSN_SoftShadowNet/data/src/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/build/CMakeFiles 0
 .PHONY : Dep/fmt/CMakeFiles/fmt.dir/rule
 
 # Convenience name for target.
@@ -237,14 +237,14 @@ Dep/fmt/CMakeFiles/fmt.dir/clean:
 Dep/tinyobjloader/CMakeFiles/tinyobjloader.dir/all:
 	$(MAKE) -f Dep/tinyobjloader/CMakeFiles/tinyobjloader.dir/build.make Dep/tinyobjloader/CMakeFiles/tinyobjloader.dir/depend
 	$(MAKE) -f Dep/tinyobjloader/CMakeFiles/tinyobjloader.dir/build.make Dep/tinyobjloader/CMakeFiles/tinyobjloader.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sheng30/Documents/paper/shadow/SSN_SoftShadowNet/data/src/build/CMakeFiles --progress-num=13,14 "Built target tinyobjloader"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/build/CMakeFiles --progress-num=14,15 "Built target tinyobjloader"
 .PHONY : Dep/tinyobjloader/CMakeFiles/tinyobjloader.dir/all
 
 # Build rule for subdir invocation for target.
 Dep/tinyobjloader/CMakeFiles/tinyobjloader.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sheng30/Documents/paper/shadow/SSN_SoftShadowNet/data/src/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/build/CMakeFiles 2
 	$(MAKE) -f CMakeFiles/Makefile2 Dep/tinyobjloader/CMakeFiles/tinyobjloader.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sheng30/Documents/paper/shadow/SSN_SoftShadowNet/data/src/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/build/CMakeFiles 0
 .PHONY : Dep/tinyobjloader/CMakeFiles/tinyobjloader.dir/rule
 
 # Convenience name for target.

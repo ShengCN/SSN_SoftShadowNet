@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/sheng30/Documents/paper/shadow/SSN_SoftShadowNet/data/src/Dep/tinyobjloader/tiny_obj_loader.cc" "/home/sheng30/Documents/paper/shadow/SSN_SoftShadowNet/data/src/build/Dep/tinyobjloader/CMakeFiles/tinyobjloader.dir/tiny_obj_loader.cc.o"
+  "/home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/Dep/tinyobjloader/tiny_obj_loader.cc" "/home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/build/Dep/tinyobjloader/CMakeFiles/tinyobjloader.dir/tiny_obj_loader.cc.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

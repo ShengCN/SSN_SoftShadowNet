@@ -1,7 +1,6 @@
 #pragma once
 #include <common.h>
-#include "mesh.h"
-#include "ppc.h"
+#include <Render_DS/Render_DS.h>
 #include "ray_intersect.h"
 
 __global__

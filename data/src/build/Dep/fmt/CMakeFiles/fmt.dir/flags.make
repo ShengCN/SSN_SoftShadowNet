@@ -6,5 +6,5 @@ CXX_FLAGS =   -std=gnu++11
 
 CXX_DEFINES = -DFMT_LOCALE
 
-CXX_INCLUDES = -I/home/sheng30/Documents/paper/shadow/SSN_SoftShadowNet/data/src/Dep/fmt/include 
+CXX_INCLUDES = -I/home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/Dep/fmt/include 
 

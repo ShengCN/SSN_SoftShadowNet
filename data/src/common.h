@@ -1,14 +1,5 @@
 #pragma once
-#include <glm/vec2.hpp>
-#include <glm/vec3.hpp>
-#include <glm/vec4.hpp>
-#include <glm/mat3x3.hpp>
-#include <glm/mat4x4.hpp>
-#include <glm/gtx/quaternion.hpp>
-#include <glm/gtx/transform.hpp>
-#include <glm/gtx/matrix_decompose.hpp>
-
-
+#include <fstream>
 #include <algorithm>
 #include <memory>
 #include <iostream>
@@ -21,9 +12,19 @@
 #include <random>
 #include <sstream>
 #include <unistd.h>
-#include <cuda_runtime.h>
 #include <fmt/core.h>
 #include <fmt/ranges.h>
+
+#include <glm/vec2.hpp>
+#include <glm/vec3.hpp>
+#include <glm/vec4.hpp>
+#include <glm/mat3x3.hpp>
+#include <glm/mat4x4.hpp>
+#include <glm/gtx/quaternion.hpp>
+#include <glm/gtx/transform.hpp>
+#include <glm/gtx/matrix_decompose.hpp>
+
+#include "Utilities/cuda_helper.h"
 
 typedef std::chrono::high_resolution_clock Clock;
 
@@ -48,7 +49,6 @@ using glm::quat;
 using pd::operator *;
 
 namespace purdue {
-	bool save_image(const std::string fname, unsigned int *pixels, int w, int h, int c = 4);
 	
 	/*!
 	 *
@@ -146,7 +146,7 @@ namespace purdue {
 		return a * bary_coord.x + b * bary_coord.y + c * bary_coord.z;
 	}
 
-	inline bool float_equal(float a, float b, float eps = 1e-7) {
+	inline bool float_equal(float a, float b, float eps = 1e-6) {
 		return std::abs(a - b) < eps;
 	}
 
@@ -209,14 +209,4 @@ namespace purdue {
     inline bool exists_test (const std::string& name) {
     return ( access( name.c_str(), F_OK ) != -1 );
     }
-
-	#define gpuErrchk(ans) { gpuAssert((ans), __FILE__, __LINE__); }
-	inline void gpuAssert(cudaError_t code, const char *file, int line, bool abort = true)
-	{
-		if (code != cudaSuccess)
-		{
-			fprintf(stderr, "GPUassert: %s %s %d\n", cudaGetErrorString(code), file, line);
-			if (abort) exit(code);
-		}
-	}
 }

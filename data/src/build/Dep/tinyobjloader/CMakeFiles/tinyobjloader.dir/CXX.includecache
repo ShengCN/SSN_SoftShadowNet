@@ -6,11 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/home/sheng30/Documents/paper/shadow/SSN_SoftShadowNet/data/src/Dep/tinyobjloader/tiny_obj_loader.cc
+/home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/Dep/tinyobjloader/tiny_obj_loader.cc
 tiny_obj_loader.h
-/home/sheng30/Documents/paper/shadow/SSN_SoftShadowNet/data/src/Dep/tinyobjloader/tiny_obj_loader.h
+/home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/Dep/tinyobjloader/tiny_obj_loader.h
 
-/home/sheng30/Documents/paper/shadow/SSN_SoftShadowNet/data/src/Dep/tinyobjloader/tiny_obj_loader.h
+/home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/Dep/tinyobjloader/tiny_obj_loader.h
 map
 -
 string
