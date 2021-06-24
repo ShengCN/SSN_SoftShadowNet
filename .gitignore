@@ -1,3 +1,7 @@
 *.pt
 network/tensorboard_log/runs/*
 *.pyc
+*.png
+*.jpg
+*.jpeg
+**/.vscode

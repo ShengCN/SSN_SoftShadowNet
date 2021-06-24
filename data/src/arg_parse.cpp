@@ -25,6 +25,7 @@ exp_params parse(int argc, char *argv[]) {
 		("render_normal", "do you need to render normal", cxxopts::value<bool>()->default_value("false"))
 		("render_depth", "do you need to render depth", cxxopts::value<bool>()->default_value("false"))
 		("render_touch", "do you need to render touch", cxxopts::value<bool>()->default_value("false"))
+		("h,help", "Print usage")
 		;
 	
 		auto result = options.parse(argc, argv);

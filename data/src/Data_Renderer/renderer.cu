@@ -236,7 +236,7 @@ void scene_initialize(const exp_params &params,
 	std::shared_ptr<mesh> &render_target) {
 	// load render target
 	if (load_mesh(params.model, render_target)) {
-		std::cerr << params.model + " Loading success \n";
+		std::cout << fmt::format("{} Loading success, Triangle: {} \n",params.model, render_target->m_verts.size());
 	}
 	else {
 		std::cerr << params.model + " Loading failed \n";
