@@ -4,6 +4,7 @@
 struct exp_params {
 	std::vector<float> cam_pitch, model_rot;
 	bool resume, verbose, render_shadow, render_mask, render_normal, render_depth, render_touch;
+	bool base_avg;
 	int gpu, model_id, w, h, ibl_w, ibl_h, patch_size;
 	std::string model, output;
 
@@ -17,6 +18,7 @@ struct exp_params {
 		ibl_w = 512;
 		ibl_h = 128;
 		patch_size = 8;
+		base_avg = false;
 
 		/* Used for indexing some random numbers */
 		model_id = 0;
@@ -29,6 +31,12 @@ struct exp_params {
 		oss << fmt::format("model_rot: {}", model_rot) << std::endl; 
 		oss << "resume " << resume << std::endl;
 		oss << "verbose " << verbose << std::endl;
+		oss << "base patch average " << base_avg << std::endl;
+		oss << "width " << w << std::endl;
+		oss << "height " << h << std::endl;
+		oss << "ibl_h " << ibl_h << std::endl;
+		oss << "ibl_w " << ibl_w << std::endl;
+		oss << "patch size " << patch_size << std::endl;
 		oss << "render_shadow " << render_shadow << std::endl;
 		oss << "render_mask " << render_mask << std::endl;
 		oss << "render_normal " << render_normal << std::endl;

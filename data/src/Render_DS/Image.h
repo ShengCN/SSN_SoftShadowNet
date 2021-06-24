@@ -12,6 +12,7 @@ struct image {
 	}
 
 	void clear() {
+		pixels.clear();
 		pixels.resize(w * h, glm::vec3(0.0f));
 	}
 
@@ -20,12 +21,29 @@ struct image {
 		pixels.at(ind) = p;
 	}
 
-	glm::vec3 at(int u, int v) {
+	glm::vec3& at(int u, int v) {
 		size_t ind = (h - 1 - v) * w + u;
 		return pixels.at(ind);
 	}
 
+	glm::vec2 minmax() {
+		glm::vec2 ret(FLT_MAX, -1e8);
+		for(int i = 0; i < w * h; ++i) {
+			ret.x = std::min(ret.x, pixels[i].x);
+			ret.x = std::min(ret.x, pixels[i].y);
+			ret.x = std::min(ret.x, pixels[i].z);
+
+			ret.y = std::max(ret.y, pixels[i].x);
+			ret.y = std::max(ret.y, pixels[i].y);
+			ret.y = std::max(ret.y, pixels[i].z);
+		}
+		return ret;
+	}
+
 	bool save_image(const std::string fname);
+
+	image operator+(const image &rhs);
+	image operator*(const float &rhs);
 };
 
 __host__ __device__

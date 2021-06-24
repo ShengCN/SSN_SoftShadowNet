@@ -6,31 +6,37 @@
 struct scene {
 	cuda_container<glm::vec3> world_verts;
 	cuda_type<AABB> world_AABB;
-	glm::vec3 render_target_center;
-	plane ground_plane;
+	cuda_type<glm::vec3> render_target_center;
+	cuda_type<plane> ground_plane;
+	cuda_container<glm::vec3> rd_samples;
 
-	scene(std::vector<glm::vec3> &verts, AABB &world_aabb, vec3 center, plane &ground):
+	scene(std::vector<glm::vec3> &verts, 
+	AABB &world_aabb, 
+	std::vector<glm::vec3> &samples,
+	vec3 center, 
+	plane &ground):
 	world_verts(verts),
-	world_AABB(world_aabb) {
-		render_target_center = center;
-		ground_plane = ground;
+	world_AABB(world_aabb), 
+	rd_samples(samples),
+	ground_plane(ground),
+	render_target_center(center) {
 	}
 };
 
 /* Rendering params shared by all objects */
 struct render_param {
 	ppc cur_ppc; 		/* render camera */
-	vec3 light_pos;     /* assume the light is point light */
+	vec3 light_pos, render_target_center;
 
-	render_param()=default;
+	int ibl_h, ibl_w, patch_size;
+	int camera_pitch, target_rot;
 };
 
 struct output_param {
-	bool resume, verbose;
+	bool resume, verbose, base_avg;
+	std::string output_folder;
 	std::string ofname;
 	image img;
-
-	output_param()=default;
 };
 
 struct pixel_pos {
@@ -43,70 +49,11 @@ struct pixel_pos {
 	}
 };
 
+void render_data(const exp_params &params);
+
 void mask_render(scene &cur_scene, render_param &cur_rp, output_param &out);
 void normal_render(scene &cur_scene, render_param &cur_rp, output_param &out);
 void depth_render(scene &cur_scene, render_param &cur_rp, output_param &out);
 void shadow_render(scene &cur_scene, render_param &cur_rp, output_param &out);
 void touch_render(scene &cur_scene, render_param &cur_rp, output_param &out);
 
-void shadow_render(glm::vec3* world_verts_cuda, 
-	int N, 
-	plane* ground_plane, 
-	AABB* aabb_cuda, 
-	ppc &cur_ppc, 
-	vec3 render_target_center,
-	int camera_pitch, 
-	int target_rot, 
-	glm::vec3* pixels, 
-	glm::vec3* tmp_pixels,
-	unsigned int* out_pixels, 
-	image &out_img);
-
-void mask_render(glm::vec3* world_verts_cuda, 
-				int N, 
-				AABB* aabb_cuda, 
-				ppc &cur_ppc, 
-				glm::vec3* pixels, 
-				unsigned int* out_pixels, 
-				image &out_img, 
-				std::string output_fname);
-
-
-void normal_render(glm::vec3* world_verts_cuda, 
-				int N, 
-				AABB* aabb_cuda, 
-				ppc &cur_ppc, 
-				glm::vec3* pixels, 
-				unsigned int* out_pixels, 
-				image &out_img, 
-				std::string output_fname);
-
-
-void depth_render(glm::vec3* world_verts_cuda, 
-				int N, 
-				AABB* aabb_cuda, 
-				ppc &cur_ppc, 
-				glm::vec3* pixels, 
-				unsigned int* out_pixels, 
-				image &out_img, 
-				std::string output_fname);
-
-
-void ground_render(plane* ground_plane,  
-				ppc &cur_ppc, 
-				glm::vec3* pixels, 
-				unsigned int* out_pixels, 
-				image &out_img, 
-				std::string output_fname);
-
-void touch_render(glm::vec3 *world_verts_cuda, 
-				int N, 
-				AABB* aabb,
-				plane* ground_plane,  
-				ppc &cur_ppc, 
-				glm::vec3* pixels, 
-				unsigned int* out_pixels, 
-				image &out_img, 
-				std::string output_fname);
-
-void render_data(const exp_params &params);

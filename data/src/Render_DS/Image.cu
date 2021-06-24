@@ -26,10 +26,28 @@ unsigned int vec3_unsign(glm::vec3 v) {
 bool image::save_image(const std::string fname){
 	std::vector<unsigned int> buffer(w * h);
 	for(int i = 0; i < w * h; ++i) {
-		buffer[i] = vec3_unsign(pixels[i]);
+		buffer[i] = vec3_unsign(glm::clamp(pixels[i], 0.0f, 1.0f));
 	}
 
 	return stbi_write_png(fname.c_str(), w, h, 4, buffer.data(), w*4);
+}
+
+image image::operator+(const image &rhs) {
+	image ret(w, h);
+
+	for(int i = 0; i < w * h; ++i) {
+		ret.pixels[i] = pixels[i] + rhs.pixels[i];
+	}
+	return ret;
+}
+
+image image::operator*(const float &rhs) {
+	image ret = *this;
+
+	for(int i = 0; i < w * h; ++i) {
+		ret.pixels[i] = pixels[i] * rhs;
+	}
+	return ret;
 }
 
 __host__ __device__

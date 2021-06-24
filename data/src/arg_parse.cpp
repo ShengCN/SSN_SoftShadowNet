@@ -10,6 +10,7 @@ exp_params parse(int argc, char *argv[]) {
 		("model_rot", "A list of model rotations", cxxopts::value<std::vector<float>>())
 		("resume","Skip those rendered images?",cxxopts::value<bool>()->default_value("true"))
 		("verbose","verbose time? ",cxxopts::value<bool>()->default_value("true"))
+		("base_avg","Averageing patch shadows ",cxxopts::value<bool>()->default_value("false"))
 		("gpu","graphics card",cxxopts::value<int>()->default_value("0"))
 		("model_id","random seed",cxxopts::value<int>()->default_value("0"))
 		("width","output image width",cxxopts::value<int>()->default_value("256"))
@@ -41,6 +42,7 @@ exp_params parse(int argc, char *argv[]) {
 		parse_by_key(result, "ibl_w", ret.ibl_w);
 		parse_by_key(result, "ibl_h", ret.ibl_h);
 		parse_by_key(result, "gpu", ret.gpu);
+		parse_by_key(result, "base_avg", ret.base_avg);
 		parse_by_key(result, "patch_size", ret.patch_size);
 		parse_by_key(result, "model_id", ret.model_id);
 		parse_by_key(result, "model", ret.model);
