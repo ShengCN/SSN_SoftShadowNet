@@ -90,15 +90,7 @@ void ppc::tilt(double deg) {
 	// #TODO
 }
 
-void ppc::pitch(double deg)
-{
-	// deg = deg /_height * 10.0f;
-	// //glm::mat4 rot_x = glm::rotate(deg2rad(deg), glm::vec3(1.0f, 0.0f, 0.0f));
-	// //_front = glm::vec3(rot_x * glm::vec4(_front, 0.0f));
-	// vec3 up = GetUp();
-	// _front += up * float(deg);
-	// _front = glm::normalize(_front);
-	
+void ppc::pitch(double deg) {
 	vec3 right = glm::cross(_front, _worldUp);
 	vec4 tmp = glm::rotate(deg2rad(deg), right) * vec4(_front, 0.0f);
 	_front = glm::normalize(vec3(tmp));

@@ -46,6 +46,7 @@ void mask_render(scene &cur_scene, render_param &cur_rp, output_param &out) {
 	d_pixels.get_d());
 	GC(cudaPeekAtLastError());
 	GC(cudaDeviceSynchronize());
+	d_pixels.mem_copy_back();
 	profiling.toc();
 
 	if (out.verbose) {
@@ -54,7 +55,6 @@ void mask_render(scene &cur_scene, render_param &cur_rp, output_param &out) {
 	}
 
 	if (out.ofname != "") {
-		d_pixels.mem_copy_back();
 		out.img.save_image(out.ofname);
 	}
 }
@@ -312,8 +312,10 @@ void render_scenes(const exp_params &params,
 			}
 
 			// get rotation angle
-			float ang_rad = pd::rad2deg(std::atan((float)(highest_h - params.ibl_h + 2)/render_camera->get_focal()));
+			float ang_rad = pd::rad2deg(std::atan((float)(highest_h - params.h/2 + 2)/render_camera->get_focal()));
 			render_camera->pitch(-(render_camera->get_fov() * 0.5f - ang_rad));
+			std::cout << fmt::format("Highest: {} Angle: {}, pos: {} ori: {}\n", highest_h, ang_rad, to_string(render_camera->_position), to_string(render_camera->_front));
+			cur_rp.cur_ppc = *render_camera;
 			
 			std::string cur_prefix;
 			cur_prefix = fmt::format("pitch_{}_rot_{}_fov_{}", (int)camera_pitch, (int)target_rot, (int)random_fov);
