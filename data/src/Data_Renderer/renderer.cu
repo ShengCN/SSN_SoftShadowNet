@@ -25,25 +25,20 @@ vec3 compute_light_pos(int x, int y, int w = 512, int h = 256) {
 	return vec3(cos(deg2rad(beta)) * cos(deg2rad(alpha)), sin(deg2rad(beta)), cos(deg2rad(beta)) * sin(deg2rad(alpha)));
 }
 
-void mask_render(scene &cur_scene, render_param &cur_rp, output_param &out) {
-	if(out.resume) {
-		if(exists_test(out.ofname)) {
-			std::cout << out.ofname << " is skipped \n";
-			return;
-		}
-	}
+inline bool is_rendered(const std::string fname) {
+	return exists_test(fname); 	
+}
 
-	std::cout << fmt::format("H:{} W: {}, verts: {}, output: {}\n", 
-	cur_rp.cur_ppc.height(),
-	cur_rp.cur_ppc.width(),
-	cur_scene.world_verts.get_n(),
-	out.ofname);
+void mask_render(scene &cur_scene, render_param &cur_rp, output_param &out) {
+	if (out.resume && is_rendered(out.ofname)) {
+		std::cout << fmt::format("File {} skipped \n", out.ofname);
+		return;
+	}
 
 	out.img = image(cur_rp.cur_ppc.width(), cur_rp.cur_ppc.height());
 	cuda_container<glm::vec3> d_pixels(out.img.pixels);
 	int block = 16 * 16, grid = (block + cur_rp.cur_ppc.width() * cur_rp.cur_ppc.height() - 1)/block;
 	timer profiling;
-
 
 	profiling.tic();
 	raster_mask << <grid, block >> > (cur_scene.world_verts.get_d(), 
@@ -66,12 +61,72 @@ void mask_render(scene &cur_scene, render_param &cur_rp, output_param &out) {
 	}
 }
 
-void shadow_render(scene &cur_scene, render_param &cur_rp, const std::string ofname, image &out_img);
-void normal_render(scene &cur_scene, render_param &cur_rp, const std::string ofname, image &out_img);
-void depth_render(scene &cur_scene, render_param &cur_rp, const std::string ofname,image &out_img);
-void ground_render(scene &cur_scene, render_param &cur_rp, const std::string ofname, image &out_img);
-void touch_render(scene &cur_scene, render_param &cur_rp, const std::string ofname, image &out_img);
+void normal_render(scene &cur_scene, render_param &cur_rp, output_param &out) {
+	if (out.resume && is_rendered(out.ofname)) {
+		std::cout << fmt::format("File {} skipped \n", out.ofname);
+		return;
+	}
 
+	out.img = image(cur_rp.cur_ppc.width(), cur_rp.cur_ppc.height());
+	cuda_container<glm::vec3> d_pixels(out.img.pixels);
+	int block = 16 * 16, grid = (block + cur_rp.cur_ppc.width() * cur_rp.cur_ppc.height() - 1)/block;
+	timer profiling;
+
+	profiling.tic();
+	raster_normal << <grid, block >> > (cur_scene.world_verts.get_d(), 
+	cur_scene.world_verts.get_n(), 
+	cur_scene.world_AABB.get_d(), 
+	cur_rp.cur_ppc, 
+	d_pixels.get_d());
+	GC(cudaPeekAtLastError());
+	GC(cudaDeviceSynchronize());
+	profiling.toc();
+
+	if (out.verbose) {
+		std::string total_time = profiling.to_string();
+		std::cout << "Normal total time: " << total_time << std::endl;
+	}
+
+	if (out.ofname != "") {
+		d_pixels.mem_copy_back();
+		out.img.save_image(out.ofname);
+	}
+}
+
+void depth_render(scene &cur_scene, render_param &cur_rp, output_param &out) {
+	if (out.resume && is_rendered(out.ofname)) {
+		std::cout << fmt::format("File {} skipped \n", out.ofname);
+		return;
+	}
+
+	out.img = image(cur_rp.cur_ppc.width(), cur_rp.cur_ppc.height());
+	cuda_container<glm::vec3> d_pixels(out.img.pixels);
+	int block = 16 * 16, grid = (block + cur_rp.cur_ppc.width() * cur_rp.cur_ppc.height() - 1)/block;
+	timer profiling;
+
+	profiling.tic();
+	raster_depth << <grid, block >> > (cur_scene.world_verts.get_d(), 
+	cur_scene.world_verts.get_n(), 
+	cur_scene.world_AABB.get_d(), 
+	cur_rp.cur_ppc, 
+	d_pixels.get_d());
+	GC(cudaPeekAtLastError());
+	GC(cudaDeviceSynchronize());
+	profiling.toc();
+
+	if (out.verbose) {
+		std::string total_time = profiling.to_string();
+		std::cout << "Depth total time: " << total_time << std::endl;
+	}
+
+	if (out.ofname != "") {
+		d_pixels.mem_copy_back();
+		out.img.save_image(out.ofname);
+	}
+}
+
+void shadow_render(scene &cur_scene, render_param &cur_rp, output_param &out);
+void touch_render(scene &cur_scene, render_param &cur_rp, output_param &out);
 // void shadow_render(glm::vec3* world_verts_cuda, 
 // 	int N, 
 // 	plane* ground_plane, 
@@ -573,7 +628,7 @@ void render_scenes(const exp_params &params,
 			float ang_rad = pd::rad2deg(std::atan((float)(highest_h - params.ibl_h + 2)/render_camera->get_focal()));
 			render_camera->pitch(-(render_camera->get_fov() * 0.5f - ang_rad));
 			
-			std::string cur_prefix, output_fname;
+			std::string cur_prefix;
 			cur_prefix = fmt::format("pitch_{}_rot_{}_fov_{}", (int)camera_pitch, (int)target_rot, (int)random_fov);
 
 			// ------------------------------------ mask ------------------------------------ //
@@ -582,17 +637,17 @@ void render_scenes(const exp_params &params,
 				mask_render(cur_scene, cur_rp, oparam);
 			}
 
-			// // ------------------------------------ normal ------------------------------------ //
-			// if(params.render_normal) {
-			// 	output_fname = output_folder + "/" + cur_prefix + "_normal.png";
-			// 	normal_render(world_verts_cuda, world_verts.size(), aabb_cuda, *cur_ppc, pixels, out_pixels, out_img, output_fname);
-			// }
+			// ------------------------------------ normal ------------------------------------ //
+			if(params.render_normal) {
+				oparam.ofname = params.output + "/" + cur_prefix + "_normal.png";
+				normal_render(cur_scene, cur_rp, oparam);
+			}
 
-			// // ------------------------------------ depth ------------------------------------ //
-			// if(params.render_depth) {
-			// 	output_fname = output_folder + "/" + cur_prefix + "_depth.png";
-			// 	depth_render(world_verts_cuda, world_verts.size(), aabb_cuda, *cur_ppc, pixels, out_pixels, out_img, output_fname);
-			// }
+			// ------------------------------------ depth ------------------------------------ //
+			if(params.render_depth) {
+				oparam.ofname = params.output + "/" + cur_prefix + "_depth.png";
+				depth_render(cur_scene, cur_rp, oparam);
+			}
 			
 			// // ------------------------------------ touching ------------------------------------ // 
 			// if (params.render_touch) {

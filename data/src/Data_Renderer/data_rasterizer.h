@@ -34,9 +34,6 @@ void raster_depth(glm::vec3* world_verts,
 				ppc cur_ppc, 
 				glm::vec3* pixels);
 
-__global__ 
-void raster_ground(plane *ground_plane, ppc cur_ppc, glm::vec3 *pixels);
-
 __host__ __device__
 float height_transform(float h, float norm_size);
 

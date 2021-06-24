@@ -12,6 +12,10 @@ exp_params parse(int argc, char *argv[]) {
 		("verbose","verbose time? ",cxxopts::value<bool>()->default_value("true"))
 		("gpu","graphics card",cxxopts::value<int>()->default_value("0"))
 		("model_id","random seed",cxxopts::value<int>()->default_value("0"))
+		("width","output image width",cxxopts::value<int>()->default_value("256"))
+		("height","output image height",cxxopts::value<int>()->default_value("256"))
+		("ibl_h","ibl height",cxxopts::value<int>()->default_value("128"))
+		("ibl_w","ibl width",cxxopts::value<int>()->default_value("512"))
 		("patch_size","patch size",cxxopts::value<int>()->default_value("8"))
 		("model","model file path",cxxopts::value<std::string>())
 		("output","output folder",cxxopts::value<std::string>())
@@ -32,6 +36,10 @@ exp_params parse(int argc, char *argv[]) {
 		parse_by_key(result, "model_rot", ret.model_rot);
 		parse_by_key(result, "resume", ret.resume);
 		parse_by_key(result, "verbose", ret.verbose);
+		parse_by_key(result, "width", ret.w);
+		parse_by_key(result, "height", ret.h);
+		parse_by_key(result, "ibl_w", ret.ibl_w);
+		parse_by_key(result, "ibl_h", ret.ibl_h);
 		parse_by_key(result, "gpu", ret.gpu);
 		parse_by_key(result, "patch_size", ret.patch_size);
 		parse_by_key(result, "model_id", ret.model_id);

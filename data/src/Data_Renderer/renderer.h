@@ -44,10 +44,9 @@ struct pixel_pos {
 };
 
 void mask_render(scene &cur_scene, render_param &cur_rp, output_param &out);
-void shadow_render(scene &cur_scene, render_param &cur_rp, output_param &out);
 void normal_render(scene &cur_scene, render_param &cur_rp, output_param &out);
 void depth_render(scene &cur_scene, render_param &cur_rp, output_param &out);
-void ground_render(scene &cur_scene, render_param &cur_rp, output_param &out);
+void shadow_render(scene &cur_scene, render_param &cur_rp, output_param &out);
 void touch_render(scene &cur_scene, render_param &cur_rp, output_param &out);
 
 void shadow_render(glm::vec3* world_verts_cuda, 
