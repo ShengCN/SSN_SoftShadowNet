@@ -10,6 +10,9 @@ The renderer for the data is in `data` folder. This renderer is accelerated by C
 There is an example testing model: `data/test_model.off` which has **19317** triangles. For the **512x512** output image, a mask rendering takes 0.018 s and a **8x8** shadow base takes 3.6s for a GTX Titan Xp. 
 
 ### Environment Requirements
+* System: Ubuntu 18.04
+* CMake: >= 3.8
+* GCC: >= 7.4.0
 * CUDA (Ensure CMake can find nvcc)
 
 CMake is used to manage the packages and compiling. All other dependencies required except CUDA are in the `data/src/Dep` folders. Again, remember to recursively clone the submodules. 
