@@ -1,5 +1,4 @@
 #include "ppc.h"
-#include <glm/common.hpp>
 
 using namespace glm;
 using namespace purdue;
@@ -18,18 +17,9 @@ ppc::ppc(int w, int h, float fov, float p_near, float p_far) :
 	_worldUp(0.0f, 1.0f, 0.0f) {
 }
 
-ppc::~ppc()
-{
+ppc::~ppc() {
 }
 
-glm::mat4 ppc::GetP() const {
-	return glm::perspective(deg2rad(_fov), (float)_width / (float)_height, _near, _far);
-}
-
-glm::mat4 ppc::GetV() const {
-	return glm::lookAt(_position, _position + _front, _worldUp);
-	// return glm::lookAt(_position, target, _worldUp);
-}
 
 void ppc::Rotate_Axis(glm::vec3 O, glm::vec3 axis, float angled)
 {

@@ -89,6 +89,7 @@ public:
     vec3 GetUp() const {
         return cross(GetRight(), GetViewVec());
     }
+
     CUDA_HOSTDEV
 	vec3 GetViewVec() const { return _front; }
 	
@@ -105,8 +106,16 @@ public:
         _worldUp = up;
     }
     
-	glm::mat4 GetP() const;
-	glm::mat4 GetV() const;
+   	CUDA_HOSTDEV
+	glm::mat4 GetP() const {
+		return glm::perspective(purdue::deg2rad(_fov), (float)_width / (float)_height, _near, _far);
+	}
+
+   	CUDA_HOSTDEV
+	glm::mat4 GetV() const {
+		return glm::lookAt(_position, _position + _front, _worldUp);
+	}
+
 	void Rotate_Axis(glm::vec3 O, glm::vec3 axis, float angled);	// only rotate ppc position
 	void Zoom(float delta);
 	void Keyboard(CameraMovement cm, float speed); // keyboard reactions
@@ -119,8 +128,19 @@ public:
 	void pitch(double deg);
 	int width() {return _width;}
 	int height() {return _height;}
+
     
-   CUDA_HOSTDEV
+   	CUDA_HOSTDEV
+	vec2 project(vec3 p) {
+		vec3 a = glm::normalize(GetRight());
+		vec3 b = -glm::normalize(GetUp());
+		vec3 c = glm::normalize(GetViewVec()) * get_focal() - 0.5f * (float)_width * GetRight() + 0.5f * (float)_height * GetUp();
+		mat3 m(a,b,c);
+		vec3 pp = glm::inverse(m) * (p-_position);
+		return vec2(pp.x/pp.z, _height-pp.y/pp.z);
+	}
+
+   	CUDA_HOSTDEV
 	void get_ray(int u, int v, vec3& ro, vec3& rd) const {
         float focal = get_focal();
         vec3 right = glm::normalize(GetRight());

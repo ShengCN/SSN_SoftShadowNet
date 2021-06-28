@@ -43,3 +43,11 @@ void raster_touch(glm::vec3 *world_verts,
 				vec3 *samples, 
 				int sn,
 				glm::vec3 *pixels);
+
+__global__
+void raster_height(glm::vec3 *world_verts, 
+				int N, 
+				AABB *aabb,
+				plane *ground_plane, 
+				ppc cur_ppc, 
+				glm::vec3 *pixels);

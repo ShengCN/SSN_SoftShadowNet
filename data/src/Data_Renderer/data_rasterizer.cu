@@ -222,3 +222,47 @@ void raster_touch(glm::vec3 *world_verts, int N, AABB* aabb,plane *ground_plane,
 		pixels[cur_ind] = vec3(vis);
 	}
 }
+
+__global__
+void raster_height(glm::vec3 *world_verts, 
+				int N, 
+				AABB *aabb,
+				plane *ground_plane, 
+				ppc cur_ppc, 
+				glm::vec3 *pixels) {
+	int idx = blockDim.x * blockIdx.x + threadIdx.x;
+	int i_stride = blockDim.x * gridDim.x;
+	
+	for (int ind = idx; ind < cur_ppc._height * cur_ppc._width; ind += i_stride) {
+		int i = ind - ind / cur_ppc._width * cur_ppc._width;
+		int j = cur_ppc._height - 1 - (ind - i) / cur_ppc._width;
+
+		int cur_ind = (cur_ppc._height - 1 - j) * cur_ppc._width + i;
+		bool ret = false;
+		ray r; cur_ppc.get_ray(i, j, r.ro, r.rd);
+		ray_aabb_intersect(r, aabb, ret);
+		if (ret) {
+			ret = false;
+			float closest_z = FLT_MAX;
+			for (int ti = 0; ti < N / 3; ti += 1) {
+				vec3 p0 = world_verts[3 * ti + 0];
+				vec3 p1 = world_verts[3 * ti + 1];
+				vec3 p2 = world_verts[3 * ti + 2];
+
+				float t = ray_triangle_intersect(r, p0, p1, p2, ret);
+				if (ret && t < closest_z) {
+					closest_z = t;
+
+					// intersect
+					vec3 p = r.ro + r.rd * t;
+					vec3 gp = vec3(p.x, 0.0f, p.z);
+
+					vec2 ph = cur_ppc.project(p);
+					vec2 gph = cur_ppc.project(gp);
+
+					pixels[cur_ind] = vec3((ph.y - gph.y)/cur_ppc._height);
+				}
+			}
+		}
+	}
+}

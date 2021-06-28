@@ -25,6 +25,7 @@ exp_params parse(int argc, char *argv[]) {
 		("render_normal", "do you need to render normal", cxxopts::value<bool>()->default_value("false"))
 		("render_depth", "do you need to render depth", cxxopts::value<bool>()->default_value("false"))
 		("render_touch", "do you need to render touch", cxxopts::value<bool>()->default_value("false"))
+		("render_height", "do you need to render height", cxxopts::value<bool>()->default_value("false"))
 		("h,help", "Print usage")
 		;
 	
@@ -53,6 +54,7 @@ exp_params parse(int argc, char *argv[]) {
 		parse_by_key(result, "render_normal", ret.render_normal);
 		parse_by_key(result, "render_depth", ret.render_depth);
 		parse_by_key(result, "render_touch", ret.render_touch);
+		parse_by_key(result, "render_height", ret.render_height);
 
 		std::cout << (ret.to_string()) << std::endl;
 	}	

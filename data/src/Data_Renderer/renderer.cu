@@ -78,6 +78,7 @@ void normal_render(scene &cur_scene, render_param &cur_rp, output_param &out) {
 	GC(cudaPeekAtLastError());
 	GC(cudaDeviceSynchronize());
 	profiling.toc();
+	d_pixels.mem_copy_back();
 
 	if (out.verbose) {
 		std::string total_time = profiling.to_string();
@@ -85,7 +86,6 @@ void normal_render(scene &cur_scene, render_param &cur_rp, output_param &out) {
 	}
 
 	if (out.ofname != "") {
-		d_pixels.mem_copy_back();
 		out.img.save_image(out.ofname);
 	}
 }
@@ -109,6 +109,7 @@ void depth_render(scene &cur_scene, render_param &cur_rp, output_param &out) {
 	GC(cudaPeekAtLastError());
 	GC(cudaDeviceSynchronize());
 	profiling.toc();
+	d_pixels.mem_copy_back();
 
 	if (out.verbose) {
 		std::string total_time = profiling.to_string();
@@ -116,7 +117,6 @@ void depth_render(scene &cur_scene, render_param &cur_rp, output_param &out) {
 	}
 
 	if (out.ofname != "") {
-		d_pixels.mem_copy_back();
 		out.img.save_image(out.ofname);
 	}
 }
@@ -143,6 +143,7 @@ void touch_render(scene &cur_scene, render_param &cur_rp, output_param &out) {
 	GC(cudaPeekAtLastError());
 	GC(cudaDeviceSynchronize());
 	profiling.toc();
+	d_pixels.mem_copy_back();
 
 	if (out.verbose) {
 		std::string total_time = profiling.to_string();
@@ -150,7 +151,38 @@ void touch_render(scene &cur_scene, render_param &cur_rp, output_param &out) {
 	}
 
 	if (out.ofname != "") {
-		d_pixels.mem_copy_back();
+		out.img.save_image(out.ofname);
+	}
+}
+
+void height_render(scene &cur_scene, render_param &cur_rp, output_param &out) {
+	if (out.resume && is_rendered(out.ofname)) {
+		std::cout << fmt::format("File {} skipped \n", out.ofname);
+		return;
+	}
+
+	out.img = image(cur_rp.cur_ppc.width(), cur_rp.cur_ppc.height());
+	cuda_container<glm::vec3> d_pixels(out.img.pixels);
+	int block = 16 * 16, grid = (block + cur_rp.cur_ppc.width() * cur_rp.cur_ppc.height() - 1)/block;
+
+	profiling.tic();
+	raster_height << <grid, block >> > (cur_scene.world_verts.get_d(), 
+	cur_scene.world_verts.get_n(), 
+	cur_scene.world_AABB.get_d(), 
+	cur_scene.ground_plane.get_d(),
+	cur_rp.cur_ppc, 
+	d_pixels.get_d());
+	GC(cudaPeekAtLastError());
+	GC(cudaDeviceSynchronize());
+	profiling.toc();
+	d_pixels.mem_copy_back();
+
+	if (out.verbose) {
+		std::string total_time = profiling.to_string();
+		std::cout << "Height total time: " << total_time << std::endl;
+	}
+
+	if (out.ofname != "") {
 		out.img.save_image(out.ofname);
 	}
 }
@@ -342,6 +374,12 @@ void render_scenes(const exp_params &params,
 			if (params.render_touch) {
 				oparam.ofname = params.output + "/" + cur_prefix + "_touch.png";
 				touch_render(cur_scene, cur_rp, oparam);
+			}
+
+			// ------------------------------------ height ------------------------------------ // 
+			if (params.render_height) {
+				oparam.ofname = params.output + "/" + cur_prefix + "_height.png";
+				height_render(cur_scene, cur_rp, oparam);
 			}
 
 			// ------------------------------------ shadow ------------------------------------ // 
