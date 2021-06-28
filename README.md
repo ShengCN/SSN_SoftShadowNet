@@ -29,6 +29,7 @@ make -j16
 
 ### Command Interface
 ```Bash
+Give me parameters for camera and model rotation
 Usage:
   shadow rendering [OPTION...]
 
@@ -51,6 +52,7 @@ Usage:
       --render_normal   do you need to render normal
       --render_depth    do you need to render depth
       --render_touch    do you need to render touch
+      --render_height   do you need to render height
   -h, --help            Print usage
 ```
 ***Example***
