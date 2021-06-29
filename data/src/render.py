@@ -34,7 +34,6 @@ for i in range(processer_num):
         model_output = join(params.out_folder, os.path.splitext(os.path.basename(model))[0])
         inputs.append([params.gpus[i], model, model_output])
 
-import pdb; pdb.set_trace()
 task_num = len(inputs)
 with multiprocessing.Pool(processer_num) as pool:
     for i, _ in enumerate(pool.imap_unordered(worker, inputs), 1):
