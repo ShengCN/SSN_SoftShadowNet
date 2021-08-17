@@ -60,4 +60,12 @@ Usage:
 ./shadow_base --model="../test_model.off" --output="airplane" --cam_pitch=0,15,30 --model_rot=0,-45,45 --render_mask --render_shadow --render_touch --gpu=2 --width=512 --height=512 --ibl_w=256 --ibl_h=512 --resume=0  --patch_size=8
 ```
 
-
+# Citation
+```
+@article{xie2021segformer,
+  title={SegFormer: Simple and Efficient Design for Semantic Segmentation with Transformers},
+  author={Xie, Enze and Wang, Wenhai and Yu, Zhiding and Anandkumar, Anima and Alvarez, Jose M and Luo, Ping},
+  journal={arXiv preprint arXiv:2105.15203},
+  year={2021}
+}
+```
