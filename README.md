@@ -61,7 +61,7 @@ Usage:
 ```
 
 # License
-Please check the LICENSE file. SSN may be used non-commercially, meaning for research or evaluation purposes only. 
+SSN may be used non-commercially, meaning for research or evaluation purposes only. 
 
 # Citation
 ```
