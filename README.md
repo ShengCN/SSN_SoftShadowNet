@@ -65,10 +65,11 @@ Please check the LICENSE file. SSN may be used non-commercially, meaning for res
 
 # Citation
 ```
-@article{xie2021segformer,
-  title={SegFormer: Simple and Efficient Design for Semantic Segmentation with Transformers},
-  author={Xie, Enze and Wang, Wenhai and Yu, Zhiding and Anandkumar, Anima and Alvarez, Jose M and Luo, Ping},
-  journal={arXiv preprint arXiv:2105.15203},
+@inproceedings{sheng2021ssn,
+  title={SSN: Soft shadow network for image compositing},
+  author={Sheng, Yichen and Zhang, Jianming and Benes, Bedrich},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+  pages={4380--4390},
   year={2021}
 }
 ```
