@@ -18,7 +18,7 @@ params = parser.parse_args()
 def worker(input):
     gpu, model_path, out_path = input
     os.makedirs(out_path, exist_ok=True)
-    cmd = 'build/shadow_base --model={} --output={} --cam_pitch=30 --model_rot=-45 --render_mask --render_height --render_normal --render_shadow --gpu={} --width=512 --height=512 --ibl_w=512 --ibl_h=256'.format(model_path, out_path, gpu)
+    cmd = 'build/shadow_base --model={} --output={} --cam_pitch=30 --model_rot=-45 --render_mask --render_height --render_shadow --gpu={} --width=512 --height=512 --ibl_w=512 --ibl_h=256 --base_avg'.format(model_path, out_path, gpu)
     os.system(cmd)
 
 all_models = glob(join(params.ds_root, '*'))[params.start_id:params.end_id]

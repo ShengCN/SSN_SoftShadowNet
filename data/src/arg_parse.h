@@ -10,7 +10,7 @@ struct exp_params {
 
 	exp_params() {
 		/* Default values here */
-		resume = true;
+		resume = false;
 		verbose = true;
 		render_shadow = render_mask = render_normal = render_depth = render_touch = render_height= false; 
 		gpu = 0;
