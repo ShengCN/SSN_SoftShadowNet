@@ -52,6 +52,7 @@ struct pixel_pos {
 void render_data(const exp_params &params);
 
 void mask_render(scene &cur_scene, render_param &cur_rp, output_param &out);
+void rgb_render(scene &cur_scene, render_param &cur_rp, output_param &out);
 void normal_render(scene &cur_scene, render_param &cur_rp, output_param &out);
 void depth_render(scene &cur_scene, render_param &cur_rp, output_param &out);
 void shadow_render(scene &cur_scene, render_param &cur_rp, output_param &out);

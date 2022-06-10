@@ -1,6 +1,5 @@
 #include "Data_Renderer.h"
 #include "render_helper.h"
-
 using namespace purdue;
 
 /* Note different machine will generate different random numbers
@@ -52,6 +51,37 @@ void mask_render(scene &cur_scene, render_param &cur_rp, output_param &out) {
 	if (out.verbose) {
 		std::string total_time = profiling.to_string();
 		std::cout << "mask total time: " << total_time << std::endl;
+	}
+
+	if (out.ofname != "") {
+		out.img.save_image(out.ofname);
+	}
+}
+
+void rgb_render(scene &cur_scene, render_param &cur_rp, output_param &out) {
+	if (out.resume && is_rendered(out.ofname)) {
+		std::cout << fmt::format("File {} skipped \n", out.ofname);
+		return;
+	}
+
+	out.img = image(cur_rp.cur_ppc.width(), cur_rp.cur_ppc.height());
+	cuda_container<glm::vec3> d_pixels(out.img.pixels);
+	int block = 16 * 16, grid = (block + cur_rp.cur_ppc.width() * cur_rp.cur_ppc.height() - 1)/block;
+
+	profiling.tic();
+	raster_rgb << <grid, block >> > (cur_scene.world_verts.get_d(), 
+	cur_scene.world_verts.get_n(), 
+	cur_scene.world_AABB.get_d(), 
+	cur_rp.cur_ppc, 
+	d_pixels.get_d());
+	GC(cudaPeekAtLastError());
+	GC(cudaDeviceSynchronize());
+	d_pixels.mem_copy_back();
+	profiling.toc();
+
+	if (out.verbose) {
+		std::string total_time = profiling.to_string();
+		std::cout << "rgb total time: " << total_time << std::endl;
 	}
 
 	if (out.ofname != "") {
@@ -345,6 +375,7 @@ void render_scenes(const exp_params &params,
 
 			// get rotation angle
 			float ang_rad = pd::rad2deg(std::atan((float)(highest_h - params.h/2 + 2)/render_camera->get_focal()));
+            std::cout << "pitch angle: " << std::atan((float)(highest_h - params.h/2 + 2)/render_camera->get_focal()) << std::endl;
 			render_camera->pitch(-(render_camera->get_fov() * 0.5f - ang_rad));
 			std::cout << fmt::format("Highest: {} Angle: {}, pos: {} ori: {}\n", highest_h, ang_rad, to_string(render_camera->_position), to_string(render_camera->_front));
 			cur_rp.cur_ppc = *render_camera;
@@ -352,10 +383,30 @@ void render_scenes(const exp_params &params,
 			std::string cur_prefix;
 			cur_prefix = fmt::format("pitch_{}_rot_{}_fov_{}", (int)camera_pitch, (int)target_rot, (int)random_fov);
 
+            {
+				oparam.ofname = params.output + "/" + cur_prefix + "_mts.bin";
+                std::fstream oss(oparam.ofname, std::ios::binary | std::ios::out);
+
+                oss.write((char*)&cur_rp.cur_ppc, sizeof(ppc));
+                auto mat = render_target->get_world_mat();
+                oss.write((char*)&mat, sizeof(mat));
+                auto fpath = render_target->file_path;
+                size_t flen = fpath.size();
+                oss.write((char*)&flen, sizeof(size_t));
+                oss.write((char*)&fpath[0], flen);
+                oss.close();
+            }
+
 			// ------------------------------------ mask ------------------------------------ //
 			if (params.render_mask) {
 				oparam.ofname = params.output + "/" + cur_prefix + "_mask.png";
 				mask_render(cur_scene, cur_rp, oparam);
+			}
+
+			// ------------------------------------ rgb ------------------------------------ //
+			if (params.render_mask) {
+				oparam.ofname = params.output + "/" + cur_prefix + "_rgb.png";
+				rgb_render(cur_scene, cur_rp, oparam);
 			}
 
 			// ------------------------------------ normal ------------------------------------ //
@@ -398,7 +449,7 @@ void render_scenes(const exp_params &params,
 void render_data(const exp_params &params) {
 	timer t; 
 	std::shared_ptr<mesh> render_target = std::make_shared<mesh>();
-	std::shared_ptr<ppc> cur_ppc = std::make_shared<ppc>(params.w, params.h, 65.0f);
+	std::shared_ptr<ppc> cur_ppc = std::make_shared<ppc>(params.w, params.h, 50.0f);
     
 	scene_initialize(params, render_target);
 

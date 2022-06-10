@@ -5,3 +5,7 @@ network/tensorboard_log/runs/*
 *.jpg
 *.jpeg
 **/.vscode
+*/build
+**/build
+data/src/build
+data/src/build/*

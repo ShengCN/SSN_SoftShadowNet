@@ -19,6 +19,12 @@ void raster_mask(glm::vec3* world_verts,
 				 ppc cur_ppc, 
 				 glm::vec3* pixels);
 
+__global__
+void raster_rgb(glm::vec3* world_verts, 
+				 int N, 
+				 AABB* aabb, 
+				 ppc cur_ppc, 
+				 glm::vec3* pixels);
 
 __global__
 void raster_normal(glm::vec3* world_verts, 
