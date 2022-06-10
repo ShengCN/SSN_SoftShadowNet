@@ -8,7 +8,7 @@ exp_params parse(int argc, char *argv[]) {
 		.add_options()
 		("cam_pitch", "A list of camera pitches", cxxopts::value<std::vector<float>>())
 		("model_rot", "A list of model rotations", cxxopts::value<std::vector<float>>())
-		("resume","Skip those rendered images?",cxxopts::value<bool>()->default_value("true"))
+		("resume","Skip those rendered images?",cxxopts::value<bool>()->default_value("false"))
 		("verbose","verbose time? ",cxxopts::value<bool>()->default_value("true"))
 		("base_avg","Averageing patch shadows ",cxxopts::value<bool>()->default_value("false"))
 		("gpu","graphics card",cxxopts::value<int>()->default_value("0"))
