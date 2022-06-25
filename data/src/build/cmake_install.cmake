@@ -1,4 +1,4 @@
-# Install script for directory: /home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src
+# Install script for directory: /home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -12,7 +12,7 @@ if(NOT DEFINED CMAKE_INSTALL_CONFIG_NAME)
     string(REGEX REPLACE "^[^A-Za-z0-9_]+" ""
            CMAKE_INSTALL_CONFIG_NAME "${BUILD_TYPE}")
   else()
-    set(CMAKE_INSTALL_CONFIG_NAME "Debug")
+    set(CMAKE_INSTALL_CONFIG_NAME "")
   endif()
   message(STATUS "Install configuration: \"${CMAKE_INSTALL_CONFIG_NAME}\"")
 endif()
@@ -39,9 +39,9 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/build/Dep/glm/cmake_install.cmake")
-  include("/home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/build/Dep/fmt/cmake_install.cmake")
-  include("/home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/build/Dep/tinyobjloader/cmake_install.cmake")
+  include("/home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src/build/Dep/glm/cmake_install.cmake")
+  include("/home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src/build/Dep/fmt/cmake_install.cmake")
+  include("/home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src/build/Dep/tinyobjloader/cmake_install.cmake")
 
 endif()
 
@@ -53,5 +53,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

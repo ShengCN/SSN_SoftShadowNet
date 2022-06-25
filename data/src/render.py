@@ -24,7 +24,7 @@ def worker(input):
     cam_pitch_str = cam_pitch_str[1:]
     model_rot_str = model_rot_str[1:]
 
-    cmd = 'build/shadow_base --model={} --output={} --cam_pitch={} --model_rot={} --gpu={} --render_mask --width={} --height={} --ibl_w=512 --ibl_h=256'.format(model_path, out_path, cam_pitch_str, model_rot_str, gpu, w, h)
+    cmd = 'build/shadow_base --model={} --output={} --cam_pitch={} --model_rot={} --gpu={} --render_mask --render_shadow --render_touch --width={} --height={} --ibl_w=512 --ibl_h=256'.format(model_path, out_path, cam_pitch_str, model_rot_str, gpu, w, h)
     print(cmd)
     os.system(cmd)
 
@@ -36,7 +36,8 @@ def render_raw_imgs(params):
     else:
         all_models = all_models[params.start_id:params.end_id]
 
-    processer_num = len(params.gpus)
+    # processer_num = len(params.gpus)
+    processer_num = params.cpus
     inputs        = []
 
     for i in range(processer_num):
@@ -48,7 +49,7 @@ def render_raw_imgs(params):
 
         for model in cur_pro_models:
             model_output = join(params.out_folder, os.path.splitext(os.path.basename(model))[0])
-            inputs.append([params.gpus[i], model, model_output, params.width, params.height, params.cam_pitch, params.model_rot])
+            inputs.append([params.gpus[i%len(params.gpus)], model, model_output, params.width, params.height, params.cam_pitch, params.model_rot])
 
 
     import pdb; pdb.set_trace()
@@ -60,6 +61,7 @@ def render_raw_imgs(params):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
+    parser.add_argument('--cpus', type=int, help='how many cpu?')
     parser.add_argument('--gpus', nargs="+", type=int, help='which gpu?')
     parser.add_argument('--ds_root', type=str, help='Dataset path')
     parser.add_argument('--out_folder', type=str, help='output folder')

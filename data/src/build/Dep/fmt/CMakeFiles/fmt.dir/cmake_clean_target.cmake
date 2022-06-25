@@ -1,3 +1,3 @@
 file(REMOVE_RECURSE
-  "libfmtd.a"
+  "libfmt.a"
 )

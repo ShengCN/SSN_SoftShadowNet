@@ -214,9 +214,9 @@ CMakeFiles/shadow_base.dir/Data_Renderer/data_rasterizer.cu.o
  ../Utilities/cxxopts.hpp
  ../arg_parse.h
  ../common.h
- /home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/Data_Renderer/data_rasterizer.cu
- /home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/Data_Renderer/data_rasterizer.h
- /home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/Data_Renderer/ray_intersect.h
+ /home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src/Data_Renderer/data_rasterizer.cu
+ /home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src/Data_Renderer/data_rasterizer.h
+ /home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src/Data_Renderer/ray_intersect.h
 CMakeFiles/shadow_base.dir/Data_Renderer/ray_intersect.cu.o
  ../Dep/fmt/include/fmt/core.h
  ../Dep/fmt/include/fmt/format-inl.h
@@ -430,8 +430,8 @@ CMakeFiles/shadow_base.dir/Data_Renderer/ray_intersect.cu.o
  ../Utilities/cxxopts.hpp
  ../arg_parse.h
  ../common.h
- /home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/Data_Renderer/ray_intersect.cu
- /home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/Data_Renderer/ray_intersect.h
+ /home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src/Data_Renderer/ray_intersect.cu
+ /home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src/Data_Renderer/ray_intersect.h
 CMakeFiles/shadow_base.dir/Data_Renderer/renderer.cu.o
  ../Dep/fmt/include/fmt/core.h
  ../Dep/fmt/include/fmt/format-inl.h
@@ -645,12 +645,12 @@ CMakeFiles/shadow_base.dir/Data_Renderer/renderer.cu.o
  ../Utilities/cxxopts.hpp
  ../arg_parse.h
  ../common.h
- /home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/Data_Renderer/Data_Renderer.h
- /home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/Data_Renderer/data_rasterizer.h
- /home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/Data_Renderer/ray_intersect.h
- /home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/Data_Renderer/render_helper.h
- /home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/Data_Renderer/renderer.cu
- /home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/Data_Renderer/renderer.h
+ /home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src/Data_Renderer/Data_Renderer.h
+ /home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src/Data_Renderer/data_rasterizer.h
+ /home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src/Data_Renderer/ray_intersect.h
+ /home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src/Data_Renderer/render_helper.h
+ /home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src/Data_Renderer/renderer.cu
+ /home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src/Data_Renderer/renderer.h
 CMakeFiles/shadow_base.dir/Render_DS/Image.cu.o
  ../Dep/fmt/include/fmt/core.h
  ../Dep/fmt/include/fmt/format-inl.h
@@ -861,8 +861,8 @@ CMakeFiles/shadow_base.dir/Render_DS/Image.cu.o
  ../Utilities/cxxopts.hpp
  ../arg_parse.h
  ../common.h
- /home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/Render_DS/Image.cu
- /home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/Render_DS/Image.h
+ /home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src/Render_DS/Image.cu
+ /home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src/Render_DS/Image.h
 CMakeFiles/shadow_base.dir/main.cu.o
  ../Data_Renderer/Data_Renderer.h
  ../Data_Renderer/data_rasterizer.h
@@ -1080,7 +1080,7 @@ CMakeFiles/shadow_base.dir/main.cu.o
  ../Utilities/cxxopts.hpp
  ../arg_parse.h
  ../common.h
- /home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/main.cu
+ /home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src/main.cu
 CMakeFiles/shadow_base.dir/Render_DS/mesh.cpp.o
  ../Dep/fmt/include/fmt/core.h
  ../Dep/fmt/include/fmt/format-inl.h
@@ -1289,64 +1289,64 @@ CMakeFiles/shadow_base.dir/Render_DS/mesh.cpp.o
  ../Utilities/cxxopts.hpp
  ../arg_parse.h
  ../common.h
- /home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/Render_DS/mesh.cpp
- /home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/Render_DS/mesh.h
- /home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/Render_DS/ppc.h
- /usr/local/cuda-11.1/include/builtin_types.h
- /usr/local/cuda-11.1/include/channel_descriptor.h
- /usr/local/cuda-11.1/include/crt/common_functions.h
- /usr/local/cuda-11.1/include/crt/device_double_functions.h
- /usr/local/cuda-11.1/include/crt/device_double_functions.hpp
- /usr/local/cuda-11.1/include/crt/device_functions.h
- /usr/local/cuda-11.1/include/crt/device_functions.hpp
- /usr/local/cuda-11.1/include/crt/func_macro.h
- /usr/local/cuda-11.1/include/crt/host_config.h
- /usr/local/cuda-11.1/include/crt/host_defines.h
- /usr/local/cuda-11.1/include/crt/math_functions.h
- /usr/local/cuda-11.1/include/crt/math_functions.hpp
- /usr/local/cuda-11.1/include/crt/sm_70_rt.h
- /usr/local/cuda-11.1/include/crt/sm_70_rt.hpp
- /usr/local/cuda-11.1/include/crt/sm_80_rt.h
- /usr/local/cuda-11.1/include/crt/sm_80_rt.hpp
- /usr/local/cuda-11.1/include/cuda.h
- /usr/local/cuda-11.1/include/cuda_device_runtime_api.h
- /usr/local/cuda-11.1/include/cuda_runtime.h
- /usr/local/cuda-11.1/include/cuda_runtime_api.h
- /usr/local/cuda-11.1/include/cuda_surface_types.h
- /usr/local/cuda-11.1/include/cuda_texture_types.h
- /usr/local/cuda-11.1/include/device_atomic_functions.h
- /usr/local/cuda-11.1/include/device_atomic_functions.hpp
- /usr/local/cuda-11.1/include/device_launch_parameters.h
- /usr/local/cuda-11.1/include/device_types.h
- /usr/local/cuda-11.1/include/driver_functions.h
- /usr/local/cuda-11.1/include/driver_types.h
- /usr/local/cuda-11.1/include/library_types.h
- /usr/local/cuda-11.1/include/math_constants.h
- /usr/local/cuda-11.1/include/sm_20_atomic_functions.h
- /usr/local/cuda-11.1/include/sm_20_atomic_functions.hpp
- /usr/local/cuda-11.1/include/sm_20_intrinsics.h
- /usr/local/cuda-11.1/include/sm_20_intrinsics.hpp
- /usr/local/cuda-11.1/include/sm_30_intrinsics.h
- /usr/local/cuda-11.1/include/sm_30_intrinsics.hpp
- /usr/local/cuda-11.1/include/sm_32_atomic_functions.h
- /usr/local/cuda-11.1/include/sm_32_atomic_functions.hpp
- /usr/local/cuda-11.1/include/sm_32_intrinsics.h
- /usr/local/cuda-11.1/include/sm_32_intrinsics.hpp
- /usr/local/cuda-11.1/include/sm_35_atomic_functions.h
- /usr/local/cuda-11.1/include/sm_35_intrinsics.h
- /usr/local/cuda-11.1/include/sm_60_atomic_functions.h
- /usr/local/cuda-11.1/include/sm_60_atomic_functions.hpp
- /usr/local/cuda-11.1/include/sm_61_intrinsics.h
- /usr/local/cuda-11.1/include/sm_61_intrinsics.hpp
- /usr/local/cuda-11.1/include/surface_functions.h
- /usr/local/cuda-11.1/include/surface_indirect_functions.h
- /usr/local/cuda-11.1/include/surface_types.h
- /usr/local/cuda-11.1/include/texture_fetch_functions.h
- /usr/local/cuda-11.1/include/texture_indirect_functions.h
- /usr/local/cuda-11.1/include/texture_types.h
- /usr/local/cuda-11.1/include/vector_functions.h
- /usr/local/cuda-11.1/include/vector_functions.hpp
- /usr/local/cuda-11.1/include/vector_types.h
+ /home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src/Render_DS/mesh.cpp
+ /home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src/Render_DS/mesh.h
+ /home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src/Render_DS/ppc.h
+ /usr/local/cuda/include/builtin_types.h
+ /usr/local/cuda/include/channel_descriptor.h
+ /usr/local/cuda/include/crt/common_functions.h
+ /usr/local/cuda/include/crt/device_double_functions.h
+ /usr/local/cuda/include/crt/device_double_functions.hpp
+ /usr/local/cuda/include/crt/device_functions.h
+ /usr/local/cuda/include/crt/device_functions.hpp
+ /usr/local/cuda/include/crt/func_macro.h
+ /usr/local/cuda/include/crt/host_config.h
+ /usr/local/cuda/include/crt/host_defines.h
+ /usr/local/cuda/include/crt/math_functions.h
+ /usr/local/cuda/include/crt/math_functions.hpp
+ /usr/local/cuda/include/crt/sm_70_rt.h
+ /usr/local/cuda/include/crt/sm_70_rt.hpp
+ /usr/local/cuda/include/crt/sm_80_rt.h
+ /usr/local/cuda/include/crt/sm_80_rt.hpp
+ /usr/local/cuda/include/cuda.h
+ /usr/local/cuda/include/cuda_device_runtime_api.h
+ /usr/local/cuda/include/cuda_runtime.h
+ /usr/local/cuda/include/cuda_runtime_api.h
+ /usr/local/cuda/include/cuda_surface_types.h
+ /usr/local/cuda/include/cuda_texture_types.h
+ /usr/local/cuda/include/device_atomic_functions.h
+ /usr/local/cuda/include/device_atomic_functions.hpp
+ /usr/local/cuda/include/device_launch_parameters.h
+ /usr/local/cuda/include/device_types.h
+ /usr/local/cuda/include/driver_functions.h
+ /usr/local/cuda/include/driver_types.h
+ /usr/local/cuda/include/library_types.h
+ /usr/local/cuda/include/math_constants.h
+ /usr/local/cuda/include/sm_20_atomic_functions.h
+ /usr/local/cuda/include/sm_20_atomic_functions.hpp
+ /usr/local/cuda/include/sm_20_intrinsics.h
+ /usr/local/cuda/include/sm_20_intrinsics.hpp
+ /usr/local/cuda/include/sm_30_intrinsics.h
+ /usr/local/cuda/include/sm_30_intrinsics.hpp
+ /usr/local/cuda/include/sm_32_atomic_functions.h
+ /usr/local/cuda/include/sm_32_atomic_functions.hpp
+ /usr/local/cuda/include/sm_32_intrinsics.h
+ /usr/local/cuda/include/sm_32_intrinsics.hpp
+ /usr/local/cuda/include/sm_35_atomic_functions.h
+ /usr/local/cuda/include/sm_35_intrinsics.h
+ /usr/local/cuda/include/sm_60_atomic_functions.h
+ /usr/local/cuda/include/sm_60_atomic_functions.hpp
+ /usr/local/cuda/include/sm_61_intrinsics.h
+ /usr/local/cuda/include/sm_61_intrinsics.hpp
+ /usr/local/cuda/include/surface_functions.h
+ /usr/local/cuda/include/surface_indirect_functions.h
+ /usr/local/cuda/include/surface_types.h
+ /usr/local/cuda/include/texture_fetch_functions.h
+ /usr/local/cuda/include/texture_indirect_functions.h
+ /usr/local/cuda/include/texture_types.h
+ /usr/local/cuda/include/vector_functions.h
+ /usr/local/cuda/include/vector_functions.hpp
+ /usr/local/cuda/include/vector_types.h
 CMakeFiles/shadow_base.dir/Render_DS/model_loader.cpp.o
  ../Dep/fmt/include/fmt/core.h
  ../Dep/fmt/include/fmt/format-inl.h
@@ -1556,65 +1556,65 @@ CMakeFiles/shadow_base.dir/Render_DS/model_loader.cpp.o
  ../Utilities/cxxopts.hpp
  ../arg_parse.h
  ../common.h
- /home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/Render_DS/mesh.h
- /home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/Render_DS/model_loader.cpp
- /home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/Render_DS/model_loader.h
- /home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/Render_DS/ppc.h
- /usr/local/cuda-11.1/include/builtin_types.h
- /usr/local/cuda-11.1/include/channel_descriptor.h
- /usr/local/cuda-11.1/include/crt/common_functions.h
- /usr/local/cuda-11.1/include/crt/device_double_functions.h
- /usr/local/cuda-11.1/include/crt/device_double_functions.hpp
- /usr/local/cuda-11.1/include/crt/device_functions.h
- /usr/local/cuda-11.1/include/crt/device_functions.hpp
- /usr/local/cuda-11.1/include/crt/func_macro.h
- /usr/local/cuda-11.1/include/crt/host_config.h
- /usr/local/cuda-11.1/include/crt/host_defines.h
- /usr/local/cuda-11.1/include/crt/math_functions.h
- /usr/local/cuda-11.1/include/crt/math_functions.hpp
- /usr/local/cuda-11.1/include/crt/sm_70_rt.h
- /usr/local/cuda-11.1/include/crt/sm_70_rt.hpp
- /usr/local/cuda-11.1/include/crt/sm_80_rt.h
- /usr/local/cuda-11.1/include/crt/sm_80_rt.hpp
- /usr/local/cuda-11.1/include/cuda.h
- /usr/local/cuda-11.1/include/cuda_device_runtime_api.h
- /usr/local/cuda-11.1/include/cuda_runtime.h
- /usr/local/cuda-11.1/include/cuda_runtime_api.h
- /usr/local/cuda-11.1/include/cuda_surface_types.h
- /usr/local/cuda-11.1/include/cuda_texture_types.h
- /usr/local/cuda-11.1/include/device_atomic_functions.h
- /usr/local/cuda-11.1/include/device_atomic_functions.hpp
- /usr/local/cuda-11.1/include/device_launch_parameters.h
- /usr/local/cuda-11.1/include/device_types.h
- /usr/local/cuda-11.1/include/driver_functions.h
- /usr/local/cuda-11.1/include/driver_types.h
- /usr/local/cuda-11.1/include/library_types.h
- /usr/local/cuda-11.1/include/math_constants.h
- /usr/local/cuda-11.1/include/sm_20_atomic_functions.h
- /usr/local/cuda-11.1/include/sm_20_atomic_functions.hpp
- /usr/local/cuda-11.1/include/sm_20_intrinsics.h
- /usr/local/cuda-11.1/include/sm_20_intrinsics.hpp
- /usr/local/cuda-11.1/include/sm_30_intrinsics.h
- /usr/local/cuda-11.1/include/sm_30_intrinsics.hpp
- /usr/local/cuda-11.1/include/sm_32_atomic_functions.h
- /usr/local/cuda-11.1/include/sm_32_atomic_functions.hpp
- /usr/local/cuda-11.1/include/sm_32_intrinsics.h
- /usr/local/cuda-11.1/include/sm_32_intrinsics.hpp
- /usr/local/cuda-11.1/include/sm_35_atomic_functions.h
- /usr/local/cuda-11.1/include/sm_35_intrinsics.h
- /usr/local/cuda-11.1/include/sm_60_atomic_functions.h
- /usr/local/cuda-11.1/include/sm_60_atomic_functions.hpp
- /usr/local/cuda-11.1/include/sm_61_intrinsics.h
- /usr/local/cuda-11.1/include/sm_61_intrinsics.hpp
- /usr/local/cuda-11.1/include/surface_functions.h
- /usr/local/cuda-11.1/include/surface_indirect_functions.h
- /usr/local/cuda-11.1/include/surface_types.h
- /usr/local/cuda-11.1/include/texture_fetch_functions.h
- /usr/local/cuda-11.1/include/texture_indirect_functions.h
- /usr/local/cuda-11.1/include/texture_types.h
- /usr/local/cuda-11.1/include/vector_functions.h
- /usr/local/cuda-11.1/include/vector_functions.hpp
- /usr/local/cuda-11.1/include/vector_types.h
+ /home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src/Render_DS/mesh.h
+ /home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src/Render_DS/model_loader.cpp
+ /home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src/Render_DS/model_loader.h
+ /home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src/Render_DS/ppc.h
+ /usr/local/cuda/include/builtin_types.h
+ /usr/local/cuda/include/channel_descriptor.h
+ /usr/local/cuda/include/crt/common_functions.h
+ /usr/local/cuda/include/crt/device_double_functions.h
+ /usr/local/cuda/include/crt/device_double_functions.hpp
+ /usr/local/cuda/include/crt/device_functions.h
+ /usr/local/cuda/include/crt/device_functions.hpp
+ /usr/local/cuda/include/crt/func_macro.h
+ /usr/local/cuda/include/crt/host_config.h
+ /usr/local/cuda/include/crt/host_defines.h
+ /usr/local/cuda/include/crt/math_functions.h
+ /usr/local/cuda/include/crt/math_functions.hpp
+ /usr/local/cuda/include/crt/sm_70_rt.h
+ /usr/local/cuda/include/crt/sm_70_rt.hpp
+ /usr/local/cuda/include/crt/sm_80_rt.h
+ /usr/local/cuda/include/crt/sm_80_rt.hpp
+ /usr/local/cuda/include/cuda.h
+ /usr/local/cuda/include/cuda_device_runtime_api.h
+ /usr/local/cuda/include/cuda_runtime.h
+ /usr/local/cuda/include/cuda_runtime_api.h
+ /usr/local/cuda/include/cuda_surface_types.h
+ /usr/local/cuda/include/cuda_texture_types.h
+ /usr/local/cuda/include/device_atomic_functions.h
+ /usr/local/cuda/include/device_atomic_functions.hpp
+ /usr/local/cuda/include/device_launch_parameters.h
+ /usr/local/cuda/include/device_types.h
+ /usr/local/cuda/include/driver_functions.h
+ /usr/local/cuda/include/driver_types.h
+ /usr/local/cuda/include/library_types.h
+ /usr/local/cuda/include/math_constants.h
+ /usr/local/cuda/include/sm_20_atomic_functions.h
+ /usr/local/cuda/include/sm_20_atomic_functions.hpp
+ /usr/local/cuda/include/sm_20_intrinsics.h
+ /usr/local/cuda/include/sm_20_intrinsics.hpp
+ /usr/local/cuda/include/sm_30_intrinsics.h
+ /usr/local/cuda/include/sm_30_intrinsics.hpp
+ /usr/local/cuda/include/sm_32_atomic_functions.h
+ /usr/local/cuda/include/sm_32_atomic_functions.hpp
+ /usr/local/cuda/include/sm_32_intrinsics.h
+ /usr/local/cuda/include/sm_32_intrinsics.hpp
+ /usr/local/cuda/include/sm_35_atomic_functions.h
+ /usr/local/cuda/include/sm_35_intrinsics.h
+ /usr/local/cuda/include/sm_60_atomic_functions.h
+ /usr/local/cuda/include/sm_60_atomic_functions.hpp
+ /usr/local/cuda/include/sm_61_intrinsics.h
+ /usr/local/cuda/include/sm_61_intrinsics.hpp
+ /usr/local/cuda/include/surface_functions.h
+ /usr/local/cuda/include/surface_indirect_functions.h
+ /usr/local/cuda/include/surface_types.h
+ /usr/local/cuda/include/texture_fetch_functions.h
+ /usr/local/cuda/include/texture_indirect_functions.h
+ /usr/local/cuda/include/texture_types.h
+ /usr/local/cuda/include/vector_functions.h
+ /usr/local/cuda/include/vector_functions.hpp
+ /usr/local/cuda/include/vector_types.h
 CMakeFiles/shadow_base.dir/Render_DS/ppc.cpp.o
  ../Dep/fmt/include/fmt/core.h
  ../Dep/fmt/include/fmt/format-inl.h
@@ -1823,63 +1823,63 @@ CMakeFiles/shadow_base.dir/Render_DS/ppc.cpp.o
  ../Utilities/cxxopts.hpp
  ../arg_parse.h
  ../common.h
- /home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/Render_DS/ppc.cpp
- /home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/Render_DS/ppc.h
- /usr/local/cuda-11.1/include/builtin_types.h
- /usr/local/cuda-11.1/include/channel_descriptor.h
- /usr/local/cuda-11.1/include/crt/common_functions.h
- /usr/local/cuda-11.1/include/crt/device_double_functions.h
- /usr/local/cuda-11.1/include/crt/device_double_functions.hpp
- /usr/local/cuda-11.1/include/crt/device_functions.h
- /usr/local/cuda-11.1/include/crt/device_functions.hpp
- /usr/local/cuda-11.1/include/crt/func_macro.h
- /usr/local/cuda-11.1/include/crt/host_config.h
- /usr/local/cuda-11.1/include/crt/host_defines.h
- /usr/local/cuda-11.1/include/crt/math_functions.h
- /usr/local/cuda-11.1/include/crt/math_functions.hpp
- /usr/local/cuda-11.1/include/crt/sm_70_rt.h
- /usr/local/cuda-11.1/include/crt/sm_70_rt.hpp
- /usr/local/cuda-11.1/include/crt/sm_80_rt.h
- /usr/local/cuda-11.1/include/crt/sm_80_rt.hpp
- /usr/local/cuda-11.1/include/cuda.h
- /usr/local/cuda-11.1/include/cuda_device_runtime_api.h
- /usr/local/cuda-11.1/include/cuda_runtime.h
- /usr/local/cuda-11.1/include/cuda_runtime_api.h
- /usr/local/cuda-11.1/include/cuda_surface_types.h
- /usr/local/cuda-11.1/include/cuda_texture_types.h
- /usr/local/cuda-11.1/include/device_atomic_functions.h
- /usr/local/cuda-11.1/include/device_atomic_functions.hpp
- /usr/local/cuda-11.1/include/device_launch_parameters.h
- /usr/local/cuda-11.1/include/device_types.h
- /usr/local/cuda-11.1/include/driver_functions.h
- /usr/local/cuda-11.1/include/driver_types.h
- /usr/local/cuda-11.1/include/library_types.h
- /usr/local/cuda-11.1/include/math_constants.h
- /usr/local/cuda-11.1/include/sm_20_atomic_functions.h
- /usr/local/cuda-11.1/include/sm_20_atomic_functions.hpp
- /usr/local/cuda-11.1/include/sm_20_intrinsics.h
- /usr/local/cuda-11.1/include/sm_20_intrinsics.hpp
- /usr/local/cuda-11.1/include/sm_30_intrinsics.h
- /usr/local/cuda-11.1/include/sm_30_intrinsics.hpp
- /usr/local/cuda-11.1/include/sm_32_atomic_functions.h
- /usr/local/cuda-11.1/include/sm_32_atomic_functions.hpp
- /usr/local/cuda-11.1/include/sm_32_intrinsics.h
- /usr/local/cuda-11.1/include/sm_32_intrinsics.hpp
- /usr/local/cuda-11.1/include/sm_35_atomic_functions.h
- /usr/local/cuda-11.1/include/sm_35_intrinsics.h
- /usr/local/cuda-11.1/include/sm_60_atomic_functions.h
- /usr/local/cuda-11.1/include/sm_60_atomic_functions.hpp
- /usr/local/cuda-11.1/include/sm_61_intrinsics.h
- /usr/local/cuda-11.1/include/sm_61_intrinsics.hpp
- /usr/local/cuda-11.1/include/surface_functions.h
- /usr/local/cuda-11.1/include/surface_indirect_functions.h
- /usr/local/cuda-11.1/include/surface_types.h
- /usr/local/cuda-11.1/include/texture_fetch_functions.h
- /usr/local/cuda-11.1/include/texture_indirect_functions.h
- /usr/local/cuda-11.1/include/texture_types.h
- /usr/local/cuda-11.1/include/vector_functions.h
- /usr/local/cuda-11.1/include/vector_functions.hpp
- /usr/local/cuda-11.1/include/vector_types.h
+ /home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src/Render_DS/ppc.cpp
+ /home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src/Render_DS/ppc.h
+ /usr/local/cuda/include/builtin_types.h
+ /usr/local/cuda/include/channel_descriptor.h
+ /usr/local/cuda/include/crt/common_functions.h
+ /usr/local/cuda/include/crt/device_double_functions.h
+ /usr/local/cuda/include/crt/device_double_functions.hpp
+ /usr/local/cuda/include/crt/device_functions.h
+ /usr/local/cuda/include/crt/device_functions.hpp
+ /usr/local/cuda/include/crt/func_macro.h
+ /usr/local/cuda/include/crt/host_config.h
+ /usr/local/cuda/include/crt/host_defines.h
+ /usr/local/cuda/include/crt/math_functions.h
+ /usr/local/cuda/include/crt/math_functions.hpp
+ /usr/local/cuda/include/crt/sm_70_rt.h
+ /usr/local/cuda/include/crt/sm_70_rt.hpp
+ /usr/local/cuda/include/crt/sm_80_rt.h
+ /usr/local/cuda/include/crt/sm_80_rt.hpp
+ /usr/local/cuda/include/cuda.h
+ /usr/local/cuda/include/cuda_device_runtime_api.h
+ /usr/local/cuda/include/cuda_runtime.h
+ /usr/local/cuda/include/cuda_runtime_api.h
+ /usr/local/cuda/include/cuda_surface_types.h
+ /usr/local/cuda/include/cuda_texture_types.h
+ /usr/local/cuda/include/device_atomic_functions.h
+ /usr/local/cuda/include/device_atomic_functions.hpp
+ /usr/local/cuda/include/device_launch_parameters.h
+ /usr/local/cuda/include/device_types.h
+ /usr/local/cuda/include/driver_functions.h
+ /usr/local/cuda/include/driver_types.h
+ /usr/local/cuda/include/library_types.h
+ /usr/local/cuda/include/math_constants.h
+ /usr/local/cuda/include/sm_20_atomic_functions.h
+ /usr/local/cuda/include/sm_20_atomic_functions.hpp
+ /usr/local/cuda/include/sm_20_intrinsics.h
+ /usr/local/cuda/include/sm_20_intrinsics.hpp
+ /usr/local/cuda/include/sm_30_intrinsics.h
+ /usr/local/cuda/include/sm_30_intrinsics.hpp
+ /usr/local/cuda/include/sm_32_atomic_functions.h
+ /usr/local/cuda/include/sm_32_atomic_functions.hpp
+ /usr/local/cuda/include/sm_32_intrinsics.h
+ /usr/local/cuda/include/sm_32_intrinsics.hpp
+ /usr/local/cuda/include/sm_35_atomic_functions.h
+ /usr/local/cuda/include/sm_35_intrinsics.h
+ /usr/local/cuda/include/sm_60_atomic_functions.h
+ /usr/local/cuda/include/sm_60_atomic_functions.hpp
+ /usr/local/cuda/include/sm_61_intrinsics.h
+ /usr/local/cuda/include/sm_61_intrinsics.hpp
+ /usr/local/cuda/include/surface_functions.h
+ /usr/local/cuda/include/surface_indirect_functions.h
+ /usr/local/cuda/include/surface_types.h
+ /usr/local/cuda/include/texture_fetch_functions.h
+ /usr/local/cuda/include/texture_indirect_functions.h
+ /usr/local/cuda/include/texture_types.h
+ /usr/local/cuda/include/vector_functions.h
+ /usr/local/cuda/include/vector_functions.hpp
+ /usr/local/cuda/include/vector_types.h
 CMakeFiles/shadow_base.dir/arg_parse.cpp.o
  ../Dep/fmt/include/fmt/core.h
  ../Dep/fmt/include/fmt/format-inl.h
@@ -2087,60 +2087,60 @@ CMakeFiles/shadow_base.dir/arg_parse.cpp.o
  ../Utilities/cuda_helper.h
  ../Utilities/cxxopts.hpp
  ../common.h
- /home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/arg_parse.cpp
- /home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/arg_parse.h
- /usr/local/cuda-11.1/include/builtin_types.h
- /usr/local/cuda-11.1/include/channel_descriptor.h
- /usr/local/cuda-11.1/include/crt/common_functions.h
- /usr/local/cuda-11.1/include/crt/device_double_functions.h
- /usr/local/cuda-11.1/include/crt/device_double_functions.hpp
- /usr/local/cuda-11.1/include/crt/device_functions.h
- /usr/local/cuda-11.1/include/crt/device_functions.hpp
- /usr/local/cuda-11.1/include/crt/func_macro.h
- /usr/local/cuda-11.1/include/crt/host_config.h
- /usr/local/cuda-11.1/include/crt/host_defines.h
- /usr/local/cuda-11.1/include/crt/math_functions.h
- /usr/local/cuda-11.1/include/crt/math_functions.hpp
- /usr/local/cuda-11.1/include/crt/sm_70_rt.h
- /usr/local/cuda-11.1/include/crt/sm_70_rt.hpp
- /usr/local/cuda-11.1/include/crt/sm_80_rt.h
- /usr/local/cuda-11.1/include/crt/sm_80_rt.hpp
- /usr/local/cuda-11.1/include/cuda.h
- /usr/local/cuda-11.1/include/cuda_device_runtime_api.h
- /usr/local/cuda-11.1/include/cuda_runtime.h
- /usr/local/cuda-11.1/include/cuda_runtime_api.h
- /usr/local/cuda-11.1/include/cuda_surface_types.h
- /usr/local/cuda-11.1/include/cuda_texture_types.h
- /usr/local/cuda-11.1/include/device_atomic_functions.h
- /usr/local/cuda-11.1/include/device_atomic_functions.hpp
- /usr/local/cuda-11.1/include/device_launch_parameters.h
- /usr/local/cuda-11.1/include/device_types.h
- /usr/local/cuda-11.1/include/driver_functions.h
- /usr/local/cuda-11.1/include/driver_types.h
- /usr/local/cuda-11.1/include/library_types.h
- /usr/local/cuda-11.1/include/math_constants.h
- /usr/local/cuda-11.1/include/sm_20_atomic_functions.h
- /usr/local/cuda-11.1/include/sm_20_atomic_functions.hpp
- /usr/local/cuda-11.1/include/sm_20_intrinsics.h
- /usr/local/cuda-11.1/include/sm_20_intrinsics.hpp
- /usr/local/cuda-11.1/include/sm_30_intrinsics.h
- /usr/local/cuda-11.1/include/sm_30_intrinsics.hpp
- /usr/local/cuda-11.1/include/sm_32_atomic_functions.h
- /usr/local/cuda-11.1/include/sm_32_atomic_functions.hpp
- /usr/local/cuda-11.1/include/sm_32_intrinsics.h
- /usr/local/cuda-11.1/include/sm_32_intrinsics.hpp
- /usr/local/cuda-11.1/include/sm_35_atomic_functions.h
- /usr/local/cuda-11.1/include/sm_35_intrinsics.h
- /usr/local/cuda-11.1/include/sm_60_atomic_functions.h
- /usr/local/cuda-11.1/include/sm_60_atomic_functions.hpp
- /usr/local/cuda-11.1/include/sm_61_intrinsics.h
- /usr/local/cuda-11.1/include/sm_61_intrinsics.hpp
- /usr/local/cuda-11.1/include/surface_functions.h
- /usr/local/cuda-11.1/include/surface_indirect_functions.h
- /usr/local/cuda-11.1/include/surface_types.h
- /usr/local/cuda-11.1/include/texture_fetch_functions.h
- /usr/local/cuda-11.1/include/texture_indirect_functions.h
- /usr/local/cuda-11.1/include/texture_types.h
- /usr/local/cuda-11.1/include/vector_functions.h
- /usr/local/cuda-11.1/include/vector_functions.hpp
- /usr/local/cuda-11.1/include/vector_types.h
+ /home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src/arg_parse.cpp
+ /home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src/arg_parse.h
+ /usr/local/cuda/include/builtin_types.h
+ /usr/local/cuda/include/channel_descriptor.h
+ /usr/local/cuda/include/crt/common_functions.h
+ /usr/local/cuda/include/crt/device_double_functions.h
+ /usr/local/cuda/include/crt/device_double_functions.hpp
+ /usr/local/cuda/include/crt/device_functions.h
+ /usr/local/cuda/include/crt/device_functions.hpp
+ /usr/local/cuda/include/crt/func_macro.h
+ /usr/local/cuda/include/crt/host_config.h
+ /usr/local/cuda/include/crt/host_defines.h
+ /usr/local/cuda/include/crt/math_functions.h
+ /usr/local/cuda/include/crt/math_functions.hpp
+ /usr/local/cuda/include/crt/sm_70_rt.h
+ /usr/local/cuda/include/crt/sm_70_rt.hpp
+ /usr/local/cuda/include/crt/sm_80_rt.h
+ /usr/local/cuda/include/crt/sm_80_rt.hpp
+ /usr/local/cuda/include/cuda.h
+ /usr/local/cuda/include/cuda_device_runtime_api.h
+ /usr/local/cuda/include/cuda_runtime.h
+ /usr/local/cuda/include/cuda_runtime_api.h
+ /usr/local/cuda/include/cuda_surface_types.h
+ /usr/local/cuda/include/cuda_texture_types.h
+ /usr/local/cuda/include/device_atomic_functions.h
+ /usr/local/cuda/include/device_atomic_functions.hpp
+ /usr/local/cuda/include/device_launch_parameters.h
+ /usr/local/cuda/include/device_types.h
+ /usr/local/cuda/include/driver_functions.h
+ /usr/local/cuda/include/driver_types.h
+ /usr/local/cuda/include/library_types.h
+ /usr/local/cuda/include/math_constants.h
+ /usr/local/cuda/include/sm_20_atomic_functions.h
+ /usr/local/cuda/include/sm_20_atomic_functions.hpp
+ /usr/local/cuda/include/sm_20_intrinsics.h
+ /usr/local/cuda/include/sm_20_intrinsics.hpp
+ /usr/local/cuda/include/sm_30_intrinsics.h
+ /usr/local/cuda/include/sm_30_intrinsics.hpp
+ /usr/local/cuda/include/sm_32_atomic_functions.h
+ /usr/local/cuda/include/sm_32_atomic_functions.hpp
+ /usr/local/cuda/include/sm_32_intrinsics.h
+ /usr/local/cuda/include/sm_32_intrinsics.hpp
+ /usr/local/cuda/include/sm_35_atomic_functions.h
+ /usr/local/cuda/include/sm_35_intrinsics.h
+ /usr/local/cuda/include/sm_60_atomic_functions.h
+ /usr/local/cuda/include/sm_60_atomic_functions.hpp
+ /usr/local/cuda/include/sm_61_intrinsics.h
+ /usr/local/cuda/include/sm_61_intrinsics.hpp
+ /usr/local/cuda/include/surface_functions.h
+ /usr/local/cuda/include/surface_indirect_functions.h
+ /usr/local/cuda/include/surface_types.h
+ /usr/local/cuda/include/texture_fetch_functions.h
+ /usr/local/cuda/include/texture_indirect_functions.h
+ /usr/local/cuda/include/texture_types.h
+ /usr/local/cuda/include/vector_functions.h
+ /usr/local/cuda/include/vector_functions.hpp
+ /usr/local/cuda/include/vector_types.h

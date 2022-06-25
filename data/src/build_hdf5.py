@@ -37,7 +37,6 @@ def render_hdf5(opt:dict):
 
     with h5py.File(out_hdf5, 'w') as f:
         for scene in tqdm(scenes, desc='Build hdf5'):
-            import pdb; pdb.set_trace()
             scene_name = '{}_{}'.format(os.path.basename(os.path.dirname(scene)), os.path.basename(scene))
             dset = f.create_dataset(scene_name, (width, height, IBLW, IBLH), chunks=(width, height, 1, 1), dtype='f', compression="gzip")
 

@@ -1,4 +1,4 @@
-# Install script for directory: /home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/Dep/tinyobjloader
+# Install script for directory: /home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src/Dep/tinyobjloader
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -12,7 +12,7 @@ if(NOT DEFINED CMAKE_INSTALL_CONFIG_NAME)
     string(REGEX REPLACE "^[^A-Za-z0-9_]+" ""
            CMAKE_INSTALL_CONFIG_NAME "${BUILD_TYPE}")
   else()
-    set(CMAKE_INSTALL_CONFIG_NAME "Debug")
+    set(CMAKE_INSTALL_CONFIG_NAME "")
   endif()
   message(STATUS "Install configuration: \"${CMAKE_INSTALL_CONFIG_NAME}\"")
 endif()
@@ -38,14 +38,14 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "/home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/build/Dep/tinyobjloader/libtinyobjloader.a")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "/home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src/build/Dep/tinyobjloader/libtinyobjloader.a")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/tinyobjloader/cmake/tinyobjloader-targets.cmake")
     file(DIFFERENT EXPORT_FILE_CHANGED FILES
          "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/tinyobjloader/cmake/tinyobjloader-targets.cmake"
-         "/home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/build/Dep/tinyobjloader/CMakeFiles/Export/lib/tinyobjloader/cmake/tinyobjloader-targets.cmake")
+         "/home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src/build/Dep/tinyobjloader/CMakeFiles/Export/lib/tinyobjloader/cmake/tinyobjloader-targets.cmake")
     if(EXPORT_FILE_CHANGED)
       file(GLOB OLD_CONFIG_FILES "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/tinyobjloader/cmake/tinyobjloader-targets-*.cmake")
       if(OLD_CONFIG_FILES)
@@ -54,28 +54,28 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
       endif()
     endif()
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/tinyobjloader/cmake" TYPE FILE FILES "/home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/build/Dep/tinyobjloader/CMakeFiles/Export/lib/tinyobjloader/cmake/tinyobjloader-targets.cmake")
-  if("${CMAKE_INSTALL_CONFIG_NAME}" MATCHES "^([Dd][Ee][Bb][Uu][Gg])$")
-    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/tinyobjloader/cmake" TYPE FILE FILES "/home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/build/Dep/tinyobjloader/CMakeFiles/Export/lib/tinyobjloader/cmake/tinyobjloader-targets-debug.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/tinyobjloader/cmake" TYPE FILE FILES "/home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src/build/Dep/tinyobjloader/CMakeFiles/Export/lib/tinyobjloader/cmake/tinyobjloader-targets.cmake")
+  if("${CMAKE_INSTALL_CONFIG_NAME}" MATCHES "^()$")
+    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/tinyobjloader/cmake" TYPE FILE FILES "/home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src/build/Dep/tinyobjloader/CMakeFiles/Export/lib/tinyobjloader/cmake/tinyobjloader-targets-noconfig.cmake")
   endif()
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE FILE FILES "/home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/Dep/tinyobjloader/tiny_obj_loader.h")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE FILE FILES "/home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src/Dep/tinyobjloader/tiny_obj_loader.h")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/doc/tinyobjloader" TYPE FILE FILES "/home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/Dep/tinyobjloader/LICENSE")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/doc/tinyobjloader" TYPE FILE FILES "/home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src/Dep/tinyobjloader/LICENSE")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/tinyobjloader/cmake" TYPE FILE FILES
-    "/home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/build/Dep/tinyobjloader/tinyobjloader-config.cmake"
-    "/home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/build/Dep/tinyobjloader/tinyobjloader-config-version.cmake"
+    "/home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src/build/Dep/tinyobjloader/tinyobjloader-config.cmake"
+    "/home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src/build/Dep/tinyobjloader/tinyobjloader-config-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/sheng30/Documents/Research/SSN_SoftShadowNet/data/src/build/Dep/tinyobjloader/tinyobjloader.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src/build/Dep/tinyobjloader/tinyobjloader.pc")
 endif()
 
