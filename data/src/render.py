@@ -40,16 +40,27 @@ def render_raw_imgs(params):
     processer_num = params.cpus
     inputs        = []
 
-    for i in range(processer_num):
-        delta          = int(len(all_models)/processer_num)
-        cur_pro_models = all_models[i * delta:(i+1)*delta]
+    # for i in range(processer_num):
+    #     delta          = int(len(all_models)/processer_num)
+    #     cur_pro_models = all_models[i * delta:(i+1)*delta]
 
-        if i == processer_num - 1:
-            cur_pro_models = all_models[i * delta:]
+    #     if i == processer_num - 1:
+    #         cur_pro_models = all_models[i * delta:]
 
-        for model in cur_pro_models:
-            model_output = join(params.out_folder, os.path.splitext(os.path.basename(model))[0])
-            inputs.append([params.gpus[i%len(params.gpus)], model, model_output, params.width, params.height, params.cam_pitch, params.model_rot])
+    #     for model in cur_pro_models:
+    #         model_output = join(params.out_folder, os.path.splitext(os.path.basename(model))[0])
+    #         inputs.append([params.gpus[i%len(params.gpus)], model, model_output, params.width, params.height, params.cam_pitch, params.model_rot])
+
+    for i, model in enumerate(all_models):
+        model_output = join(params.out_folder, os.path.splitext(os.path.basename(model))[0])
+        inputs.append([params.gpus[i%len(params.gpus)],
+                       model,
+                       model_output,
+                       params.width,
+                       params.height,
+                       params.cam_pitch,
+                       params.model_rot])
+
 
 
     import pdb; pdb.set_trace()
