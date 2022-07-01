@@ -141,6 +141,16 @@ def render_each_scene_hdf5(opt:dict):
     # merge all hdf5s
     merge_all_hdf5(out_hdf5, tmp_hdf5_folder)
 
+            input_name = 'x/{}_{}'.format(os.path.basename(os.path.dirname(scene)), os.path.basename(scene))
+            dset = f.create_dataset(input_name, (width, height, 2), chunks=(width, height, 2), dtype='f', compression="gzip")
+
+            mask_name = '{}_mask.png'.format(scene)
+            ao_name = '{}_touch.png'.format(scene)
+
+            dset[:,:,0] = plt.imread(mask_name)[:,:,0]
+            dset[:,:,1] = plt.imread(ao_name)[:,:,0]
+
+
 
 if __name__ == '__main__':
     log_file = 'logs/{}.log'.format(os.path.splitext(__file__)[0])
