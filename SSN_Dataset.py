@@ -30,12 +30,14 @@ class SSN_Dataset(Dataset):
     def __init__(self, opt: dict, is_training: bool):
         """ Inputs:
                opt: {'hdf5_file': ...,
-                     'use_ao': True/False # do we use AO?
+                     'use_ao': True/False    # do we use AO?
+                     'use_64_16': True/False # do we use 512 x 512 x 64 x 16 IBL?
         }
         """
 
         self.hdf5_file   = opt['hdf5_file']
         self.use_ao      = opt['use_ao']
+        self.use_64_16   = opt['use_64_16']
         self.is_training = is_training
         self.to_tensor   = ToTensor()
 
@@ -71,7 +73,13 @@ class SSN_Dataset(Dataset):
         f = h5py.File(hdf5_path, 'r')
 
         self.x         = f['x']
-        self.base      = f['base']
+
+        import pdb; pdb.set_trace()
+        if self.use_64_16:
+            self.base = f['base_64_16']
+        else:
+            self.base = f['base_32_8']
+
         self.meta_data = [k for k in self.x.keys()]
 
         self.train_n = len(self.meta_data) - len(self.meta_data) // 10
@@ -100,7 +108,7 @@ class SSN_Dataset(Dataset):
 
 if __name__ == '__main__':
     from tqdm import tqdm
-    opt = {'hdf5_file': 'data/src/base/all_base.hdf5', 'use_ao': False}
+    opt = {'hdf5_file': 'data/src/base/all_base.hdf5', 'use_ao': False, 'use_64_16': True}
 
     ds = SSN_Dataset(opt, True)
 

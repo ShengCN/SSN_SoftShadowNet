@@ -37,10 +37,19 @@ def render_hdf5(opt:dict):
 
     with h5py.File(out_hdf5, 'w') as f:
         for scene in tqdm(scenes, desc='Build hdf5'):
-            scene_name = '{}_{}'.format(os.path.basename(os.path.dirname(scene)), os.path.basename(scene))
+            scene_name = 'base/{}_{}'.format(os.path.basename(os.path.dirname(scene)), os.path.basename(scene))
             dset = f.create_dataset(scene_name, (width, height, IBLW, IBLH), chunks=(width, height, 1, 1), dtype='f', compression="gzip")
-
             fill_dset(scene, dset)
+
+            input_name = 'x/{}_{}'.format(os.path.basename(os.path.dirname(scene)), os.path.basename(scene))
+            dset = f.create_dataset(input_name, (width, height, 2), chunks=(width, height, 2), dtype='f', compression="gzip")
+
+            mask_name = '{}_mask.png'.format(scene)
+            ao_name = '{}_touch.png'.format(scene)
+
+            dset[:,:,0] = plt.imread(mask_name)[:,:,0]
+            dset[:,:,1] = plt.imread(ao_name)[:,:,0]
+
 
 
 if __name__ == '__main__':
