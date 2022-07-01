@@ -63,7 +63,6 @@ def render_raw_imgs(params):
 
 
 
-    import pdb; pdb.set_trace()
     task_num = len(inputs)
     with multiprocessing.Pool(processer_num) as pool:
         for i, _ in enumerate(pool.imap_unordered(worker, inputs), 1):
