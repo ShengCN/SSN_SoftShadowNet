@@ -8,6 +8,7 @@ import matplotlib.pyplot as plt
 import multiprocessing
 import logging
 import numpy as np
+import pickle
 
 def read_img(inputs):
     fname, i, j = inputs
@@ -101,21 +102,23 @@ def build_scene_hdf5_worker(inputs):
     except BaseException as err:
         logging.error('{}, {}'.format(err, out_hdf5))
 
+def get_dataset_keys(f):
+    keys = []
+    f.visit(lambda key : keys.append(key) if isinstance(f[key], h5py.Dataset) else None)
+    return keys
 
 def merge_all_hdf5(out_hdf5:str, tmp_hdf5_folder:str):
     os.makedirs(tmp_hdf5_folder, exist_ok=True)
 
     h5files = glob(join(tmp_hdf5_folder, '*.hdf5'))
 
+    import pdb; pdb.set_trace()
     with h5py.File(out_hdf5, 'w') as dstf:
         for h5file in tqdm(h5files, desc='Merging hdf5'):
             with h5py.File(h5file, 'r') as srcf:
-                folders = srcf.keys()
-                for f in folders:
-                    for k in srcf[f].keys():
-                        dirname = f
-                        filename = k
-                        srcf.copy(srcf[dirname], dstf['.'], join(dirname, filename))
+                paths = get_dataset_keys(srcf)
+                for p in paths:
+                    srcf.copy(srcf[p], dstf['.'], p)
 
 
 def render_each_scene_hdf5(opt:dict):
@@ -130,8 +133,19 @@ def render_each_scene_hdf5(opt:dict):
     tmp_hdf5_folder = join(os.path.dirname(out_hdf5), 'hdf5')
     os.makedirs(tmp_hdf5_folder, exist_ok=True)
 
-    scenes = glob(join(cache, '**/*_mask.png'), recursive=True)
+
+    cache_file = 'tmp/scene_cache.bin'
+    if os.path.exists(cache_file):
+        with open(cache_file, 'rb') as f:
+            scenes = pickle.load(f)
+    else:
+        scenes = glob(join(cache, '**/*_mask.png'), recursive=True)
+        os.makedirs(os.path.dirname(cache_file), exist_ok=True)
+        with open(cache_file, 'wb') as f:
+            pickle.dump(scenes, f)
+
     inputs = [[scene[:scene.find('_mask.png')], width, height, tmp_hdf5_folder] for scene in scenes]
+
 
     processer_num = 64
     with multiprocessing.Pool(processer_num) as pool:
@@ -140,16 +154,6 @@ def render_each_scene_hdf5(opt:dict):
 
     # merge all hdf5s
     merge_all_hdf5(out_hdf5, tmp_hdf5_folder)
-
-            input_name = 'x/{}_{}'.format(os.path.basename(os.path.dirname(scene)), os.path.basename(scene))
-            dset = f.create_dataset(input_name, (width, height, 2), chunks=(width, height, 2), dtype='f', compression="gzip")
-
-            mask_name = '{}_mask.png'.format(scene)
-            ao_name = '{}_touch.png'.format(scene)
-
-            dset[:,:,0] = plt.imread(mask_name)[:,:,0]
-            dset[:,:,1] = plt.imread(ao_name)[:,:,0]
-
 
 
 if __name__ == '__main__':
