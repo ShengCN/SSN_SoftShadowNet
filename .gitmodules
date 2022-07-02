@@ -1,14 +1,14 @@
-[submodule "data/src/Dep/glm"]
-	path = data/src/Dep/glm
+[submodule "Data/src/Dep/glm"]
+	path = Data/src/Dep/glm
 	url = https://github.com/g-truc/glm.git
-[submodule "data/src/Dep/fmt"]
-	path = data/src/Dep/fmt
+[submodule "Data/src/Dep/fmt"]
+	path = Data/src/Dep/fmt
 	url = https://github.com/fmtlib/fmt.git
-[submodule "data/src/Dep/stb"]
-	path = data/src/Dep/stb
+[submodule "Data/src/Dep/stb"]
+	path = Data/src/Dep/stb
 	url = https://github.com/nothings/stb.git
-[submodule "data/src/Dep/tinyobjloader"]
-	path = data/src/Dep/tinyobjloader
+[submodule "Data/src/Dep/tinyobjloader"]
+	path = Data/src/Dep/tinyobjloader
 	url = https://github.com/tinyobjloader/tinyobjloader.git
 [submodule "imagen"]
 	path = imagen
