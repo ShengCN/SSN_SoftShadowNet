@@ -76,12 +76,14 @@ class SSN_Dataset(Dataset):
     def init_meta(self, hdf5_path: str):
         f = h5py.File(hdf5_path, 'r')
 
-        self.x         = f['x']
+        self.x = f['x']
 
         if self.use_64_16:
-            self.base = f['base_64_16']
+            self.base_key = 'base_64_16'
+            self.base     = f[self.base_key]
         else:
-            self.base = f['base_32_8']
+            self.base_key = 'base_32_8'
+            self.base     = f[self.base_key]
 
         self.meta_data = [k for k in self.x.keys()]
 
@@ -111,7 +113,7 @@ class SSN_Dataset(Dataset):
 
 if __name__ == '__main__':
     from tqdm import tqdm
-    opt = {'hdf5_file': 'data/src/base/all_base.hdf5', 'use_ao': False, 'use_64_16': True}
+    opt = {'hdf5_file': 'Dataset/human_data/all_base.hdf5', 'use_ao': False, 'use_64_16': False}
 
     ds = SSN_Dataset(opt, True)
 
