@@ -9,3 +9,4 @@ network/tensorboard_log/runs/*
 **/build
 data/src/build
 data/src/build/*
+**/weights/

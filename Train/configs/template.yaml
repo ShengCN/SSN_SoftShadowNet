@@ -1,0 +1,41 @@
+exp_name: template
+
+# model related
+model:
+  name: 'template'
+  in_channels: 3
+  out_channels: 3
+  resunet: False
+  norm_type: 'Batch'
+  out_act: 'sigmoid'
+  optimizer: 'Adam'
+  weight_decay: 4e-5
+  beta1: 0.9
+
+
+# dataset
+dataset:
+  name: 'test_dataset'
+  hdf5_file: 'test'
+
+
+# training related
+hyper_params:
+  lr: 2e-4
+  epochs: 5
+  workers: 5
+  batch_size: 5
+  save_epoch: 1
+
+  # visualization
+  vis_iter: 10     # iteration for visualization
+  save_iter: 10
+  n_cols: 5
+  gpus:
+    - 0
+    - 1
+  default_folder: 'weights'
+  resume: True
+  #resume: False
+  weight_file: 'latest'
+  # weight_file: '0000000003.pt'

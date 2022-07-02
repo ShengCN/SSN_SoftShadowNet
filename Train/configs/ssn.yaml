@@ -1,0 +1,42 @@
+exp_name: SSN
+
+# model related
+model:
+  name: 'SSN'
+  in_channels: 1
+  out_channels: 1
+  resunet: False
+  norm_type: 'Batch'
+  mid_act: 'relu'
+  out_act: 'sigmoid'
+  optimizer: 'Adam'
+  weight_decay: 4e-5
+  beta1: 0.9
+
+
+# dataset
+dataset:
+  name: 'SSN_Dataset'
+  hdf5_file: 'Dataset/all_base.hdf5'
+  use_ao: False
+  use_64_16: False
+
+
+# training related
+hyper_params:
+  lr: 2e-4
+  epochs: 1000
+  workers: 14
+  batch_size: 30
+  save_epoch: 20
+
+  # visualization
+  vis_iter: 10     # iteration for visualization
+  save_iter: 100
+  n_cols: 5
+  gpus:
+    - 0
+  default_folder: 'weights'
+  resume: True
+  resume: False
+  weight_file: 'latest'
