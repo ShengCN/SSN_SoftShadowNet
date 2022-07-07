@@ -25007,3 +25007,35 @@
 [INFO] ------------------------------------------------------------ - Trainer.py log_all_params 2022-07-02 03:22:16,692 
 [INFO] ############################################################ - Trainer.py log_all_params 2022-07-02 03:22:16,692 
 [INFO]  - Trainer.py log_all_params 2022-07-02 03:22:16,692 
+[WARNING] Use method 'params' via param namespace  - parameterized.py inner 2022-07-02 03:32:58,470 
+[INFO] model [SSN] was created - __init__.py create_model 2022-07-02 03:32:59,592 
+[INFO]  - Trainer.py log_all_params 2022-07-02 03:32:59,594 
+[INFO] ############################################################ - Trainer.py log_all_params 2022-07-02 03:32:59,594 
+[INFO] Training params: - Trainer.py log_all_params 2022-07-02 03:32:59,594 
+[INFO] Model: - Trainer.py log_all_params 2022-07-02 03:32:59,594 
+[INFO] {'name': 'SSN', 'in_channels': 1, 'out_channels': 1, 'resunet': False, 'norm_type': 'Batch', 'mid_act': 'relu', 'out_act': 'sigmoid', 'optimizer': 'Adam', 'weight_decay': '4e-5', 'beta1': 0.9} - Trainer.py log_all_params 2022-07-02 03:32:59,594 
+[INFO] ------------------------------------------------------------ - Trainer.py log_all_params 2022-07-02 03:32:59,594 
+[INFO] Dataset: - Trainer.py log_all_params 2022-07-02 03:32:59,594 
+[INFO] {'name': 'SSN_Dataset', 'hdf5_file': 'Dataset/all_base.hdf5', 'use_ao': False, 'use_64_16': False} - Trainer.py log_all_params 2022-07-02 03:32:59,594 
+[INFO] ------------------------------------------------------------ - Trainer.py log_all_params 2022-07-02 03:32:59,594 
+[INFO] Hyper Params - Trainer.py log_all_params 2022-07-02 03:32:59,594 
+[INFO] {'lr': '2e-4', 'epochs': 1000, 'workers': 14, 'batch_size': 30, 'save_epoch': 20, 'vis_iter': 10, 'save_iter': 100, 'n_cols': 5, 'gpus': [0], 'default_folder': 'weights', 'resume': False, 'weight_file': 'latest'} - Trainer.py log_all_params 2022-07-02 03:32:59,594 
+[INFO] ------------------------------------------------------------ - Trainer.py log_all_params 2022-07-02 03:32:59,594 
+[INFO] ############################################################ - Trainer.py log_all_params 2022-07-02 03:32:59,594 
+[INFO]  - Trainer.py log_all_params 2022-07-02 03:32:59,594 
+[WARNING] Use method 'params' via param namespace  - parameterized.py inner 2022-07-02 03:37:36,338 
+[INFO] model [SSN] was created - __init__.py create_model 2022-07-02 03:37:37,463 
+[INFO]  - Trainer.py log_all_params 2022-07-02 03:37:37,465 
+[INFO] ############################################################ - Trainer.py log_all_params 2022-07-02 03:37:37,465 
+[INFO] Training params: - Trainer.py log_all_params 2022-07-02 03:37:37,465 
+[INFO] Model: - Trainer.py log_all_params 2022-07-02 03:37:37,465 
+[INFO] {'name': 'SSN', 'in_channels': 1, 'out_channels': 1, 'resunet': False, 'norm_type': 'Batch', 'mid_act': 'relu', 'out_act': 'sigmoid', 'optimizer': 'Adam', 'weight_decay': '4e-5', 'beta1': 0.9} - Trainer.py log_all_params 2022-07-02 03:37:37,465 
+[INFO] ------------------------------------------------------------ - Trainer.py log_all_params 2022-07-02 03:37:37,465 
+[INFO] Dataset: - Trainer.py log_all_params 2022-07-02 03:37:37,465 
+[INFO] {'name': 'SSN_Dataset', 'hdf5_file': 'Dataset/all_base.hdf5', 'use_ao': False, 'use_64_16': False} - Trainer.py log_all_params 2022-07-02 03:37:37,465 
+[INFO] ------------------------------------------------------------ - Trainer.py log_all_params 2022-07-02 03:37:37,465 
+[INFO] Hyper Params - Trainer.py log_all_params 2022-07-02 03:37:37,465 
+[INFO] {'lr': '2e-4', 'epochs': 1000, 'workers': 14, 'batch_size': 5, 'save_epoch': 20, 'vis_iter': 10, 'save_iter': 100, 'n_cols': 5, 'gpus': [0], 'default_folder': 'weights', 'resume': False, 'weight_file': 'latest'} - Trainer.py log_all_params 2022-07-02 03:37:37,465 
+[INFO] ------------------------------------------------------------ - Trainer.py log_all_params 2022-07-02 03:37:37,465 
+[INFO] ############################################################ - Trainer.py log_all_params 2022-07-02 03:37:37,465 
+[INFO]  - Trainer.py log_all_params 2022-07-02 03:37:37,465 

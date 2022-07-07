@@ -27,7 +27,7 @@ hyper_params:
   lr: 2e-4
   epochs: 1000
   workers: 14
-  batch_size: 30
+  batch_size: 5
   save_epoch: 20
 
   # visualization

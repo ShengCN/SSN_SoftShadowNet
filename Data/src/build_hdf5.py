@@ -82,7 +82,11 @@ def build_scene_hdf5_worker(inputs):
             succ = fill_dset(scene, base_dset)
             if not succ:
                 logging.info('{} failed. We skip'.format(scene_name))
+
+                # clean files
                 del f[scene_name]
+                os.remove(out_hdf5)
+
                 return False
 
             input_name = 'x/{}'.format(scene_basename)
@@ -102,17 +106,17 @@ def build_scene_hdf5_worker(inputs):
     except BaseException as err:
         logging.error('{}, {}'.format(err, out_hdf5))
 
+
 def get_dataset_keys(f):
     keys = []
     f.visit(lambda key : keys.append(key) if isinstance(f[key], h5py.Dataset) else None)
     return keys
 
+
 def merge_all_hdf5(out_hdf5:str, tmp_hdf5_folder:str):
     os.makedirs(tmp_hdf5_folder, exist_ok=True)
 
     h5files = glob(join(tmp_hdf5_folder, '*.hdf5'))
-
-    import pdb; pdb.set_trace()
     with h5py.File(out_hdf5, 'w') as dstf:
         for h5file in tqdm(h5files, desc='Merging hdf5'):
             with h5py.File(h5file, 'r') as srcf:
