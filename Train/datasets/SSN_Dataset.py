@@ -10,6 +10,7 @@ import random
 import matplotlib.pyplot as plt
 import cv2
 import h5py
+import logging
 
 from time import time
 
@@ -45,6 +46,10 @@ class SSN_Dataset(Dataset):
 
         self.init_meta(self.hdf5_file)
         self.random_pattern_generator = random_pattern()
+
+        # block WARNING
+        root_logger = logging.getLogger('param')
+        root_logger.setLevel(logging.ERROR)
 
 
     def __len__(self):

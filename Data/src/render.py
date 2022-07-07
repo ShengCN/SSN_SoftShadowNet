@@ -24,13 +24,13 @@ def worker(input):
     cam_pitch_str = cam_pitch_str[1:]
     model_rot_str = model_rot_str[1:]
 
-    cmd = 'build/shadow_base --model={} --output={} --cam_pitch={} --model_rot={} --gpu={} --render_mask --render_shadow --render_touch --width={} --height={} --ibl_w=512 --ibl_h=256'.format(model_path, out_path, cam_pitch_str, model_rot_str, gpu, w, h)
+    cmd = 'build/shadow_base --model={} --output={} --cam_pitch={} --model_rot={} --gpu={} --render_mask --render_shadow --render_touch --width={} --height={} --ibl_w=512 --ibl_h=256 --base_avg'.format(model_path, out_path, cam_pitch_str, model_rot_str, gpu, w, h)
     print(cmd)
     os.system(cmd)
 
 
 def render_raw_imgs(params):
-    all_models    = glob(join(params.ds_root, '*'))
+    all_models    = glob(join(params.ds_root, '*.obj')) + glob(join(params.ds_root, '*.off'))
     if params.end_id == -1:
         all_models = all_models[params.start_id:]
     else:
@@ -62,6 +62,7 @@ def render_raw_imgs(params):
                        params.model_rot])
 
 
+    import pdb; pdb.set_trace()
 
     task_num = len(inputs)
     with multiprocessing.Pool(processer_num) as pool:

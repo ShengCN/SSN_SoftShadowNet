@@ -17,7 +17,7 @@ model:
 # dataset
 dataset:
   name: 'SSN_Dataset'
-  hdf5_file: 'Dataset/all_base.hdf5'
+  hdf5_file: 'Dataset1/all_base.hdf5'
   use_ao: False
   use_64_16: False
 

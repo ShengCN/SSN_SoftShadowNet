@@ -137,7 +137,6 @@ def render_each_scene_hdf5(opt:dict):
     tmp_hdf5_folder = join(os.path.dirname(out_hdf5), 'hdf5')
     os.makedirs(tmp_hdf5_folder, exist_ok=True)
 
-
     cache_file = 'tmp/scene_cache.bin'
     if os.path.exists(cache_file):
         with open(cache_file, 'rb') as f:

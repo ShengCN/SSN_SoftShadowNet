@@ -84,10 +84,6 @@ class SSN(abs_model):
 
         self.norm_loss_ = norm_loss(norm=1)
 
-        # block WARNING
-        root_logger = logging.getLogger('param')
-        root_logger.setLevel(logging.ERROR)
-
     def setup_input(self, x):
         return x
 
