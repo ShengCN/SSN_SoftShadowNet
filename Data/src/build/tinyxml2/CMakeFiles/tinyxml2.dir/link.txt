@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC -g  -shared -Wl,-soname,libtinyxml2d.so.7 -o libtinyxml2d.so.7.1.0 CMakeFiles/tinyxml2.dir/tinyxml2.cpp.o 
