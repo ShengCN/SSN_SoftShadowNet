@@ -1,4 +1,4 @@
-model_root="Dataset/human_models"
+model_root="models"
 cache="Dataset/human_data/cache"
 start_id=0
 end_id=-1 # -1 means all models
