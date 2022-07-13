@@ -7,6 +7,8 @@
 #IncludeRegexTransform: 
 
 ../Dep/fmt/include/fmt/core.h
+cstddef
+-
 cstdio
 -
 cstring
@@ -59,6 +61,8 @@ cmath
 -
 cstdint
 -
+cstring
+-
 limits
 -
 memory
@@ -67,7 +71,7 @@ stdexcept
 -
 system_error
 -
-utility
+bit
 -
 core.h
 ../Dep/fmt/include/fmt/core.h
@@ -75,23 +79,15 @@ intrin.h
 -
 fmt/format.h
 -
-xchar.h
-../Dep/fmt/include/fmt/xchar.h
 format-inl.h
 ../Dep/fmt/include/fmt/format-inl.h
 
 ../Dep/fmt/include/fmt/ranges.h
 initializer_list
 -
-type_traits
--
-format.h
-../Dep/fmt/include/fmt/format.h
-
-../Dep/fmt/include/fmt/xchar.h
-cwchar
--
 tuple
+-
+type_traits
 -
 format.h
 ../Dep/fmt/include/fmt/format.h
@@ -1474,6 +1470,18 @@ detail/setup.hpp
 detail/func_vector_relational.inl
 ../Dep/glm/glm/detail/func_vector_relational.inl
 
+../Dep/tinyobjloader/mapbox/earcut.hpp
+algorithm
+-
+cassert
+-
+cmath
+-
+memory
+-
+vector
+-
+
 ../Dep/tinyobjloader/tiny_obj_loader.h
 map
 -
@@ -1497,10 +1505,16 @@ fstream
 -
 limits
 -
+set
+-
 sstream
 -
 utility
 -
+array
+-
+mapbox/earcut.hpp
+../Dep/tinyobjloader/mapbox/earcut.hpp
 
 ../Utilities/cuda_helper.h
 cuda_runtime.h
@@ -1602,41 +1616,41 @@ Utilities/cxxopts.hpp
 arg_parse.h
 -
 
-/home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src/Render_DS/mesh.cpp
+/home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src/Render_DS/mesh.cpp
 mesh.h
-/home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src/Render_DS/mesh.h
+/home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src/Render_DS/mesh.h
 
-/home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src/Render_DS/mesh.h
+/home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src/Render_DS/mesh.h
 common.h
 -
 ppc.h
-/home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src/Render_DS/ppc.h
+/home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src/Render_DS/ppc.h
 
-/home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src/Render_DS/model_loader.cpp
+/home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src/Render_DS/model_loader.cpp
 model_loader.h
-/home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src/Render_DS/model_loader.h
+/home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src/Render_DS/model_loader.h
 tinyobjloader/tiny_obj_loader.h
-/home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src/Render_DS/tinyobjloader/tiny_obj_loader.h
+/home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src/Render_DS/tinyobjloader/tiny_obj_loader.h
 
-/home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src/Render_DS/model_loader.h
+/home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src/Render_DS/model_loader.h
 common.h
 -
 mesh.h
-/home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src/Render_DS/mesh.h
+/home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src/Render_DS/mesh.h
 
-/home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src/Render_DS/ppc.cpp
+/home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src/Render_DS/ppc.cpp
 ppc.h
-/home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src/Render_DS/ppc.h
+/home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src/Render_DS/ppc.h
 
-/home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src/Render_DS/ppc.h
+/home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src/Render_DS/ppc.h
 common.h
 -
 
-/home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src/arg_parse.cpp
+/home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src/arg_parse.cpp
 arg_parse.h
-/home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src/arg_parse.h
+/home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src/arg_parse.h
 
-/home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src/arg_parse.h
+/home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src/arg_parse.h
 common.h
 -
 

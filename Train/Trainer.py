@@ -206,6 +206,10 @@ class Trainer:
         logging.info('Hyper Params')
         logging.info('{}'.format(str(opt['hyper_params'])))
         logging.info('-' * 60)
+
+        logging.info('Model size')
+        logging.info('{} MB'.format(self.get_model_size()))
+        logging.info('-' * 60)
         logging.info('#' * 60)
         logging.info('')
 
@@ -351,6 +355,18 @@ class Trainer:
         else:
             label = '{}_{:010d}_{:010d}'.format('Eval', epoch, iteration)
         self.exp_logger.save_visualize(vis_imgs, label)
+
+
+    def get_model_size(self):
+        model = self.model
+
+        total_size = 0
+        models = model.get_models()
+        for k, m in models.items():
+            total_size += utils.get_model_size(m)
+
+        # return model size in mb
+        return total_size/(1024 ** 2)
 
 
 if __name__ == '__main__':

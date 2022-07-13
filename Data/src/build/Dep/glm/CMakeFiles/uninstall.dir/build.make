@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src
+CMAKE_SOURCE_DIR = /home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src/build
+CMAKE_BINARY_DIR = /home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src/build
 
 # Utility rule file for uninstall.
 
@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src/bu
 include Dep/glm/CMakeFiles/uninstall.dir/progress.make
 
 Dep/glm/CMakeFiles/uninstall:
-	cd /home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src/build/Dep/glm && /usr/bin/cmake -P /home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src/build/cmake_uninstall.cmake
+	cd /home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src/build/Dep/glm && /usr/bin/cmake -P /home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src/build/cmake_uninstall.cmake
 
 uninstall: Dep/glm/CMakeFiles/uninstall
 uninstall: Dep/glm/CMakeFiles/uninstall.dir/build.make
@@ -67,10 +67,10 @@ Dep/glm/CMakeFiles/uninstall.dir/build: uninstall
 .PHONY : Dep/glm/CMakeFiles/uninstall.dir/build
 
 Dep/glm/CMakeFiles/uninstall.dir/clean:
-	cd /home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src/build/Dep/glm && $(CMAKE_COMMAND) -P CMakeFiles/uninstall.dir/cmake_clean.cmake
+	cd /home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src/build/Dep/glm && $(CMAKE_COMMAND) -P CMakeFiles/uninstall.dir/cmake_clean.cmake
 .PHONY : Dep/glm/CMakeFiles/uninstall.dir/clean
 
 Dep/glm/CMakeFiles/uninstall.dir/depend:
-	cd /home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src /home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src/Dep/glm /home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src/build /home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src/build/Dep/glm /home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src/build/Dep/glm/CMakeFiles/uninstall.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src /home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src/Dep/glm /home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src/build /home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src/build/Dep/glm /home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src/build/Dep/glm/CMakeFiles/uninstall.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : Dep/glm/CMakeFiles/uninstall.dir/depend
 

@@ -25039,3 +25039,350 @@
 [INFO] ------------------------------------------------------------ - Trainer.py log_all_params 2022-07-02 03:37:37,465 
 [INFO] ############################################################ - Trainer.py log_all_params 2022-07-02 03:37:37,465 
 [INFO]  - Trainer.py log_all_params 2022-07-02 03:37:37,465 
+[WARNING] Use method 'params' via param namespace  - parameterized.py inner 2022-07-08 02:57:29,533 
+[INFO] model [SSN] was created - __init__.py create_model 2022-07-08 02:57:32,113 
+[INFO]  - Trainer.py log_all_params 2022-07-08 02:57:32,116 
+[INFO] ############################################################ - Trainer.py log_all_params 2022-07-08 02:57:32,116 
+[INFO] Training params: - Trainer.py log_all_params 2022-07-08 02:57:32,116 
+[INFO] Model: - Trainer.py log_all_params 2022-07-08 02:57:32,116 
+[INFO] {'name': 'SSN', 'in_channels': 1, 'out_channels': 1, 'resunet': False, 'norm_type': 'Batch', 'mid_act': 'relu', 'out_act': 'sigmoid', 'optimizer': 'Adam', 'weight_decay': '4e-5', 'beta1': 0.9} - Trainer.py log_all_params 2022-07-08 02:57:32,116 
+[INFO] ------------------------------------------------------------ - Trainer.py log_all_params 2022-07-08 02:57:32,116 
+[INFO] Dataset: - Trainer.py log_all_params 2022-07-08 02:57:32,116 
+[INFO] {'name': 'SSN_Dataset', 'hdf5_file': 'Dataset/all_base.hdf5', 'use_ao': False, 'use_64_16': False} - Trainer.py log_all_params 2022-07-08 02:57:32,116 
+[INFO] ------------------------------------------------------------ - Trainer.py log_all_params 2022-07-08 02:57:32,116 
+[INFO] Hyper Params - Trainer.py log_all_params 2022-07-08 02:57:32,116 
+[INFO] {'lr': '2e-4', 'epochs': 1000, 'workers': 14, 'batch_size': 10, 'save_epoch': 20, 'vis_iter': 10, 'save_iter': 100, 'n_cols': 5, 'gpus': [0, 1], 'default_folder': 'weights', 'resume': False, 'weight_file': 'latest'} - Trainer.py log_all_params 2022-07-08 02:57:32,116 
+[INFO] ------------------------------------------------------------ - Trainer.py log_all_params 2022-07-08 02:57:32,116 
+[INFO] ############################################################ - Trainer.py log_all_params 2022-07-08 02:57:32,116 
+[INFO]  - Trainer.py log_all_params 2022-07-08 02:57:32,116 
+[INFO] Use GPU: 0,1 - Trainer.py setup_training 2022-07-08 02:57:32,117 
+[WARNING] Use method 'params' via param namespace  - parameterized.py inner 2022-07-08 02:59:18,248 
+[INFO] model [SSN] was created - __init__.py create_model 2022-07-08 02:59:19,882 
+[INFO]  - Trainer.py log_all_params 2022-07-08 02:59:19,885 
+[INFO] ############################################################ - Trainer.py log_all_params 2022-07-08 02:59:19,885 
+[INFO] Training params: - Trainer.py log_all_params 2022-07-08 02:59:19,885 
+[INFO] Model: - Trainer.py log_all_params 2022-07-08 02:59:19,885 
+[INFO] {'name': 'SSN', 'in_channels': 1, 'out_channels': 1, 'resunet': False, 'norm_type': 'Batch', 'mid_act': 'relu', 'out_act': 'sigmoid', 'optimizer': 'Adam', 'weight_decay': '4e-5', 'beta1': 0.9} - Trainer.py log_all_params 2022-07-08 02:59:19,885 
+[INFO] ------------------------------------------------------------ - Trainer.py log_all_params 2022-07-08 02:59:19,885 
+[INFO] Dataset: - Trainer.py log_all_params 2022-07-08 02:59:19,885 
+[INFO] {'name': 'SSN_Dataset', 'hdf5_file': 'Dataset/all_base.hdf5', 'use_ao': False, 'use_64_16': False} - Trainer.py log_all_params 2022-07-08 02:59:19,885 
+[INFO] ------------------------------------------------------------ - Trainer.py log_all_params 2022-07-08 02:59:19,885 
+[INFO] Hyper Params - Trainer.py log_all_params 2022-07-08 02:59:19,885 
+[INFO] {'lr': '2e-4', 'epochs': 1000, 'workers': 14, 'batch_size': 10, 'save_epoch': 20, 'vis_iter': 10, 'save_iter': 100, 'n_cols': 5, 'gpus': [0, 1], 'default_folder': 'weights', 'resume': False, 'weight_file': 'latest'} - Trainer.py log_all_params 2022-07-08 02:59:19,885 
+[INFO] ------------------------------------------------------------ - Trainer.py log_all_params 2022-07-08 02:59:19,885 
+[INFO] ############################################################ - Trainer.py log_all_params 2022-07-08 02:59:19,885 
+[INFO]  - Trainer.py log_all_params 2022-07-08 02:59:19,885 
+[INFO] Use GPU: 0,1 - Trainer.py setup_training 2022-07-08 02:59:19,885 
+[WARNING] Use method 'params' via param namespace  - parameterized.py inner 2022-07-08 03:01:58,003 
+[INFO] model [SSN] was created - __init__.py create_model 2022-07-08 03:01:59,614 
+[INFO]  - Trainer.py log_all_params 2022-07-08 03:01:59,615 
+[INFO] ############################################################ - Trainer.py log_all_params 2022-07-08 03:01:59,615 
+[INFO] Training params: - Trainer.py log_all_params 2022-07-08 03:01:59,615 
+[INFO] Model: - Trainer.py log_all_params 2022-07-08 03:01:59,615 
+[INFO] {'name': 'SSN', 'in_channels': 1, 'out_channels': 1, 'resunet': False, 'norm_type': 'Batch', 'mid_act': 'relu', 'out_act': 'sigmoid', 'optimizer': 'Adam', 'weight_decay': '4e-5', 'beta1': 0.9} - Trainer.py log_all_params 2022-07-08 03:01:59,615 
+[INFO] ------------------------------------------------------------ - Trainer.py log_all_params 2022-07-08 03:01:59,616 
+[INFO] Dataset: - Trainer.py log_all_params 2022-07-08 03:01:59,616 
+[INFO] {'name': 'SSN_Dataset', 'hdf5_file': 'Dataset/all_base.hdf5', 'use_ao': False, 'use_64_16': False} - Trainer.py log_all_params 2022-07-08 03:01:59,616 
+[INFO] ------------------------------------------------------------ - Trainer.py log_all_params 2022-07-08 03:01:59,616 
+[INFO] Hyper Params - Trainer.py log_all_params 2022-07-08 03:01:59,616 
+[INFO] {'lr': '2e-4', 'epochs': 1000, 'workers': 14, 'batch_size': 10, 'save_epoch': 20, 'vis_iter': 10, 'save_iter': 100, 'n_cols': 5, 'gpus': [0, 1], 'default_folder': 'weights', 'resume': False, 'weight_file': 'latest'} - Trainer.py log_all_params 2022-07-08 03:01:59,616 
+[INFO] ------------------------------------------------------------ - Trainer.py log_all_params 2022-07-08 03:01:59,616 
+[INFO] ############################################################ - Trainer.py log_all_params 2022-07-08 03:01:59,616 
+[INFO]  - Trainer.py log_all_params 2022-07-08 03:01:59,616 
+[INFO] Use GPU: 0,1 - Trainer.py setup_training 2022-07-08 03:03:13,114 
+[WARNING] Use method 'params' via param namespace  - parameterized.py inner 2022-07-08 03:03:46,336 
+[INFO] model [SSN] was created - __init__.py create_model 2022-07-08 03:03:47,926 
+[INFO]  - Trainer.py log_all_params 2022-07-08 03:03:47,927 
+[INFO] ############################################################ - Trainer.py log_all_params 2022-07-08 03:03:47,927 
+[INFO] Training params: - Trainer.py log_all_params 2022-07-08 03:03:47,927 
+[INFO] Model: - Trainer.py log_all_params 2022-07-08 03:03:47,927 
+[INFO] {'name': 'SSN', 'in_channels': 1, 'out_channels': 1, 'resunet': False, 'norm_type': 'Batch', 'mid_act': 'relu', 'out_act': 'sigmoid', 'optimizer': 'Adam', 'weight_decay': '4e-5', 'beta1': 0.9} - Trainer.py log_all_params 2022-07-08 03:03:47,928 
+[INFO] ------------------------------------------------------------ - Trainer.py log_all_params 2022-07-08 03:03:47,928 
+[INFO] Dataset: - Trainer.py log_all_params 2022-07-08 03:03:47,928 
+[INFO] {'name': 'SSN_Dataset', 'hdf5_file': 'Dataset/all_base.hdf5', 'use_ao': False, 'use_64_16': False} - Trainer.py log_all_params 2022-07-08 03:03:47,928 
+[INFO] ------------------------------------------------------------ - Trainer.py log_all_params 2022-07-08 03:03:47,928 
+[INFO] Hyper Params - Trainer.py log_all_params 2022-07-08 03:03:47,928 
+[INFO] {'lr': '2e-4', 'epochs': 1000, 'workers': 14, 'batch_size': 5, 'save_epoch': 20, 'vis_iter': 10, 'save_iter': 100, 'n_cols': 5, 'gpus': [0, 1], 'default_folder': 'weights', 'resume': False, 'weight_file': 'latest'} - Trainer.py log_all_params 2022-07-08 03:03:47,928 
+[INFO] ------------------------------------------------------------ - Trainer.py log_all_params 2022-07-08 03:03:47,928 
+[INFO] ############################################################ - Trainer.py log_all_params 2022-07-08 03:03:47,928 
+[INFO]  - Trainer.py log_all_params 2022-07-08 03:03:47,928 
+[INFO] Use GPU: 0,1 - Trainer.py setup_training 2022-07-08 03:04:14,580 
+[WARNING] Use method 'params' via param namespace  - parameterized.py inner 2022-07-08 03:09:12,609 
+[INFO] model [SSN] was created - __init__.py create_model 2022-07-08 03:09:14,214 
+[INFO]  - Trainer.py log_all_params 2022-07-08 03:09:14,216 
+[INFO] ############################################################ - Trainer.py log_all_params 2022-07-08 03:09:14,216 
+[INFO] Training params: - Trainer.py log_all_params 2022-07-08 03:09:14,216 
+[INFO] Model: - Trainer.py log_all_params 2022-07-08 03:09:14,216 
+[INFO] {'name': 'SSN', 'in_channels': 1, 'out_channels': 1, 'resunet': False, 'norm_type': 'Batch', 'mid_act': 'relu', 'out_act': 'sigmoid', 'optimizer': 'Adam', 'weight_decay': '4e-5', 'beta1': 0.9} - Trainer.py log_all_params 2022-07-08 03:09:14,216 
+[INFO] ------------------------------------------------------------ - Trainer.py log_all_params 2022-07-08 03:09:14,217 
+[INFO] Dataset: - Trainer.py log_all_params 2022-07-08 03:09:14,217 
+[INFO] {'name': 'SSN_Dataset', 'hdf5_file': 'Dataset/all_base.hdf5', 'use_ao': False, 'use_64_16': False, 'lights_per_scene': 10} - Trainer.py log_all_params 2022-07-08 03:09:14,217 
+[INFO] ------------------------------------------------------------ - Trainer.py log_all_params 2022-07-08 03:09:14,217 
+[INFO] Hyper Params - Trainer.py log_all_params 2022-07-08 03:09:14,217 
+[INFO] {'lr': '2e-4', 'epochs': 1000, 'workers': 14, 'batch_size': 5, 'save_epoch': 20, 'vis_iter': 10, 'save_iter': 100, 'n_cols': 5, 'gpus': [0, 1], 'default_folder': 'weights', 'resume': False, 'weight_file': 'latest'} - Trainer.py log_all_params 2022-07-08 03:09:14,217 
+[INFO] ------------------------------------------------------------ - Trainer.py log_all_params 2022-07-08 03:09:14,217 
+[INFO] ############################################################ - Trainer.py log_all_params 2022-07-08 03:09:14,217 
+[INFO]  - Trainer.py log_all_params 2022-07-08 03:09:14,217 
+[INFO] Use GPU: 0,1 - Trainer.py setup_training 2022-07-08 03:09:14,217 
+[WARNING] Use method 'params' via param namespace  - parameterized.py inner 2022-07-08 03:11:34,147 
+[INFO] model [SSN] was created - __init__.py create_model 2022-07-08 03:11:35,802 
+[INFO]  - Trainer.py log_all_params 2022-07-08 03:11:35,804 
+[INFO] ############################################################ - Trainer.py log_all_params 2022-07-08 03:11:35,804 
+[INFO] Training params: - Trainer.py log_all_params 2022-07-08 03:11:35,804 
+[INFO] Model: - Trainer.py log_all_params 2022-07-08 03:11:35,804 
+[INFO] {'name': 'SSN', 'in_channels': 1, 'out_channels': 1, 'resunet': False, 'norm_type': 'Batch', 'mid_act': 'relu', 'out_act': 'sigmoid', 'optimizer': 'Adam', 'weight_decay': '4e-5', 'beta1': 0.9} - Trainer.py log_all_params 2022-07-08 03:11:35,805 
+[INFO] ------------------------------------------------------------ - Trainer.py log_all_params 2022-07-08 03:11:35,805 
+[INFO] Dataset: - Trainer.py log_all_params 2022-07-08 03:11:35,805 
+[INFO] {'name': 'SSN_Dataset', 'hdf5_file': 'Dataset/all_base.hdf5', 'use_ao': False, 'use_64_16': False, 'lights_per_scene': 10} - Trainer.py log_all_params 2022-07-08 03:11:35,805 
+[INFO] ------------------------------------------------------------ - Trainer.py log_all_params 2022-07-08 03:11:35,805 
+[INFO] Hyper Params - Trainer.py log_all_params 2022-07-08 03:11:35,805 
+[INFO] {'lr': '2e-4', 'epochs': 1000, 'workers': 14, 'batch_size': 8, 'save_epoch': 20, 'vis_iter': 10, 'save_iter': 100, 'n_cols': 5, 'gpus': [0, 1], 'default_folder': 'weights', 'resume': False, 'weight_file': 'latest'} - Trainer.py log_all_params 2022-07-08 03:11:35,805 
+[INFO] ------------------------------------------------------------ - Trainer.py log_all_params 2022-07-08 03:11:35,805 
+[INFO] ############################################################ - Trainer.py log_all_params 2022-07-08 03:11:35,805 
+[INFO]  - Trainer.py log_all_params 2022-07-08 03:11:35,805 
+[INFO] Use GPU: 0,1 - Trainer.py setup_training 2022-07-08 03:11:35,805 
+[WARNING] Use method 'params' via param namespace  - parameterized.py inner 2022-07-08 03:13:25,314 
+[INFO] model [SSN] was created - __init__.py create_model 2022-07-08 03:13:26,930 
+[INFO]  - Trainer.py log_all_params 2022-07-08 03:13:26,932 
+[INFO] ############################################################ - Trainer.py log_all_params 2022-07-08 03:13:26,932 
+[INFO] Training params: - Trainer.py log_all_params 2022-07-08 03:13:26,933 
+[INFO] Model: - Trainer.py log_all_params 2022-07-08 03:13:26,933 
+[INFO] {'name': 'SSN', 'in_channels': 1, 'out_channels': 1, 'resunet': False, 'norm_type': 'Batch', 'mid_act': 'relu', 'out_act': 'sigmoid', 'optimizer': 'Adam', 'weight_decay': '4e-5', 'beta1': 0.9} - Trainer.py log_all_params 2022-07-08 03:13:26,933 
+[INFO] ------------------------------------------------------------ - Trainer.py log_all_params 2022-07-08 03:13:26,933 
+[INFO] Dataset: - Trainer.py log_all_params 2022-07-08 03:13:26,933 
+[INFO] {'name': 'SSN_Dataset', 'hdf5_file': 'Dataset/all_base.hdf5', 'use_ao': False, 'use_64_16': False, 'lights_per_scene': 10} - Trainer.py log_all_params 2022-07-08 03:13:26,933 
+[INFO] ------------------------------------------------------------ - Trainer.py log_all_params 2022-07-08 03:13:26,933 
+[INFO] Hyper Params - Trainer.py log_all_params 2022-07-08 03:13:26,933 
+[INFO] {'lr': '2e-4', 'epochs': 1000, 'workers': 14, 'batch_size': 8, 'save_epoch': 20, 'vis_iter': 10, 'save_iter': 100, 'n_cols': 5, 'gpus': [0, 1], 'default_folder': 'weights', 'resume': False, 'weight_file': 'latest'} - Trainer.py log_all_params 2022-07-08 03:13:26,933 
+[INFO] ------------------------------------------------------------ - Trainer.py log_all_params 2022-07-08 03:13:26,933 
+[INFO] Model size - Trainer.py log_all_params 2022-07-08 03:13:26,933 
+[WARNING] Use method 'params' via param namespace  - parameterized.py inner 2022-07-08 03:14:48,594 
+[INFO] model [SSN] was created - __init__.py create_model 2022-07-08 03:14:50,201 
+[INFO]  - Trainer.py log_all_params 2022-07-08 03:14:50,204 
+[INFO] ############################################################ - Trainer.py log_all_params 2022-07-08 03:14:50,204 
+[INFO] Training params: - Trainer.py log_all_params 2022-07-08 03:14:50,204 
+[INFO] Model: - Trainer.py log_all_params 2022-07-08 03:14:50,204 
+[INFO] {'name': 'SSN', 'in_channels': 1, 'out_channels': 1, 'resunet': False, 'norm_type': 'Batch', 'mid_act': 'relu', 'out_act': 'sigmoid', 'optimizer': 'Adam', 'weight_decay': '4e-5', 'beta1': 0.9} - Trainer.py log_all_params 2022-07-08 03:14:50,204 
+[INFO] ------------------------------------------------------------ - Trainer.py log_all_params 2022-07-08 03:14:50,204 
+[INFO] Dataset: - Trainer.py log_all_params 2022-07-08 03:14:50,204 
+[INFO] {'name': 'SSN_Dataset', 'hdf5_file': 'Dataset/all_base.hdf5', 'use_ao': False, 'use_64_16': False, 'lights_per_scene': 10} - Trainer.py log_all_params 2022-07-08 03:14:50,204 
+[INFO] ------------------------------------------------------------ - Trainer.py log_all_params 2022-07-08 03:14:50,204 
+[INFO] Hyper Params - Trainer.py log_all_params 2022-07-08 03:14:50,204 
+[INFO] {'lr': '2e-4', 'epochs': 1000, 'workers': 14, 'batch_size': 8, 'save_epoch': 20, 'vis_iter': 10, 'save_iter': 100, 'n_cols': 5, 'gpus': [0, 1], 'default_folder': 'weights', 'resume': False, 'weight_file': 'latest'} - Trainer.py log_all_params 2022-07-08 03:14:50,204 
+[INFO] ------------------------------------------------------------ - Trainer.py log_all_params 2022-07-08 03:14:50,204 
+[INFO] Model size - Trainer.py log_all_params 2022-07-08 03:14:50,204 
+[INFO] 41.41781997680664 MB - Trainer.py log_all_params 2022-07-08 03:14:50,205 
+[INFO] ------------------------------------------------------------ - Trainer.py log_all_params 2022-07-08 03:14:50,205 
+[INFO] ############################################################ - Trainer.py log_all_params 2022-07-08 03:14:50,205 
+[INFO]  - Trainer.py log_all_params 2022-07-08 03:14:50,205 
+[INFO] Use GPU: 0,1 - Trainer.py setup_training 2022-07-08 03:14:50,205 
+[WARNING] Use method 'params' via param namespace  - parameterized.py inner 2022-07-08 03:20:38,443 
+[INFO] model [SSN] was created - __init__.py create_model 2022-07-08 03:20:40,050 
+[INFO]  - Trainer.py log_all_params 2022-07-08 03:20:40,052 
+[INFO] ############################################################ - Trainer.py log_all_params 2022-07-08 03:20:40,052 
+[INFO] Training params: - Trainer.py log_all_params 2022-07-08 03:20:40,053 
+[INFO] Model: - Trainer.py log_all_params 2022-07-08 03:20:40,053 
+[INFO] {'name': 'SSN', 'in_channels': 1, 'out_channels': 1, 'resunet': False, 'norm_type': 'Batch', 'mid_act': 'relu', 'out_act': 'sigmoid', 'optimizer': 'Adam', 'weight_decay': '4e-5', 'beta1': 0.9} - Trainer.py log_all_params 2022-07-08 03:20:40,053 
+[INFO] ------------------------------------------------------------ - Trainer.py log_all_params 2022-07-08 03:20:40,053 
+[INFO] Dataset: - Trainer.py log_all_params 2022-07-08 03:20:40,053 
+[INFO] {'name': 'SSN_Dataset', 'hdf5_file': 'Dataset/all_base.hdf5', 'use_ao': False, 'use_64_16': False, 'lights_per_scene': 10} - Trainer.py log_all_params 2022-07-08 03:20:40,053 
+[INFO] ------------------------------------------------------------ - Trainer.py log_all_params 2022-07-08 03:20:40,053 
+[INFO] Hyper Params - Trainer.py log_all_params 2022-07-08 03:20:40,053 
+[INFO] {'lr': '2e-4', 'epochs': 1000, 'workers': 14, 'batch_size': 8, 'save_epoch': 20, 'vis_iter': 10, 'save_iter': 100, 'n_cols': 5, 'gpus': [0, 1], 'default_folder': 'weights', 'resume': False, 'weight_file': 'latest'} - Trainer.py log_all_params 2022-07-08 03:20:40,053 
+[INFO] ------------------------------------------------------------ - Trainer.py log_all_params 2022-07-08 03:20:40,053 
+[INFO] Model size - Trainer.py log_all_params 2022-07-08 03:20:40,053 
+[INFO] 41.41781997680664 MB - Trainer.py log_all_params 2022-07-08 03:20:40,054 
+[INFO] ------------------------------------------------------------ - Trainer.py log_all_params 2022-07-08 03:20:40,054 
+[INFO] ############################################################ - Trainer.py log_all_params 2022-07-08 03:20:40,054 
+[INFO]  - Trainer.py log_all_params 2022-07-08 03:20:40,054 
+[INFO] Use GPU: 0,1 - Trainer.py setup_training 2022-07-08 03:20:40,054 
+[WARNING] Use method 'params' via param namespace  - parameterized.py inner 2022-07-08 03:26:42,736 
+[WARNING] Use method 'params' via param namespace  - parameterized.py inner 2022-07-08 03:28:32,993 
+[WARNING] Use method 'params' via param namespace  - parameterized.py inner 2022-07-08 03:29:16,833 
+[WARNING] Use method 'params' via param namespace  - parameterized.py inner 2022-07-08 03:29:55,485 
+[WARNING] Use method 'params' via param namespace  - parameterized.py inner 2022-07-08 03:34:28,906 
+[ERROR] Normalization {} has not been implemented yet - blocks.py get_norm 2022-07-08 03:34:30,419 
+[WARNING] Use method 'params' via param namespace  - parameterized.py inner 2022-07-08 03:35:28,303 
+[INFO] model [SSN] was created - __init__.py create_model 2022-07-08 03:35:30,025 
+[INFO]  - Trainer.py log_all_params 2022-07-08 03:35:30,027 
+[INFO] ############################################################ - Trainer.py log_all_params 2022-07-08 03:35:30,027 
+[INFO] Training params: - Trainer.py log_all_params 2022-07-08 03:35:30,027 
+[INFO] Model: - Trainer.py log_all_params 2022-07-08 03:35:30,027 
+[INFO] {'name': 'SSN', 'in_channels': 1, 'out_channels': 1, 'resunet': False, 'norm_type': 'Group', 'mid_act': 'relu', 'out_act': 'relu', 'optimizer': 'Adam', 'weight_decay': '4e-5', 'beta1': 0.9} - Trainer.py log_all_params 2022-07-08 03:35:30,027 
+[INFO] ------------------------------------------------------------ - Trainer.py log_all_params 2022-07-08 03:35:30,027 
+[INFO] Dataset: - Trainer.py log_all_params 2022-07-08 03:35:30,027 
+[INFO] {'name': 'SSN_Dataset', 'hdf5_file': 'Dataset/all_base.hdf5', 'use_ao': False, 'use_64_16': False, 'lights_per_scene': 10} - Trainer.py log_all_params 2022-07-08 03:35:30,027 
+[INFO] ------------------------------------------------------------ - Trainer.py log_all_params 2022-07-08 03:35:30,027 
+[INFO] Hyper Params - Trainer.py log_all_params 2022-07-08 03:35:30,027 
+[INFO] {'lr': '2e-4', 'epochs': 1000, 'workers': 48, 'batch_size': 8, 'save_epoch': 20, 'vis_iter': 10, 'save_iter': 100, 'n_cols': 5, 'gpus': [0, 1], 'default_folder': 'weights', 'resume': False, 'weight_file': 'latest'} - Trainer.py log_all_params 2022-07-08 03:35:30,027 
+[INFO] ------------------------------------------------------------ - Trainer.py log_all_params 2022-07-08 03:35:30,027 
+[INFO] Model size - Trainer.py log_all_params 2022-07-08 03:35:30,028 
+[INFO] 90.38607406616211 MB - Trainer.py log_all_params 2022-07-08 03:35:30,028 
+[INFO] ------------------------------------------------------------ - Trainer.py log_all_params 2022-07-08 03:35:30,028 
+[INFO] ############################################################ - Trainer.py log_all_params 2022-07-08 03:35:30,028 
+[INFO]  - Trainer.py log_all_params 2022-07-08 03:35:30,028 
+[INFO] Use GPU: 0,1 - Trainer.py setup_training 2022-07-08 03:35:30,028 
+[WARNING] Use method 'params' via param namespace  - parameterized.py inner 2022-07-08 03:42:32,643 
+[WARNING] Use method 'params' via param namespace  - parameterized.py inner 2022-07-08 03:47:53,997 
+[INFO] model [SSN] was created - __init__.py create_model 2022-07-08 03:47:55,696 
+[INFO]  - Trainer.py log_all_params 2022-07-08 03:47:55,697 
+[INFO] ############################################################ - Trainer.py log_all_params 2022-07-08 03:47:55,698 
+[INFO] Training params: - Trainer.py log_all_params 2022-07-08 03:47:55,698 
+[INFO] Model: - Trainer.py log_all_params 2022-07-08 03:47:55,698 
+[INFO] {'name': 'SSN', 'in_channels': 1, 'out_channels': 1, 'resnet': True, 'norm_type': 'Group', 'mid_act': 'relu', 'out_act': 'relu', 'optimizer': 'Adam', 'weight_decay': '4e-5', 'beta1': 0.9} - Trainer.py log_all_params 2022-07-08 03:47:55,698 
+[INFO] ------------------------------------------------------------ - Trainer.py log_all_params 2022-07-08 03:47:55,698 
+[INFO] Dataset: - Trainer.py log_all_params 2022-07-08 03:47:55,698 
+[INFO] {'name': 'SSN_Dataset', 'hdf5_file': 'Dataset/all_base.hdf5', 'use_ao': False, 'use_64_16': False, 'lights_per_scene': 10} - Trainer.py log_all_params 2022-07-08 03:47:55,698 
+[INFO] ------------------------------------------------------------ - Trainer.py log_all_params 2022-07-08 03:47:55,698 
+[INFO] Hyper Params - Trainer.py log_all_params 2022-07-08 03:47:55,698 
+[INFO] {'lr': '2e-4', 'epochs': 1000, 'workers': 48, 'batch_size': 8, 'save_epoch': 20, 'vis_iter': 10, 'save_iter': 100, 'n_cols': 5, 'gpus': [0, 1], 'default_folder': 'weights', 'resume': False, 'weight_file': 'latest'} - Trainer.py log_all_params 2022-07-08 03:47:55,698 
+[INFO] ------------------------------------------------------------ - Trainer.py log_all_params 2022-07-08 03:47:55,698 
+[INFO] Model size - Trainer.py log_all_params 2022-07-08 03:47:55,698 
+[INFO] 89.85165023803711 MB - Trainer.py log_all_params 2022-07-08 03:47:55,699 
+[INFO] ------------------------------------------------------------ - Trainer.py log_all_params 2022-07-08 03:47:55,699 
+[INFO] ############################################################ - Trainer.py log_all_params 2022-07-08 03:47:55,699 
+[INFO]  - Trainer.py log_all_params 2022-07-08 03:47:55,699 
+[INFO] Use GPU: 0,1 - Trainer.py setup_training 2022-07-08 03:47:55,699 
+[WARNING] Use method 'params' via param namespace  - parameterized.py inner 2022-07-08 03:55:50,930 
+[INFO] model [SSN] was created - __init__.py create_model 2022-07-08 03:55:52,653 
+[INFO]  - Trainer.py log_all_params 2022-07-08 03:55:52,655 
+[INFO] ############################################################ - Trainer.py log_all_params 2022-07-08 03:55:52,655 
+[INFO] Training params: - Trainer.py log_all_params 2022-07-08 03:55:52,655 
+[INFO] Model: - Trainer.py log_all_params 2022-07-08 03:55:52,655 
+[INFO] {'name': 'SSN', 'in_channels': 1, 'out_channels': 1, 'resnet': True, 'norm_type': 'Group', 'mid_act': 'relu', 'out_act': 'relu', 'optimizer': 'Adam', 'weight_decay': '4e-5', 'beta1': 0.9} - Trainer.py log_all_params 2022-07-08 03:55:52,655 
+[INFO] ------------------------------------------------------------ - Trainer.py log_all_params 2022-07-08 03:55:52,655 
+[INFO] Dataset: - Trainer.py log_all_params 2022-07-08 03:55:52,655 
+[INFO] {'name': 'SSN_Dataset', 'hdf5_file': 'Dataset/all_base.hdf5', 'use_ao': False, 'use_64_16': False, 'lights_per_scene': 10} - Trainer.py log_all_params 2022-07-08 03:55:52,655 
+[INFO] ------------------------------------------------------------ - Trainer.py log_all_params 2022-07-08 03:55:52,655 
+[INFO] Hyper Params - Trainer.py log_all_params 2022-07-08 03:55:52,655 
+[INFO] {'lr': '2e-4', 'epochs': 1000, 'workers': 48, 'batch_size': 2, 'save_epoch': 20, 'vis_iter': 10, 'save_iter': 100, 'n_cols': 5, 'gpus': [0, 1], 'default_folder': 'weights', 'resume': False, 'weight_file': 'latest'} - Trainer.py log_all_params 2022-07-08 03:55:52,655 
+[INFO] ------------------------------------------------------------ - Trainer.py log_all_params 2022-07-08 03:55:52,655 
+[INFO] Model size - Trainer.py log_all_params 2022-07-08 03:55:52,655 
+[INFO] 89.85165023803711 MB - Trainer.py log_all_params 2022-07-08 03:55:52,656 
+[INFO] ------------------------------------------------------------ - Trainer.py log_all_params 2022-07-08 03:55:52,656 
+[INFO] ############################################################ - Trainer.py log_all_params 2022-07-08 03:55:52,656 
+[INFO]  - Trainer.py log_all_params 2022-07-08 03:55:52,656 
+[INFO] Use GPU: 0,1 - Trainer.py setup_training 2022-07-08 03:55:52,656 
+[WARNING] Use method 'params' via param namespace  - parameterized.py inner 2022-07-08 03:58:49,227 
+[INFO] model [SSN] was created - __init__.py create_model 2022-07-08 03:58:50,931 
+[INFO]  - Trainer.py log_all_params 2022-07-08 03:58:50,933 
+[INFO] ############################################################ - Trainer.py log_all_params 2022-07-08 03:58:50,933 
+[INFO] Training params: - Trainer.py log_all_params 2022-07-08 03:58:50,933 
+[INFO] Model: - Trainer.py log_all_params 2022-07-08 03:58:50,933 
+[INFO] {'name': 'SSN', 'in_channels': 1, 'out_channels': 1, 'resnet': True, 'norm_type': 'Group', 'mid_act': 'relu', 'out_act': 'relu', 'optimizer': 'Adam', 'weight_decay': '4e-5', 'beta1': 0.9} - Trainer.py log_all_params 2022-07-08 03:58:50,933 
+[INFO] ------------------------------------------------------------ - Trainer.py log_all_params 2022-07-08 03:58:50,933 
+[INFO] Dataset: - Trainer.py log_all_params 2022-07-08 03:58:50,933 
+[INFO] {'name': 'SSN_Dataset', 'hdf5_file': 'Dataset/all_base.hdf5', 'use_ao': False, 'use_64_16': False, 'lights_per_scene': 10} - Trainer.py log_all_params 2022-07-08 03:58:50,933 
+[INFO] ------------------------------------------------------------ - Trainer.py log_all_params 2022-07-08 03:58:50,933 
+[INFO] Hyper Params - Trainer.py log_all_params 2022-07-08 03:58:50,933 
+[INFO] {'lr': '2e-4', 'epochs': 1000, 'workers': 48, 'batch_size': 2, 'save_epoch': 20, 'vis_iter': 10, 'save_iter': 100, 'n_cols': 5, 'gpus': [0, 1], 'default_folder': 'weights', 'resume': False, 'weight_file': 'latest'} - Trainer.py log_all_params 2022-07-08 03:58:50,933 
+[INFO] ------------------------------------------------------------ - Trainer.py log_all_params 2022-07-08 03:58:50,934 
+[INFO] Model size - Trainer.py log_all_params 2022-07-08 03:58:50,934 
+[INFO] 89.85165023803711 MB - Trainer.py log_all_params 2022-07-08 03:58:50,934 
+[INFO] ------------------------------------------------------------ - Trainer.py log_all_params 2022-07-08 03:58:50,934 
+[INFO] ############################################################ - Trainer.py log_all_params 2022-07-08 03:58:50,934 
+[INFO]  - Trainer.py log_all_params 2022-07-08 03:58:50,934 
+[INFO] Use GPU: 0,1 - Trainer.py setup_training 2022-07-08 03:58:50,934 
+[WARNING] Use method 'params' via param namespace  - parameterized.py inner 2022-07-08 04:03:37,486 
+[INFO] model [SSN] was created - __init__.py create_model 2022-07-08 04:03:39,197 
+[INFO]  - Trainer.py log_all_params 2022-07-08 04:03:39,198 
+[INFO] ############################################################ - Trainer.py log_all_params 2022-07-08 04:03:39,198 
+[INFO] Training params: - Trainer.py log_all_params 2022-07-08 04:03:39,198 
+[INFO] Model: - Trainer.py log_all_params 2022-07-08 04:03:39,198 
+[INFO] {'name': 'SSN', 'in_channels': 1, 'out_channels': 1, 'resnet': True, 'norm_type': 'Group', 'mid_act': 'relu', 'out_act': 'relu', 'optimizer': 'Adam', 'weight_decay': '4e-5', 'beta1': 0.9} - Trainer.py log_all_params 2022-07-08 04:03:39,198 
+[INFO] ------------------------------------------------------------ - Trainer.py log_all_params 2022-07-08 04:03:39,199 
+[INFO] Dataset: - Trainer.py log_all_params 2022-07-08 04:03:39,199 
+[INFO] {'name': 'SSN_Dataset', 'hdf5_file': 'Dataset/all_base.hdf5', 'use_ao': False, 'use_64_16': False, 'lights_per_scene': 10} - Trainer.py log_all_params 2022-07-08 04:03:39,199 
+[INFO] ------------------------------------------------------------ - Trainer.py log_all_params 2022-07-08 04:03:39,199 
+[INFO] Hyper Params - Trainer.py log_all_params 2022-07-08 04:03:39,199 
+[INFO] {'lr': '2e-4', 'epochs': 1000, 'workers': 48, 'batch_size': 2, 'save_epoch': 20, 'vis_iter': 10, 'save_iter': 100, 'n_cols': 5, 'gpus': [0, 1], 'default_folder': 'weights', 'resume': False, 'weight_file': 'latest'} - Trainer.py log_all_params 2022-07-08 04:03:39,199 
+[INFO] ------------------------------------------------------------ - Trainer.py log_all_params 2022-07-08 04:03:39,199 
+[INFO] Model size - Trainer.py log_all_params 2022-07-08 04:03:39,199 
+[INFO] 89.85165023803711 MB - Trainer.py log_all_params 2022-07-08 04:03:39,199 
+[INFO] ------------------------------------------------------------ - Trainer.py log_all_params 2022-07-08 04:03:39,199 
+[INFO] ############################################################ - Trainer.py log_all_params 2022-07-08 04:03:39,200 
+[INFO]  - Trainer.py log_all_params 2022-07-08 04:03:39,200 
+[INFO] Use GPU: 0,1 - Trainer.py setup_training 2022-07-08 04:03:39,200 
+[WARNING] Use method 'params' via param namespace  - parameterized.py inner 2022-07-08 04:05:07,627 
+[INFO] model [SSN] was created - __init__.py create_model 2022-07-08 04:05:09,333 
+[INFO]  - Trainer.py log_all_params 2022-07-08 04:05:09,335 
+[INFO] ############################################################ - Trainer.py log_all_params 2022-07-08 04:05:09,335 
+[INFO] Training params: - Trainer.py log_all_params 2022-07-08 04:05:09,335 
+[INFO] Model: - Trainer.py log_all_params 2022-07-08 04:05:09,335 
+[INFO] {'name': 'SSN', 'in_channels': 1, 'out_channels': 1, 'resnet': True, 'norm_type': 'Group', 'mid_act': 'relu', 'out_act': 'relu', 'optimizer': 'Adam', 'weight_decay': '4e-5', 'beta1': 0.9} - Trainer.py log_all_params 2022-07-08 04:05:09,335 
+[INFO] ------------------------------------------------------------ - Trainer.py log_all_params 2022-07-08 04:05:09,335 
+[INFO] Dataset: - Trainer.py log_all_params 2022-07-08 04:05:09,335 
+[INFO] {'name': 'SSN_Dataset', 'hdf5_file': 'Dataset/all_base.hdf5', 'use_ao': False, 'use_64_16': False, 'lights_per_scene': 10} - Trainer.py log_all_params 2022-07-08 04:05:09,335 
+[INFO] ------------------------------------------------------------ - Trainer.py log_all_params 2022-07-08 04:05:09,335 
+[INFO] Hyper Params - Trainer.py log_all_params 2022-07-08 04:05:09,335 
+[INFO] {'lr': '2e-4', 'epochs': 1000, 'workers': 48, 'batch_size': 8, 'save_epoch': 20, 'vis_iter': 10, 'save_iter': 100, 'n_cols': 5, 'gpus': [0, 1], 'default_folder': 'weights', 'resume': False, 'weight_file': 'latest'} - Trainer.py log_all_params 2022-07-08 04:05:09,335 
+[INFO] ------------------------------------------------------------ - Trainer.py log_all_params 2022-07-08 04:05:09,335 
+[INFO] Model size - Trainer.py log_all_params 2022-07-08 04:05:09,335 
+[INFO] 89.85165023803711 MB - Trainer.py log_all_params 2022-07-08 04:05:09,336 
+[INFO] ------------------------------------------------------------ - Trainer.py log_all_params 2022-07-08 04:05:09,336 
+[INFO] ############################################################ - Trainer.py log_all_params 2022-07-08 04:05:09,336 
+[INFO]  - Trainer.py log_all_params 2022-07-08 04:05:09,336 
+[INFO] Use GPU: 0,1 - Trainer.py setup_training 2022-07-08 04:05:09,336 
+[WARNING] Use method 'params' via param namespace  - parameterized.py inner 2022-07-08 04:19:40,533 
+[INFO] model [SSN] was created - __init__.py create_model 2022-07-08 04:19:42,332 
+[INFO]  - Trainer.py log_all_params 2022-07-08 04:19:42,334 
+[INFO] ############################################################ - Trainer.py log_all_params 2022-07-08 04:19:42,334 
+[INFO] Training params: - Trainer.py log_all_params 2022-07-08 04:19:42,334 
+[INFO] Model: - Trainer.py log_all_params 2022-07-08 04:19:42,334 
+[INFO] {'name': 'SSN', 'in_channels': 1, 'out_channels': 1, 'resnet': True, 'norm_type': 'Group', 'mid_act': 'relu', 'out_act': 'relu', 'optimizer': 'Adam', 'weight_decay': '4e-5', 'beta1': 0.9} - Trainer.py log_all_params 2022-07-08 04:19:42,334 
+[INFO] ------------------------------------------------------------ - Trainer.py log_all_params 2022-07-08 04:19:42,334 
+[INFO] Dataset: - Trainer.py log_all_params 2022-07-08 04:19:42,334 
+[INFO] {'name': 'SSN_Dataset', 'hdf5_file': 'Dataset/all_base.hdf5', 'use_ao': False, 'use_64_16': False, 'lights_per_scene': 10} - Trainer.py log_all_params 2022-07-08 04:19:42,334 
+[INFO] ------------------------------------------------------------ - Trainer.py log_all_params 2022-07-08 04:19:42,334 
+[INFO] Hyper Params - Trainer.py log_all_params 2022-07-08 04:19:42,334 
+[INFO] {'lr': '2e-4', 'epochs': 1000, 'workers': 48, 'batch_size': 10, 'save_epoch': 20, 'vis_iter': 10, 'save_iter': 100, 'n_cols': 5, 'gpus': [0, 1], 'default_folder': 'weights', 'resume': True, 'weight_file': 'latest'} - Trainer.py log_all_params 2022-07-08 04:19:42,334 
+[INFO] ------------------------------------------------------------ - Trainer.py log_all_params 2022-07-08 04:19:42,335 
+[INFO] Model size - Trainer.py log_all_params 2022-07-08 04:19:42,335 
+[INFO] 89.85165023803711 MB - Trainer.py log_all_params 2022-07-08 04:19:42,335 
+[INFO] ------------------------------------------------------------ - Trainer.py log_all_params 2022-07-08 04:19:42,335 
+[INFO] ############################################################ - Trainer.py log_all_params 2022-07-08 04:19:42,335 
+[INFO]  - Trainer.py log_all_params 2022-07-08 04:19:42,335 
+[INFO] Use GPU: 0,1 - Trainer.py setup_training 2022-07-08 04:19:42,335 
+[INFO] Resume from file weights/SSN/0000000000.pt - Trainer.py resume 2022-07-08 04:19:44,844 
+[WARNING] Use method 'params' via param namespace  - parameterized.py inner 2022-07-08 04:22:20,954 
+[INFO] model [SSN] was created - __init__.py create_model 2022-07-08 04:22:22,811 
+[INFO]  - Trainer.py log_all_params 2022-07-08 04:22:22,813 
+[INFO] ############################################################ - Trainer.py log_all_params 2022-07-08 04:22:22,813 
+[INFO] Training params: - Trainer.py log_all_params 2022-07-08 04:22:22,813 
+[INFO] Model: - Trainer.py log_all_params 2022-07-08 04:22:22,813 
+[INFO] {'name': 'SSN', 'in_channels': 1, 'out_channels': 1, 'resnet': True, 'norm_type': 'Group', 'mid_act': 'relu', 'out_act': 'relu', 'optimizer': 'Adam', 'weight_decay': '4e-5', 'beta1': 0.9} - Trainer.py log_all_params 2022-07-08 04:22:22,813 
+[INFO] ------------------------------------------------------------ - Trainer.py log_all_params 2022-07-08 04:22:22,813 
+[INFO] Dataset: - Trainer.py log_all_params 2022-07-08 04:22:22,814 
+[INFO] {'name': 'SSN_Dataset', 'hdf5_file': 'Dataset/all_base.hdf5', 'use_ao': False, 'use_64_16': False, 'lights_per_scene': 10} - Trainer.py log_all_params 2022-07-08 04:22:22,814 
+[INFO] ------------------------------------------------------------ - Trainer.py log_all_params 2022-07-08 04:22:22,814 
+[INFO] Hyper Params - Trainer.py log_all_params 2022-07-08 04:22:22,814 
+[INFO] {'lr': '2e-4', 'epochs': 1000, 'workers': 48, 'batch_size': 14, 'save_epoch': 20, 'vis_iter': 10, 'save_iter': 100, 'n_cols': 5, 'gpus': [0, 1], 'default_folder': 'weights', 'resume': True, 'weight_file': 'latest'} - Trainer.py log_all_params 2022-07-08 04:22:22,814 
+[INFO] ------------------------------------------------------------ - Trainer.py log_all_params 2022-07-08 04:22:22,814 
+[INFO] Model size - Trainer.py log_all_params 2022-07-08 04:22:22,814 
+[INFO] 89.85165023803711 MB - Trainer.py log_all_params 2022-07-08 04:22:22,814 
+[INFO] ------------------------------------------------------------ - Trainer.py log_all_params 2022-07-08 04:22:22,814 
+[INFO] ############################################################ - Trainer.py log_all_params 2022-07-08 04:22:22,814 
+[INFO]  - Trainer.py log_all_params 2022-07-08 04:22:22,815 
+[INFO] Use GPU: 0,1 - Trainer.py setup_training 2022-07-08 04:22:22,815 
+[INFO] Resume from file weights/SSN/0000000000.pt - Trainer.py resume 2022-07-08 04:22:25,286 
+[WARNING] Use method 'params' via param namespace  - parameterized.py inner 2022-07-13 03:21:01,503 
+[INFO] model [SSN] was created - __init__.py create_model 2022-07-13 03:21:03,279 
+[INFO]  - Trainer.py log_all_params 2022-07-13 03:21:03,281 
+[INFO] ############################################################ - Trainer.py log_all_params 2022-07-13 03:21:03,281 
+[INFO] Training params: - Trainer.py log_all_params 2022-07-13 03:21:03,281 
+[INFO] Model: - Trainer.py log_all_params 2022-07-13 03:21:03,281 
+[INFO] {'name': 'SSN', 'in_channels': 1, 'out_channels': 1, 'resnet': True, 'norm_type': 'Group', 'mid_act': 'relu', 'out_act': 'relu', 'optimizer': 'Adam', 'weight_decay': '4e-5', 'beta1': 0.9} - Trainer.py log_all_params 2022-07-13 03:21:03,281 
+[INFO] ------------------------------------------------------------ - Trainer.py log_all_params 2022-07-13 03:21:03,281 
+[INFO] Dataset: - Trainer.py log_all_params 2022-07-13 03:21:03,282 
+[INFO] {'name': 'SSN_Dataset', 'hdf5_file': 'Dataset/all_base.hdf5', 'use_ao': False, 'use_64_16': False, 'lights_per_scene': 10} - Trainer.py log_all_params 2022-07-13 03:21:03,282 
+[INFO] ------------------------------------------------------------ - Trainer.py log_all_params 2022-07-13 03:21:03,282 
+[INFO] Hyper Params - Trainer.py log_all_params 2022-07-13 03:21:03,282 
+[INFO] {'lr': '2e-4', 'epochs': 1000, 'workers': 48, 'batch_size': 14, 'save_epoch': 20, 'vis_iter': 10, 'save_iter': 100, 'n_cols': 5, 'gpus': [0, 1], 'default_folder': 'weights', 'resume': True, 'weight_file': 'latest'} - Trainer.py log_all_params 2022-07-13 03:21:03,282 
+[INFO] ------------------------------------------------------------ - Trainer.py log_all_params 2022-07-13 03:21:03,282 
+[INFO] Model size - Trainer.py log_all_params 2022-07-13 03:21:03,282 
+[INFO] 89.85165023803711 MB - Trainer.py log_all_params 2022-07-13 03:21:03,282 
+[INFO] ------------------------------------------------------------ - Trainer.py log_all_params 2022-07-13 03:21:03,282 
+[INFO] ############################################################ - Trainer.py log_all_params 2022-07-13 03:21:03,283 
+[INFO]  - Trainer.py log_all_params 2022-07-13 03:21:03,283 
+[INFO] Use GPU: 0,1 - Trainer.py setup_training 2022-07-13 03:21:03,283 
+[INFO] Resume from file weights/SSN/0000000520.pt - Trainer.py resume 2022-07-13 03:21:05,836 

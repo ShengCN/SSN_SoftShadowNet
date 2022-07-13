@@ -2,72 +2,12 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 from torchvision import utils
-from torchvision.transforms import Resize
 from collections import OrderedDict
 import numpy as np
 
 from .abs_model import abs_model
 from .blocks import *
 from .Loss.Loss import norm_loss
-
-class SSN_Model(nn.Module):
-    """ Standard Unet Implementation
-        src: https://arxiv.org/pdf/1505.04597.pdf
-    """
-    def __init__(self, in_channels, out_channels, norm_type='Batch', mid_act='relu', out_act='relu', resnet=True):
-        super(SSN_Model, self).__init__()
-
-        self.indconv = Conv(in_channels, 64-in_channels, norm_type=norm_type, activation=mid_act)
-        self.to_128 = Conv(64, 128, stride=2, norm_type=norm_type, activation=mid_act)
-        self.dconv128 = DConv(128, 128, norm_type=norm_type, activation=mid_act, resnet=resnet)
-        self.to_256 = Conv(128, 256, stride=2, norm_type=norm_type, activation=mid_act)
-        self.dconv256 = DConv(256, 256, norm_type=norm_type, activation=mid_act, resnet=resnet)
-        self.to_512 = Conv(256, 512, stride=2, norm_type=norm_type, activation=mid_act)
-        self.dconv512 = DConv(512, 512, norm_type=norm_type, activation=mid_act, resnet=resnet)
-
-        self.up512  = Up(512, 256, norm_type=norm_type, activation=mid_act, resnet=resnet)
-        self.up256  = Up(256, 128, norm_type=norm_type, activation=mid_act, resnet=resnet)
-        self.up128  = Up(128, 64, norm_type=norm_type, activation=mid_act, resnet=resnet)
-        self.out    = Conv(64, out_channels, norm_type=norm_type, activation=out_act)
-
-
-    def forward(self, x, ibl):
-        x_in = self.indconv(x)
-        x64 = torch.cat((x_in, x), dim=1)
-        x128 = self.dconv128(self.to_128(x64))
-        x256 = self.dconv256(self.to_256(x128))
-        x512 = self.dconv512(self.to_512(x256))
-
-        b,c,h,w = x.shape
-
-        if h == 512:
-            resize_t = Resize((16, 32))
-            ibl = resize_t(ibl)
-
-        b,c,h,w = x512.shape
-        ibl = ibl.view(-1, 512, 1, 1).repeat(1, 1, h, w)
-
-        y = self.up512(ibl, x256)
-        y = self.up256(y, x128)
-        y = self.up128(y, x64)
-
-        return self.out(y)
-
-
-
-    def get_bottle(self, resnet, norm_type):
-        if not resnet:
-            bottle = nn.Sequential(
-                DConv(1024, 1024, norm_type=norm_type, resnet=False)
-            )
-        else:
-            bottle = nn.Sequential(
-                DConv(1024, 1024, norm_type=norm_type, resnet=True),
-                DConv(1024, 1024, norm_type=norm_type, resnet=True),
-                DConv(1024, 1024, norm_type=norm_type, resnet=True),
-            )
-        return bottle
-
 
 class SSN(abs_model):
     def __init__(self, opt):
@@ -128,6 +68,7 @@ class SSN(abs_model):
             n     = min(nrows, batch)
 
             plot_v = v[:n]
+            plot_v = (plot_v - plot_v.min())/(plot_v.max() - plot_v.min())
             ret_vis[k] = np.clip(utils.make_grid(plot_v.cpu(), nrow=nrows).numpy().transpose(1,2,0), 0.0, 1.0)
 
         return ret_vis
@@ -170,3 +111,13 @@ class SSN(abs_model):
     ####################
     # Personal Methods #
     ####################
+
+
+if __name__ == '__main__':
+    test_input = torch.randn(5, 1, 256, 256)
+    style = torch.randn(5, 100)
+
+    model = SSN(1,1,mid_act='gelu', out_act='gelu', resnet=True)
+    test_out = model(test_input, style)
+
+    print('Ouptut shape: ', test_out.shape)

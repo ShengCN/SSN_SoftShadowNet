@@ -5,13 +5,13 @@
 # compile CXX with /usr/bin/c++
 CUDA_FLAGS =   -std=c++11
 
-CUDA_DEFINES = -DFMT_LOCALE
+CUDA_DEFINES = 
 
-CUDA_INCLUDES = -I/home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src -I/home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src/Dep/fmt/include -I/home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src/Dep/glm -I/home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src/Dep -I/home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src/Dep/tinyobjloader 
+CUDA_INCLUDES = -I/home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src -I/home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src/Dep/fmt/include -I/home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src/Dep/glm -I/home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src/Dep -I/home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src/Dep/tinyobjloader 
 
 CXX_FLAGS =   -std=gnu++11
 
-CXX_DEFINES = -DFMT_LOCALE
+CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src -I/usr/local/cuda/include -I/home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src/Dep/fmt/include -I/home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src/Dep/glm -I/home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src/Dep -I/home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src/Dep/tinyobjloader 
+CXX_INCLUDES = -I/home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src -I/usr/local/cuda/include -I/home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src/Dep/fmt/include -I/home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src/Dep/glm -I/home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src/Dep -I/home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src/Dep/tinyobjloader 
 

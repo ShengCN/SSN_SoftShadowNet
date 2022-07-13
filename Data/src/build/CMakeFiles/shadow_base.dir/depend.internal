@@ -6,7 +6,6 @@ CMakeFiles/shadow_base.dir/Data_Renderer/data_rasterizer.cu.o
  ../Dep/fmt/include/fmt/format-inl.h
  ../Dep/fmt/include/fmt/format.h
  ../Dep/fmt/include/fmt/ranges.h
- ../Dep/fmt/include/fmt/xchar.h
  ../Dep/glm/glm/common.hpp
  ../Dep/glm/glm/detail/_fixes.hpp
  ../Dep/glm/glm/detail/_swizzle.hpp
@@ -214,15 +213,14 @@ CMakeFiles/shadow_base.dir/Data_Renderer/data_rasterizer.cu.o
  ../Utilities/cxxopts.hpp
  ../arg_parse.h
  ../common.h
- /home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src/Data_Renderer/data_rasterizer.cu
- /home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src/Data_Renderer/data_rasterizer.h
- /home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src/Data_Renderer/ray_intersect.h
+ /home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src/Data_Renderer/data_rasterizer.cu
+ /home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src/Data_Renderer/data_rasterizer.h
+ /home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src/Data_Renderer/ray_intersect.h
 CMakeFiles/shadow_base.dir/Data_Renderer/ray_intersect.cu.o
  ../Dep/fmt/include/fmt/core.h
  ../Dep/fmt/include/fmt/format-inl.h
  ../Dep/fmt/include/fmt/format.h
  ../Dep/fmt/include/fmt/ranges.h
- ../Dep/fmt/include/fmt/xchar.h
  ../Dep/glm/glm/common.hpp
  ../Dep/glm/glm/detail/_fixes.hpp
  ../Dep/glm/glm/detail/_swizzle.hpp
@@ -430,14 +428,13 @@ CMakeFiles/shadow_base.dir/Data_Renderer/ray_intersect.cu.o
  ../Utilities/cxxopts.hpp
  ../arg_parse.h
  ../common.h
- /home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src/Data_Renderer/ray_intersect.cu
- /home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src/Data_Renderer/ray_intersect.h
+ /home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src/Data_Renderer/ray_intersect.cu
+ /home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src/Data_Renderer/ray_intersect.h
 CMakeFiles/shadow_base.dir/Data_Renderer/renderer.cu.o
  ../Dep/fmt/include/fmt/core.h
  ../Dep/fmt/include/fmt/format-inl.h
  ../Dep/fmt/include/fmt/format.h
  ../Dep/fmt/include/fmt/ranges.h
- ../Dep/fmt/include/fmt/xchar.h
  ../Dep/glm/glm/common.hpp
  ../Dep/glm/glm/detail/_fixes.hpp
  ../Dep/glm/glm/detail/_swizzle.hpp
@@ -645,18 +642,17 @@ CMakeFiles/shadow_base.dir/Data_Renderer/renderer.cu.o
  ../Utilities/cxxopts.hpp
  ../arg_parse.h
  ../common.h
- /home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src/Data_Renderer/Data_Renderer.h
- /home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src/Data_Renderer/data_rasterizer.h
- /home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src/Data_Renderer/ray_intersect.h
- /home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src/Data_Renderer/render_helper.h
- /home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src/Data_Renderer/renderer.cu
- /home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src/Data_Renderer/renderer.h
+ /home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src/Data_Renderer/Data_Renderer.h
+ /home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src/Data_Renderer/data_rasterizer.h
+ /home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src/Data_Renderer/ray_intersect.h
+ /home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src/Data_Renderer/render_helper.h
+ /home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src/Data_Renderer/renderer.cu
+ /home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src/Data_Renderer/renderer.h
 CMakeFiles/shadow_base.dir/Render_DS/Image.cu.o
  ../Dep/fmt/include/fmt/core.h
  ../Dep/fmt/include/fmt/format-inl.h
  ../Dep/fmt/include/fmt/format.h
  ../Dep/fmt/include/fmt/ranges.h
- ../Dep/fmt/include/fmt/xchar.h
  ../Dep/glm/glm/common.hpp
  ../Dep/glm/glm/detail/_fixes.hpp
  ../Dep/glm/glm/detail/_swizzle.hpp
@@ -861,8 +857,8 @@ CMakeFiles/shadow_base.dir/Render_DS/Image.cu.o
  ../Utilities/cxxopts.hpp
  ../arg_parse.h
  ../common.h
- /home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src/Render_DS/Image.cu
- /home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src/Render_DS/Image.h
+ /home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src/Render_DS/Image.cu
+ /home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src/Render_DS/Image.h
 CMakeFiles/shadow_base.dir/main.cu.o
  ../Data_Renderer/Data_Renderer.h
  ../Data_Renderer/data_rasterizer.h
@@ -872,7 +868,6 @@ CMakeFiles/shadow_base.dir/main.cu.o
  ../Dep/fmt/include/fmt/format-inl.h
  ../Dep/fmt/include/fmt/format.h
  ../Dep/fmt/include/fmt/ranges.h
- ../Dep/fmt/include/fmt/xchar.h
  ../Dep/glm/glm/common.hpp
  ../Dep/glm/glm/detail/_fixes.hpp
  ../Dep/glm/glm/detail/_swizzle.hpp
@@ -1080,13 +1075,12 @@ CMakeFiles/shadow_base.dir/main.cu.o
  ../Utilities/cxxopts.hpp
  ../arg_parse.h
  ../common.h
- /home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src/main.cu
+ /home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src/main.cu
 CMakeFiles/shadow_base.dir/Render_DS/mesh.cpp.o
  ../Dep/fmt/include/fmt/core.h
  ../Dep/fmt/include/fmt/format-inl.h
  ../Dep/fmt/include/fmt/format.h
  ../Dep/fmt/include/fmt/ranges.h
- ../Dep/fmt/include/fmt/xchar.h
  ../Dep/glm/glm/common.hpp
  ../Dep/glm/glm/detail/_fixes.hpp
  ../Dep/glm/glm/detail/_swizzle.hpp
@@ -1289,9 +1283,9 @@ CMakeFiles/shadow_base.dir/Render_DS/mesh.cpp.o
  ../Utilities/cxxopts.hpp
  ../arg_parse.h
  ../common.h
- /home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src/Render_DS/mesh.cpp
- /home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src/Render_DS/mesh.h
- /home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src/Render_DS/ppc.h
+ /home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src/Render_DS/mesh.cpp
+ /home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src/Render_DS/mesh.h
+ /home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src/Render_DS/ppc.h
  /usr/local/cuda/include/builtin_types.h
  /usr/local/cuda/include/channel_descriptor.h
  /usr/local/cuda/include/crt/common_functions.h
@@ -1352,7 +1346,6 @@ CMakeFiles/shadow_base.dir/Render_DS/model_loader.cpp.o
  ../Dep/fmt/include/fmt/format-inl.h
  ../Dep/fmt/include/fmt/format.h
  ../Dep/fmt/include/fmt/ranges.h
- ../Dep/fmt/include/fmt/xchar.h
  ../Dep/glm/glm/common.hpp
  ../Dep/glm/glm/detail/_fixes.hpp
  ../Dep/glm/glm/detail/_swizzle.hpp
@@ -1551,15 +1544,16 @@ CMakeFiles/shadow_base.dir/Render_DS/model_loader.cpp.o
  ../Dep/glm/glm/vec3.hpp
  ../Dep/glm/glm/vec4.hpp
  ../Dep/glm/glm/vector_relational.hpp
+ ../Dep/tinyobjloader/mapbox/earcut.hpp
  ../Dep/tinyobjloader/tiny_obj_loader.h
  ../Utilities/cuda_helper.h
  ../Utilities/cxxopts.hpp
  ../arg_parse.h
  ../common.h
- /home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src/Render_DS/mesh.h
- /home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src/Render_DS/model_loader.cpp
- /home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src/Render_DS/model_loader.h
- /home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src/Render_DS/ppc.h
+ /home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src/Render_DS/mesh.h
+ /home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src/Render_DS/model_loader.cpp
+ /home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src/Render_DS/model_loader.h
+ /home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src/Render_DS/ppc.h
  /usr/local/cuda/include/builtin_types.h
  /usr/local/cuda/include/channel_descriptor.h
  /usr/local/cuda/include/crt/common_functions.h
@@ -1620,7 +1614,6 @@ CMakeFiles/shadow_base.dir/Render_DS/ppc.cpp.o
  ../Dep/fmt/include/fmt/format-inl.h
  ../Dep/fmt/include/fmt/format.h
  ../Dep/fmt/include/fmt/ranges.h
- ../Dep/fmt/include/fmt/xchar.h
  ../Dep/glm/glm/common.hpp
  ../Dep/glm/glm/detail/_fixes.hpp
  ../Dep/glm/glm/detail/_swizzle.hpp
@@ -1823,8 +1816,8 @@ CMakeFiles/shadow_base.dir/Render_DS/ppc.cpp.o
  ../Utilities/cxxopts.hpp
  ../arg_parse.h
  ../common.h
- /home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src/Render_DS/ppc.cpp
- /home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src/Render_DS/ppc.h
+ /home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src/Render_DS/ppc.cpp
+ /home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src/Render_DS/ppc.h
  /usr/local/cuda/include/builtin_types.h
  /usr/local/cuda/include/channel_descriptor.h
  /usr/local/cuda/include/crt/common_functions.h
@@ -1885,7 +1878,6 @@ CMakeFiles/shadow_base.dir/arg_parse.cpp.o
  ../Dep/fmt/include/fmt/format-inl.h
  ../Dep/fmt/include/fmt/format.h
  ../Dep/fmt/include/fmt/ranges.h
- ../Dep/fmt/include/fmt/xchar.h
  ../Dep/glm/glm/common.hpp
  ../Dep/glm/glm/detail/_fixes.hpp
  ../Dep/glm/glm/detail/_swizzle.hpp
@@ -2087,8 +2079,8 @@ CMakeFiles/shadow_base.dir/arg_parse.cpp.o
  ../Utilities/cuda_helper.h
  ../Utilities/cxxopts.hpp
  ../common.h
- /home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src/arg_parse.cpp
- /home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src/arg_parse.h
+ /home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src/arg_parse.cpp
+ /home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src/arg_parse.h
  /usr/local/cuda/include/builtin_types.h
  /usr/local/cuda/include/channel_descriptor.h
  /usr/local/cuda/include/crt/common_functions.h

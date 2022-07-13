@@ -1,4 +1,4 @@
-# Install script for directory: /home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src/Dep/fmt
+# Install script for directory: /home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src/Dep/fmt
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

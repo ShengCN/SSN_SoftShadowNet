@@ -35,6 +35,8 @@ Render_DS/Render_DS.h
 -
 
 ../Dep/fmt/include/fmt/core.h
+cstddef
+-
 cstdio
 -
 cstring
@@ -87,6 +89,8 @@ cmath
 -
 cstdint
 -
+cstring
+-
 limits
 -
 memory
@@ -95,7 +99,7 @@ stdexcept
 -
 system_error
 -
-utility
+bit
 -
 core.h
 ../Dep/fmt/include/fmt/core.h
@@ -103,23 +107,15 @@ intrin.h
 -
 fmt/format.h
 -
-xchar.h
-../Dep/fmt/include/fmt/xchar.h
 format-inl.h
 ../Dep/fmt/include/fmt/format-inl.h
 
 ../Dep/fmt/include/fmt/ranges.h
 initializer_list
 -
-type_traits
--
-format.h
-../Dep/fmt/include/fmt/format.h
-
-../Dep/fmt/include/fmt/xchar.h
-cwchar
--
 tuple
+-
+type_traits
 -
 format.h
 ../Dep/fmt/include/fmt/format.h
@@ -1680,65 +1676,65 @@ Utilities/cxxopts.hpp
 arg_parse.h
 -
 
-/home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src/Data_Renderer/Data_Renderer.h
+/home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src/Data_Renderer/Data_Renderer.h
 data_rasterizer.h
-/home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src/Data_Renderer/data_rasterizer.h
+/home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src/Data_Renderer/data_rasterizer.h
 renderer.h
-/home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src/Data_Renderer/renderer.h
+/home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src/Data_Renderer/renderer.h
 ray_intersect.h
-/home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src/Data_Renderer/ray_intersect.h
+/home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src/Data_Renderer/ray_intersect.h
 
-/home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src/Data_Renderer/data_rasterizer.cu
+/home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src/Data_Renderer/data_rasterizer.cu
 data_rasterizer.h
-/home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src/Data_Renderer/data_rasterizer.h
+/home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src/Data_Renderer/data_rasterizer.h
 
-/home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src/Data_Renderer/data_rasterizer.h
+/home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src/Data_Renderer/data_rasterizer.h
 common.h
 -
 Render_DS/Render_DS.h
 -
 ray_intersect.h
-/home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src/Data_Renderer/ray_intersect.h
+/home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src/Data_Renderer/ray_intersect.h
 
-/home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src/Data_Renderer/ray_intersect.cu
+/home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src/Data_Renderer/ray_intersect.cu
 ray_intersect.h
-/home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src/Data_Renderer/ray_intersect.h
+/home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src/Data_Renderer/ray_intersect.h
 
-/home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src/Data_Renderer/ray_intersect.h
+/home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src/Data_Renderer/ray_intersect.h
 common.h
 -
 Render_DS/Render_DS.h
 -
 
-/home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src/Data_Renderer/render_helper.h
+/home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src/Data_Renderer/render_helper.h
 common.h
 -
 
-/home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src/Data_Renderer/renderer.cu
+/home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src/Data_Renderer/renderer.cu
 Data_Renderer.h
-/home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src/Data_Renderer/Data_Renderer.h
+/home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src/Data_Renderer/Data_Renderer.h
 render_helper.h
-/home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src/Data_Renderer/render_helper.h
+/home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src/Data_Renderer/render_helper.h
 
-/home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src/Data_Renderer/renderer.h
+/home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src/Data_Renderer/renderer.h
 common.h
 -
 Render_DS/Render_DS.h
 -
 
-/home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src/Render_DS/Image.cu
+/home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src/Render_DS/Image.cu
 Image.h
-/home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src/Render_DS/Image.h
+/home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src/Render_DS/Image.h
 stb/stb_image.h
-/home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src/Render_DS/stb/stb_image.h
+/home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src/Render_DS/stb/stb_image.h
 stb/stb_image_write.h
-/home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src/Render_DS/stb/stb_image_write.h
+/home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src/Render_DS/stb/stb_image_write.h
 
-/home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src/Render_DS/Image.h
+/home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src/Render_DS/Image.h
 common.h
 -
 
-/home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src/main.cu
+/home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src/main.cu
 common.h
 -
 Data_Renderer/Data_Renderer.h

@@ -93,10 +93,15 @@ def build_scene_hdf5_worker(inputs):
             x_dset = f.create_dataset(input_name, (width, height, 2), chunks=(width, height, 2), dtype='f', compression="gzip")
 
             mask_name = '{}_mask.png'.format(scene)
-            ao_name = '{}_touch.png'.format(scene)
+            rgb_name  = '{}_rgb.png'.format(scene)
+            ao_name   = '{}_touch.png'.format(scene)
 
             x_dset[:,:,0] = plt.imread(mask_name)[:,:,0]
             x_dset[:,:,1] = plt.imread(ao_name)[:,:,0]
+
+            input_name = 'rgb/{}'.format(scene_basename)
+            rgb_dset   = f.create_dataset(input_name, (width, height, 3), chunks=(width, height, 3), dtype='f', compression="gzip")
+            rgb_dset   = plt.imread(rgb_name)
 
             # 512 x 512 x 32 x 8 IBL
             scene_name = 'base_32_8/{}'.format(scene_basename)
@@ -148,7 +153,6 @@ def render_each_scene_hdf5(opt:dict):
             pickle.dump(scenes, f)
 
     inputs = [[scene[:scene.find('_mask.png')], width, height, tmp_hdf5_folder] for scene in scenes]
-
 
     processer_num = 64
     with multiprocessing.Pool(processer_num) as pool:

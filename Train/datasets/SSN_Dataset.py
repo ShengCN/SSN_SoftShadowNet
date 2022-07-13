@@ -35,12 +35,14 @@ class SSN_Dataset(Dataset):
                opt: {'hdf5_file': ...,
                      'use_ao': True/False    # do we use AO?
                      'use_64_16': True/False # do we use 512 x 512 x 64 x 16 IBL?
+                     'lights_per_scene': lights per scene, for one epoch, we render several lights for one scene
         }
         """
 
         self.hdf5_file   = opt['hdf5_file']
         self.use_ao      = opt['use_ao']
         self.use_64_16   = opt['use_64_16']
+        self.lights      = opt['lights_per_scene']
         self.is_training = is_training
         self.to_tensor   = ToTensor()
 
@@ -54,16 +56,17 @@ class SSN_Dataset(Dataset):
 
     def __len__(self):
         if self.is_training:
-            return self.train_n
+            return self.train_n * self.lights
         else:
-            return self.valid_n
+            return self.valid_n * self.lights
 
 
     def __getitem__(self, idx):
         if not self.is_training:
-            idx = self.training_num + idx
+            idx = self.train_n + idx
 
-        cur_scene = self.meta_data[idx]
+        scene_idx = idx % self.lights
+        cur_scene = self.meta_data[scene_idx]
 
         x    = self.x[cur_scene][...]
         base = self.base[cur_scene]

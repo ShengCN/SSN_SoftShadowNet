@@ -4768,9 +4768,9 @@ extern __attribute__((host)) __attribute__((device)) __attribute__((device_built
 # 38 "/usr/include/c++/9/new" 3
 
 # 1 "/usr/include/x86_64-linux-gnu/c++/9/bits/c++config.h" 1 3
-# 252 "/usr/include/x86_64-linux-gnu/c++/9/bits/c++config.h" 3
+# 256 "/usr/include/x86_64-linux-gnu/c++/9/bits/c++config.h" 3
 
-# 252 "/usr/include/x86_64-linux-gnu/c++/9/bits/c++config.h" 3
+# 256 "/usr/include/x86_64-linux-gnu/c++/9/bits/c++config.h" 3
 namespace std
 {
   typedef long unsigned int size_t;
@@ -4780,7 +4780,7 @@ namespace std
   typedef decltype(nullptr) nullptr_t;
 
 }
-# 274 "/usr/include/x86_64-linux-gnu/c++/9/bits/c++config.h" 3
+# 278 "/usr/include/x86_64-linux-gnu/c++/9/bits/c++config.h" 3
 namespace std
 {
   inline namespace __cxx11 __attribute__((__abi_tag__ ("cxx11"))) { }
@@ -4789,13 +4789,13 @@ namespace __gnu_cxx
 {
   inline namespace __cxx11 __attribute__((__abi_tag__ ("cxx11"))) { }
 }
-# 524 "/usr/include/x86_64-linux-gnu/c++/9/bits/c++config.h" 3
+# 528 "/usr/include/x86_64-linux-gnu/c++/9/bits/c++config.h" 3
 # 1 "/usr/include/x86_64-linux-gnu/c++/9/bits/os_defines.h" 1 3
-# 525 "/usr/include/x86_64-linux-gnu/c++/9/bits/c++config.h" 2 3
+# 529 "/usr/include/x86_64-linux-gnu/c++/9/bits/c++config.h" 2 3
 
 
 # 1 "/usr/include/x86_64-linux-gnu/c++/9/bits/cpu_defines.h" 1 3
-# 528 "/usr/include/x86_64-linux-gnu/c++/9/bits/c++config.h" 2 3
+# 532 "/usr/include/x86_64-linux-gnu/c++/9/bits/c++config.h" 2 3
 # 40 "/usr/include/c++/9/new" 2 3
 # 1 "/usr/include/c++/9/exception" 1 3
 # 33 "/usr/include/c++/9/exception" 3
@@ -4836,6 +4836,8 @@ namespace std
     virtual const char*
     what() const noexcept;
   };
+
+
 
 }
 
@@ -6108,55 +6110,48 @@ namespace std __attribute__ ((__visibility__ ("default")))
     : public __is_move_constructible_impl<_Tp>
     { };
 
-  template<typename _Tp>
-    struct __is_nt_default_constructible_atom
-    : public integral_constant<bool, noexcept(_Tp())>
+  template<bool, typename _Tp, typename... _Args>
+    struct __is_nt_constructible_impl
+    : public false_type
     { };
 
-  template<typename _Tp, bool = is_array<_Tp>::value>
-    struct __is_nt_default_constructible_impl;
+  template<typename _Tp, typename... _Args>
+    struct __is_nt_constructible_impl<true, _Tp, _Args...>
+    : public __bool_constant<noexcept(_Tp(std::declval<_Args>()...))>
+    { };
 
-  template<typename _Tp>
-    struct __is_nt_default_constructible_impl<_Tp, true>
-    : public __and_<__is_array_known_bounds<_Tp>,
-      __is_nt_default_constructible_atom<typename
-                      remove_all_extents<_Tp>::type>>
+  template<typename _Tp, typename _Arg>
+    struct __is_nt_constructible_impl<true, _Tp, _Arg>
+    : public __bool_constant<noexcept(static_cast<_Tp>(std::declval<_Arg>()))>
     { };
 
   template<typename _Tp>
-    struct __is_nt_default_constructible_impl<_Tp, false>
-    : public __is_nt_default_constructible_atom<_Tp>
+    struct __is_nt_constructible_impl<true, _Tp>
+    : public __bool_constant<noexcept(_Tp())>
+    { };
+
+  template<typename _Tp, size_t _Num>
+    struct __is_nt_constructible_impl<true, _Tp[_Num]>
+    : public __bool_constant<noexcept(typename remove_all_extents<_Tp>::type())>
+    { };
+
+  template<typename _Tp, typename... _Args>
+    using __is_nothrow_constructible_impl
+      = __is_nt_constructible_impl<__is_constructible(_Tp, _Args...),
+       _Tp, _Args...>;
+
+
+  template<typename _Tp, typename... _Args>
+    struct is_nothrow_constructible
+    : public __is_nothrow_constructible_impl<_Tp, _Args...>::type
     { };
 
 
   template<typename _Tp>
     struct is_nothrow_default_constructible
-    : public __and_<is_default_constructible<_Tp>,
-                    __is_nt_default_constructible_impl<_Tp>>
+    : public __is_nothrow_constructible_impl<_Tp>::type
     { };
 
-  template<typename _Tp, typename... _Args>
-    struct __is_nt_constructible_impl
-    : public integral_constant<bool, noexcept(_Tp(declval<_Args>()...))>
-    { };
-
-  template<typename _Tp, typename _Arg>
-    struct __is_nt_constructible_impl<_Tp, _Arg>
-    : public integral_constant<bool,
-                               noexcept(static_cast<_Tp>(declval<_Arg>()))>
-    { };
-
-  template<typename _Tp>
-    struct __is_nt_constructible_impl<_Tp>
-    : public is_nothrow_default_constructible<_Tp>
-    { };
-
-
-  template<typename _Tp, typename... _Args>
-    struct is_nothrow_constructible
-    : public __and_<is_constructible<_Tp, _Args...>,
-      __is_nt_constructible_impl<_Tp, _Args...>>
-    { };
 
   template<typename _Tp, bool = __is_referenceable<_Tp>::value>
     struct __is_nothrow_copy_constructible_impl;
@@ -6517,7 +6512,7 @@ namespace std __attribute__ ((__visibility__ ("default")))
     struct is_convertible
     : public __is_convertible_helper<_From, _To>::type
     { };
-# 1381 "/usr/include/c++/9/type_traits" 3
+# 1374 "/usr/include/c++/9/type_traits" 3
   template<typename _Tp>
     struct remove_const
     { typedef _Tp type; };
@@ -6713,7 +6708,7 @@ namespace std __attribute__ ((__visibility__ ("default")))
   template<>
     struct __make_unsigned<__int128>
     { typedef unsigned __int128 __type; };
-# 1594 "/usr/include/c++/9/type_traits" 3
+# 1587 "/usr/include/c++/9/type_traits" 3
   template<typename _Tp,
     bool _IsInt = is_integral<_Tp>::value,
     bool _IsEnum = is_enum<_Tp>::value>
@@ -6779,7 +6774,7 @@ namespace std __attribute__ ((__visibility__ ("default")))
       using __type
  = typename __make_unsigned_selector<wchar_t, false, true>::__type;
     };
-# 1670 "/usr/include/c++/9/type_traits" 3
+# 1663 "/usr/include/c++/9/type_traits" 3
   template<>
     struct __make_unsigned<char16_t>
     {
@@ -6840,7 +6835,7 @@ namespace std __attribute__ ((__visibility__ ("default")))
   template<>
     struct __make_signed<unsigned __int128>
     { typedef __int128 __type; };
-# 1748 "/usr/include/c++/9/type_traits" 3
+# 1741 "/usr/include/c++/9/type_traits" 3
   template<typename _Tp,
     bool _IsInt = is_integral<_Tp>::value,
     bool _IsEnum = is_enum<_Tp>::value>
@@ -6878,7 +6873,7 @@ namespace std __attribute__ ((__visibility__ ("default")))
       using __type
  = typename __make_signed_selector<wchar_t, false, true>::__type;
     };
-# 1796 "/usr/include/c++/9/type_traits" 3
+# 1789 "/usr/include/c++/9/type_traits" 3
   template<>
     struct __make_signed<char16_t>
     {
@@ -7003,7 +6998,7 @@ namespace std __attribute__ ((__visibility__ ("default")))
  struct __attribute__((__aligned__)) { } __align;
       };
     };
-# 1931 "/usr/include/c++/9/type_traits" 3
+# 1924 "/usr/include/c++/9/type_traits" 3
   template<std::size_t _Len, std::size_t _Align =
     __alignof__(typename __aligned_storage_msa<_Len>::__type)>
     struct aligned_storage
@@ -7032,7 +7027,7 @@ namespace std __attribute__ ((__visibility__ ("default")))
         sizeof(_Tp) > __strictest_alignment<_Types...>::_S_size
  ? sizeof(_Tp) : __strictest_alignment<_Types...>::_S_size;
     };
-# 1970 "/usr/include/c++/9/type_traits" 3
+# 1963 "/usr/include/c++/9/type_traits" 3
   template <size_t _Len, typename... _Types>
     struct aligned_union
     {
@@ -7508,7 +7503,7 @@ namespace std __attribute__ ((__visibility__ ("default")))
     typename... _Args>
     using __detected_or_t
       = typename __detected_or<_Default, _Op, _Args...>::type;
-# 2462 "/usr/include/c++/9/type_traits" 3
+# 2455 "/usr/include/c++/9/type_traits" 3
   template <typename _Tp>
     struct __is_swappable;
 
@@ -7819,7 +7814,7 @@ namespace std __attribute__ ((__visibility__ ("default")))
     __nonesuch(__nonesuch const&) = delete;
     void operator=(__nonesuch const&) = delete;
   };
-# 3103 "/usr/include/c++/9/type_traits" 3
+# 3096 "/usr/include/c++/9/type_traits" 3
 
 }
 # 56 "/usr/include/c++/9/bits/move.h" 2 3
@@ -22383,7 +22378,7 @@ char const info_version[] = {
 
   '.', ('0' + (((1) / 10000000)%10)), ('0' + (((1) / 1000000)%10)), ('0' + (((1) / 100000)%10)), ('0' + (((1) / 10000)%10)), ('0' + (((1) / 1000)%10)), ('0' + (((1) / 100)%10)), ('0' + (((1) / 10)%10)), ('0' + ((1) % 10)),
 
-   '.', ('0' + (((105) / 10000000)%10)), ('0' + (((105) / 1000000)%10)), ('0' + (((105) / 100000)%10)), ('0' + (((105) / 10000)%10)), ('0' + (((105) / 1000)%10)), ('0' + (((105) / 100)%10)), ('0' + (((105) / 10)%10)), ('0' + ((105) % 10)),
+   '.', ('0' + (((74) / 10000000)%10)), ('0' + (((74) / 1000000)%10)), ('0' + (((74) / 100000)%10)), ('0' + (((74) / 10000)%10)), ('0' + (((74) / 1000)%10)), ('0' + (((74) / 100)%10)), ('0' + (((74) / 10)%10)), ('0' + ((74) % 10)),
 
 
 

@@ -1,4 +1,4 @@
-# Install script for directory: /home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src/Dep/glm
+# Install script for directory: /home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src/Dep/glm
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,7 +39,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/ysheng/Documents/Research/SSN_SoftShadowNet/data/src/build/Dep/glm/glm/cmake_install.cmake")
+  include("/home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src/build/Dep/glm/glm/cmake_install.cmake")
 
 endif()
 

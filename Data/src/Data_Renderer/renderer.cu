@@ -225,9 +225,7 @@ void shadow_render(scene &cur_scene, render_param &cur_rp, output_param &out) {
 	for(int ibl_i = 0; ibl_i <= cur_rp.ibl_w/cur_rp.patch_size; ++ibl_i) {
 		for(int ibl_j = cur_rp.ibl_h / 2 /cur_rp.patch_size; ibl_j <= cur_rp.ibl_h / cur_rp.patch_size; ++ibl_j) {
 			pixel_pos begin_pixel_pos = {ibl_i * cur_rp.patch_size, ibl_j * cur_rp.patch_size};
-			std::string cur_prefix = fmt::format("pitch_{}_rot_{}_fov_{:.2f}_ibli_{}_iblj_{}",
-			(int)cur_rp.camera_pitch, (int)cur_rp.target_rot, cur_rp.cur_ppc.get_fov(),
-			begin_pixel_pos.x, begin_pixel_pos.y);
+			std::string cur_prefix = fmt::format("pitch_{:.5f}_rot_{:.5f}_fov_{:.2f}_ibli_{}_iblj_{}", cur_rp.camera_pitch, cur_rp.target_rot, cur_rp.cur_ppc.get_fov(), begin_pixel_pos.x, begin_pixel_pos.y);
 			std::string output_fname = out.output_folder + "/" + cur_prefix + "_shadow.png";
 			
 			if (out.resume && is_rendered(output_fname)) {
@@ -362,7 +360,7 @@ void render_scenes(const exp_params &params,
 				render_target->compute_world_center(),
 				cur_plane);
 			render_param cur_rp = {*render_camera, vec3(0.0f), render_target_center, 
-				params.ibl_h, params.ibl_w, params.patch_size, (int)camera_pitch, (int)target_rot};
+				params.ibl_h, params.ibl_w, params.patch_size, camera_pitch, target_rot};
 			output_param oparam = {params.resume, params.verbose, params.base_avg, params.output, "", image()};
 
 			/* Refine the camera orientation to leave enough shadow space */
@@ -382,7 +380,7 @@ void render_scenes(const exp_params &params,
 			cur_rp.cur_ppc = *render_camera;
 			
 			std::string cur_prefix;
-			cur_prefix = fmt::format("pitch_{}_rot_{}_fov_{:.2f}", (int)camera_pitch, (int)target_rot, random_fov);
+			cur_prefix = fmt::format("pitch_{:.5f}_rot_{:.5f}_fov_{:.2f}", camera_pitch, target_rot, random_fov);
 
             {
 				oparam.ofname = params.output + "/" + cur_prefix + "_mts.bin";

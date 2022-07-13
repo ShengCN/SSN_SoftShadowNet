@@ -29,7 +29,7 @@ struct render_param {
 	vec3 light_pos, render_target_center;
 
 	int ibl_h, ibl_w, patch_size;
-	int camera_pitch, target_rot;
+	float camera_pitch, target_rot;
 };
 
 struct output_param {

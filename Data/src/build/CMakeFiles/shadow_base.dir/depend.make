@@ -5,7 +5,6 @@ CMakeFiles/shadow_base.dir/Data_Renderer/data_rasterizer.cu.o: ../Dep/fmt/includ
 CMakeFiles/shadow_base.dir/Data_Renderer/data_rasterizer.cu.o: ../Dep/fmt/include/fmt/format-inl.h
 CMakeFiles/shadow_base.dir/Data_Renderer/data_rasterizer.cu.o: ../Dep/fmt/include/fmt/format.h
 CMakeFiles/shadow_base.dir/Data_Renderer/data_rasterizer.cu.o: ../Dep/fmt/include/fmt/ranges.h
-CMakeFiles/shadow_base.dir/Data_Renderer/data_rasterizer.cu.o: ../Dep/fmt/include/fmt/xchar.h
 CMakeFiles/shadow_base.dir/Data_Renderer/data_rasterizer.cu.o: ../Dep/glm/glm/common.hpp
 CMakeFiles/shadow_base.dir/Data_Renderer/data_rasterizer.cu.o: ../Dep/glm/glm/detail/_fixes.hpp
 CMakeFiles/shadow_base.dir/Data_Renderer/data_rasterizer.cu.o: ../Dep/glm/glm/detail/_swizzle.hpp
@@ -221,7 +220,6 @@ CMakeFiles/shadow_base.dir/Data_Renderer/ray_intersect.cu.o: ../Dep/fmt/include/
 CMakeFiles/shadow_base.dir/Data_Renderer/ray_intersect.cu.o: ../Dep/fmt/include/fmt/format-inl.h
 CMakeFiles/shadow_base.dir/Data_Renderer/ray_intersect.cu.o: ../Dep/fmt/include/fmt/format.h
 CMakeFiles/shadow_base.dir/Data_Renderer/ray_intersect.cu.o: ../Dep/fmt/include/fmt/ranges.h
-CMakeFiles/shadow_base.dir/Data_Renderer/ray_intersect.cu.o: ../Dep/fmt/include/fmt/xchar.h
 CMakeFiles/shadow_base.dir/Data_Renderer/ray_intersect.cu.o: ../Dep/glm/glm/common.hpp
 CMakeFiles/shadow_base.dir/Data_Renderer/ray_intersect.cu.o: ../Dep/glm/glm/detail/_fixes.hpp
 CMakeFiles/shadow_base.dir/Data_Renderer/ray_intersect.cu.o: ../Dep/glm/glm/detail/_swizzle.hpp
@@ -436,7 +434,6 @@ CMakeFiles/shadow_base.dir/Data_Renderer/renderer.cu.o: ../Dep/fmt/include/fmt/c
 CMakeFiles/shadow_base.dir/Data_Renderer/renderer.cu.o: ../Dep/fmt/include/fmt/format-inl.h
 CMakeFiles/shadow_base.dir/Data_Renderer/renderer.cu.o: ../Dep/fmt/include/fmt/format.h
 CMakeFiles/shadow_base.dir/Data_Renderer/renderer.cu.o: ../Dep/fmt/include/fmt/ranges.h
-CMakeFiles/shadow_base.dir/Data_Renderer/renderer.cu.o: ../Dep/fmt/include/fmt/xchar.h
 CMakeFiles/shadow_base.dir/Data_Renderer/renderer.cu.o: ../Dep/glm/glm/common.hpp
 CMakeFiles/shadow_base.dir/Data_Renderer/renderer.cu.o: ../Dep/glm/glm/detail/_fixes.hpp
 CMakeFiles/shadow_base.dir/Data_Renderer/renderer.cu.o: ../Dep/glm/glm/detail/_swizzle.hpp
@@ -655,7 +652,6 @@ CMakeFiles/shadow_base.dir/Render_DS/Image.cu.o: ../Dep/fmt/include/fmt/core.h
 CMakeFiles/shadow_base.dir/Render_DS/Image.cu.o: ../Dep/fmt/include/fmt/format-inl.h
 CMakeFiles/shadow_base.dir/Render_DS/Image.cu.o: ../Dep/fmt/include/fmt/format.h
 CMakeFiles/shadow_base.dir/Render_DS/Image.cu.o: ../Dep/fmt/include/fmt/ranges.h
-CMakeFiles/shadow_base.dir/Render_DS/Image.cu.o: ../Dep/fmt/include/fmt/xchar.h
 CMakeFiles/shadow_base.dir/Render_DS/Image.cu.o: ../Dep/glm/glm/common.hpp
 CMakeFiles/shadow_base.dir/Render_DS/Image.cu.o: ../Dep/glm/glm/detail/_fixes.hpp
 CMakeFiles/shadow_base.dir/Render_DS/Image.cu.o: ../Dep/glm/glm/detail/_swizzle.hpp
@@ -871,7 +867,6 @@ CMakeFiles/shadow_base.dir/main.cu.o: ../Dep/fmt/include/fmt/core.h
 CMakeFiles/shadow_base.dir/main.cu.o: ../Dep/fmt/include/fmt/format-inl.h
 CMakeFiles/shadow_base.dir/main.cu.o: ../Dep/fmt/include/fmt/format.h
 CMakeFiles/shadow_base.dir/main.cu.o: ../Dep/fmt/include/fmt/ranges.h
-CMakeFiles/shadow_base.dir/main.cu.o: ../Dep/fmt/include/fmt/xchar.h
 CMakeFiles/shadow_base.dir/main.cu.o: ../Dep/glm/glm/common.hpp
 CMakeFiles/shadow_base.dir/main.cu.o: ../Dep/glm/glm/detail/_fixes.hpp
 CMakeFiles/shadow_base.dir/main.cu.o: ../Dep/glm/glm/detail/_swizzle.hpp
@@ -1085,7 +1080,6 @@ CMakeFiles/shadow_base.dir/Render_DS/mesh.cpp.o: ../Dep/fmt/include/fmt/core.h
 CMakeFiles/shadow_base.dir/Render_DS/mesh.cpp.o: ../Dep/fmt/include/fmt/format-inl.h
 CMakeFiles/shadow_base.dir/Render_DS/mesh.cpp.o: ../Dep/fmt/include/fmt/format.h
 CMakeFiles/shadow_base.dir/Render_DS/mesh.cpp.o: ../Dep/fmt/include/fmt/ranges.h
-CMakeFiles/shadow_base.dir/Render_DS/mesh.cpp.o: ../Dep/fmt/include/fmt/xchar.h
 CMakeFiles/shadow_base.dir/Render_DS/mesh.cpp.o: ../Dep/glm/glm/common.hpp
 CMakeFiles/shadow_base.dir/Render_DS/mesh.cpp.o: ../Dep/glm/glm/detail/_fixes.hpp
 CMakeFiles/shadow_base.dir/Render_DS/mesh.cpp.o: ../Dep/glm/glm/detail/_swizzle.hpp
@@ -1351,7 +1345,6 @@ CMakeFiles/shadow_base.dir/Render_DS/model_loader.cpp.o: ../Dep/fmt/include/fmt/
 CMakeFiles/shadow_base.dir/Render_DS/model_loader.cpp.o: ../Dep/fmt/include/fmt/format-inl.h
 CMakeFiles/shadow_base.dir/Render_DS/model_loader.cpp.o: ../Dep/fmt/include/fmt/format.h
 CMakeFiles/shadow_base.dir/Render_DS/model_loader.cpp.o: ../Dep/fmt/include/fmt/ranges.h
-CMakeFiles/shadow_base.dir/Render_DS/model_loader.cpp.o: ../Dep/fmt/include/fmt/xchar.h
 CMakeFiles/shadow_base.dir/Render_DS/model_loader.cpp.o: ../Dep/glm/glm/common.hpp
 CMakeFiles/shadow_base.dir/Render_DS/model_loader.cpp.o: ../Dep/glm/glm/detail/_fixes.hpp
 CMakeFiles/shadow_base.dir/Render_DS/model_loader.cpp.o: ../Dep/glm/glm/detail/_swizzle.hpp
@@ -1550,6 +1543,7 @@ CMakeFiles/shadow_base.dir/Render_DS/model_loader.cpp.o: ../Dep/glm/glm/vec2.hpp
 CMakeFiles/shadow_base.dir/Render_DS/model_loader.cpp.o: ../Dep/glm/glm/vec3.hpp
 CMakeFiles/shadow_base.dir/Render_DS/model_loader.cpp.o: ../Dep/glm/glm/vec4.hpp
 CMakeFiles/shadow_base.dir/Render_DS/model_loader.cpp.o: ../Dep/glm/glm/vector_relational.hpp
+CMakeFiles/shadow_base.dir/Render_DS/model_loader.cpp.o: ../Dep/tinyobjloader/mapbox/earcut.hpp
 CMakeFiles/shadow_base.dir/Render_DS/model_loader.cpp.o: ../Dep/tinyobjloader/tiny_obj_loader.h
 CMakeFiles/shadow_base.dir/Render_DS/model_loader.cpp.o: ../Utilities/cuda_helper.h
 CMakeFiles/shadow_base.dir/Render_DS/model_loader.cpp.o: ../Utilities/cxxopts.hpp
@@ -1619,7 +1613,6 @@ CMakeFiles/shadow_base.dir/Render_DS/ppc.cpp.o: ../Dep/fmt/include/fmt/core.h
 CMakeFiles/shadow_base.dir/Render_DS/ppc.cpp.o: ../Dep/fmt/include/fmt/format-inl.h
 CMakeFiles/shadow_base.dir/Render_DS/ppc.cpp.o: ../Dep/fmt/include/fmt/format.h
 CMakeFiles/shadow_base.dir/Render_DS/ppc.cpp.o: ../Dep/fmt/include/fmt/ranges.h
-CMakeFiles/shadow_base.dir/Render_DS/ppc.cpp.o: ../Dep/fmt/include/fmt/xchar.h
 CMakeFiles/shadow_base.dir/Render_DS/ppc.cpp.o: ../Dep/glm/glm/common.hpp
 CMakeFiles/shadow_base.dir/Render_DS/ppc.cpp.o: ../Dep/glm/glm/detail/_fixes.hpp
 CMakeFiles/shadow_base.dir/Render_DS/ppc.cpp.o: ../Dep/glm/glm/detail/_swizzle.hpp
@@ -1884,7 +1877,6 @@ CMakeFiles/shadow_base.dir/arg_parse.cpp.o: ../Dep/fmt/include/fmt/core.h
 CMakeFiles/shadow_base.dir/arg_parse.cpp.o: ../Dep/fmt/include/fmt/format-inl.h
 CMakeFiles/shadow_base.dir/arg_parse.cpp.o: ../Dep/fmt/include/fmt/format.h
 CMakeFiles/shadow_base.dir/arg_parse.cpp.o: ../Dep/fmt/include/fmt/ranges.h
-CMakeFiles/shadow_base.dir/arg_parse.cpp.o: ../Dep/fmt/include/fmt/xchar.h
 CMakeFiles/shadow_base.dir/arg_parse.cpp.o: ../Dep/glm/glm/common.hpp
 CMakeFiles/shadow_base.dir/arg_parse.cpp.o: ../Dep/glm/glm/detail/_fixes.hpp
 CMakeFiles/shadow_base.dir/arg_parse.cpp.o: ../Dep/glm/glm/detail/_swizzle.hpp

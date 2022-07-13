@@ -34,7 +34,6 @@ def unfreeze(module):
     for param in module.parameters():
         param.requires_grad = True
 
-
 def get_optimizer(opt, model):
     lr           = float(opt['hyper_params']['lr'])
     beta1        = float(opt['model']['beta1'])
@@ -92,231 +91,228 @@ def get_norm(out_channels, norm_type='Instance'):
         return nn.BatchNorm2d(out_channels)
 
     if norm_type == 'Group':
-        raise NotImplementedError
+        if out_channels >= 32:
+            groups = 32
+        else:
+            groups = 1
+
+        return nn.GroupNorm(groups, out_channels)
+
+    else:
+        raise NotImplementedError('{} has not implemented yet'.format(norm_type))
 
 
-class Conv_1x1(nn.Module):
-    def __init__(self, in_channels, out_channels, stride=1, norm_type='Batch', activation='relu'):
-        super().__init__()
 
-        act_func =get_activation(activation)
-        norm_layer = get_norm(out_channels, norm_type)
-        self.conv = nn.Sequential(
-            nn.Conv2d(in_channels, out_channels, kernel_size=1, stride=stride, padding=0, bias=True, padding_mode='reflect'),
-            norm_layer,
-            act_func)
-
-    def forward(self, x):
-        return self.conv(x)
+def get_layer_info(out_channels, activation_func='relu'):
+    activation = get_activation(activation_func)
+    norm_layer = get_norm(out_channels, 'Group')
+    return norm_layer, activation
 
 
 class Conv(nn.Module):
-    def __init__(self, in_channels, out_channels, stride=1, norm_type='Batch', activation='relu'):
+    """ (convolution => [BN] => ReLU) """
+    def __init__(self,
+                 in_channels,
+                 out_channels,
+                 kernel_size=3,
+                 stride=1,
+                 padding=1,
+                 bias=True,
+                 activation='leaky',
+                 resnet=True):
         super().__init__()
 
-        act_func   = get_activation(activation)
-        norm_layer = get_norm(out_channels, norm_type)
+        norm_layer, act_func = get_layer_info(out_channels,activation)
+
+        if resnet and in_channels == out_channels:
+            self.resnet = True
+        else:
+            self.resnet = False
+
         self.conv = nn.Sequential(
-            nn.Conv2d(in_channels, out_channels, kernel_size=3, stride=stride, padding=1, bias=True, padding_mode='reflect'),
+            nn.Conv2d(in_channels, out_channels, stride=stride, kernel_size=kernel_size, padding=padding, bias=bias),
             norm_layer,
             act_func)
 
     def forward(self, x):
-        return self.conv(x)
+        res = self.conv(x)
+
+        if self.resnet:
+            res = res + x
+
+        return res
+
+
+
+class Up(nn.Module):
+    """ Upscaling then conv """
+
+    def __init__(self, in_channels, out_channels, activation='relu',  resnet=True):
+        super().__init__()
+
+        self.up_layer = nn.Upsample(scale_factor=2, mode='bilinear', align_corners=True)
+        self.up       = Conv(in_channels, out_channels, activation=activation, resnet=resnet)
+
+    def forward(self, x):
+        x = self.up_layer(x)
+        return self.up(x)
+
 
 
 class DConv(nn.Module):
     """ Double Conv Layer
     """
-    def __init__(self, in_channels, out_channels, norm_type='Batch', activation='relu', resnet=True):
+    def __init__(self, in_channels, out_channels, activation='relu', resnet=True):
         super().__init__()
 
-        self.in_equal_out = in_channels == out_channels
-        self.resnet = resnet
-        self.conv1 = Conv(in_channels, out_channels, norm_type=norm_type, activation=activation)
-        self.conv2 = Conv(out_channels, out_channels, norm_type=norm_type, activation=activation)
+        self.conv1 = Conv(in_channels, out_channels, activation=activation, resnet=resnet)
+        self.conv2 = Conv(out_channels, out_channels, activation=activation, resnet=resnet)
 
     def forward(self, x):
-        if self.resnet and self.in_equal_out:
-            x = x + self.conv1(x)
-            return self.conv2(x) + x
-
-        elif self.resnet:
-            x = self.conv1(x)
-            return self.conv2(x) + x
-
-        else:
-            return self.conv2(self.conv1(x))
-
-
-class Up(nn.Module):
-    def __init__(self, in_channels, out_channels, norm_type='Batch', activation = 'relu', resnet=True):
-        super().__init__()
-
-        self.up    = nn.Upsample(scale_factor=2, mode='bilinear', align_corners=True)
-        self.dconv = DConv(in_channels + in_channels//2, out_channels, norm_type=norm_type, resnet=resnet)
-
-    def forward(self, x1, x2):
-        x1 = self.up(x1)
-        x  = torch.cat([x2, x1], dim=1)
-        return self.dconv(x)
+        return self.conv2(self.conv1(x))
 
 
 class Encoder(nn.Module):
-    def __init__(self, in_channels, norm_type='Batch', mid_act='relu', resnet=True):
-        """ Default auto encoder
-            From U-net paper, default output for encoder part is 512
-        """
-        super().__init__()
-        self.indconv = Conv(in_channels, 64-in_channels, norm_type=norm_type, activation=mid_act)
-
-        self.to_128 = Conv(64, 128, stride=2, norm_type=norm_type, activation=mid_act)
-        self.dconv128 = DConv(128, 128, norm_type=norm_type, activation=mid_act, resnet=resnet)
-
-        self.to_256 = Conv(128, 256, stride=2, norm_type=norm_type, activation=mid_act)
-        self.dconv256 = DConv(256, 256, norm_type=norm_type, activation=mid_act, resnet=resnet)
-
-        self.to_512 = Conv(256, 512, stride=2, norm_type=norm_type, activation=mid_act)
-        self.dconv512 = DConv(512, 512, norm_type=norm_type, activation=mid_act, resnet=resnet)
-
-        self.to_1024 = Conv(512, 1024, stride=2, norm_type=norm_type, activation=mid_act)
+    def __init__(self, in_channels=3, mid_act='leaky', resnet=True):
+        super(Encoder, self).__init__()
+        self.in_conv        = Conv(in_channels, 32-in_channels, stride=1, activation=mid_act, resnet=resnet)
+        self.down_32_64     = Conv(32, 64, stride=2, activation=mid_act, resnet=resnet)
+        self.down_64_64_1   = Conv(64, 64, activation=mid_act, resnet=resnet)
+        self.down_64_128    = Conv(64, 128, stride=2, activation=mid_act, resnet=resnet)
+        self.down_128_128_1 = Conv(128, 128,  activation=mid_act, resnet=resnet)
+        self.down_128_256   = Conv(128, 256, stride=2, activation=mid_act, resnet=resnet)
+        self.down_256_256_1 = Conv(256, 256, activation=mid_act, resnet=resnet)
+        self.down_256_512   = Conv(256, 512, stride=2, activation=mid_act, resnet=resnet)
+        self.down_512_512_1 = Conv(512, 512, activation=mid_act, resnet=resnet)
+        self.down_512_512_2 = Conv(512, 512, activation=mid_act, resnet=resnet)
+        self.down_512_512_3 = Conv(512, 512, activation=mid_act, resnet=resnet)
 
 
     def forward(self, x):
-        x_in = self.indconv(x)
-        x64 = torch.cat((x_in, x), dim=1)
-        x128 = self.dconv128(self.to_128(x64))
-        x256 = self.dconv256(self.to_256(x128))
-        x512 = self.dconv512(self.to_512(x256))
-        x1024 = self.to_1024(x512)
+        x1 = self.in_conv(x)  # 32 x 256 x 256
+        x1 = torch.cat((x, x1), dim=1)
 
-        return x1024, x512, x256, x128, x64
+        x2 = self.down_32_64(x1)
+        x3 = self.down_64_64_1(x2)
+
+        x4 = self.down_64_128(x3)
+        x5 = self.down_128_128_1(x4)
+
+        x6 = self.down_128_256(x5)
+        x7 = self.down_256_256_1(x6)
+
+        x8 = self.down_256_512(x7)
+        x9 = self.down_512_512_1(x8)
+        x10 = self.down_512_512_2(x9)
+        x11 = self.down_512_512_3(x10)
+
+        return x11, x10, x9, x8, x7, x6, x5, x4, x3, x2, x1
 
 
 class Decoder(nn.Module):
-    def __init__(self, in_channels, out_channels, norm_type='Batch', mid_act='relu', resnet=True, out_act='sigmoid'):
-        """ Default auto encoder
-            From U-net paper, default input for decoder part is 1024
-        """
-        super().__init__()
-        self.up1024 = Up(in_channels, 512, norm_type=norm_type, activation=mid_act, resnet=resnet)
-        self.up512  = Up(512, 256, norm_type=norm_type, activation=mid_act, resnet=resnet)
-        self.up256  = Up(256, 128, norm_type=norm_type, activation=mid_act, resnet=resnet)
-        self.up128  = Up(128, 64, norm_type=norm_type, activation=mid_act, resnet=resnet)
-        self.out    = Conv(64, out_channels, norm_type=norm_type, activation=out_act)
+    """ Up Stream Sequence """
 
-    def forward(self, x, prev_x):
-        y = self.up1024(x, prev_x[1])
-        y = self.up512(y, prev_x[2])
-        y = self.up256(y, prev_x[3])
-        y = self.up128(y, prev_x[4])
-        return self.out(y)
-
-
-class Unet(nn.Module):
-    """ Standard Unet Implementation
-        src: https://arxiv.org/pdf/1505.04597.pdf
-    """
     def __init__(self,
-                 in_channels,
-                 out_channels,
-                 norm_type='Batch',
+                 out_channels=3,
+                 mid_act='relu',
                  out_act='sigmoid',
-                 resnet=False,
-                 freeze_layers=False):
+                 resnet = True):
 
-        super(Unet, self).__init__()
-        self.encoder = Encoder(in_channels, norm_type=norm_type)
-        self.bottle  = self.get_bottle(resnet, norm_type)
-        self.decoder = Decoder(out_channels, norm_type=norm_type,out_act=out_act)
+        super(Decoder, self).__init__()
 
-
-    def forward(self, x):
-        import pdb; pdb.set_trace()
-        prev_x = self.encoder(x)
-        bottle = self.bottle(prev_x[0])
-        return self.decoder(bottle, prev_x)
+        input_channel = 512
+        fea_dim       = 100
 
 
-    def get_bottle(self, resnet, norm_type):
-        if not resnet:
-            bottle = nn.Sequential(
-                DConv(1024, 1024, norm_type=norm_type, resnet=False)
-            )
-        else:
-            bottle = nn.Sequential(
-                DConv(1024, 1024, norm_type=norm_type, resnet=True),
-                DConv(1024, 1024, norm_type=norm_type, resnet=True),
-                DConv(1024, 1024, norm_type=norm_type, resnet=True),
-            )
-        return bottle
+        self.up_16_16_1 = Conv(input_channel, 256, activation=mid_act, resnet=resnet)
+        self.up_16_16_2 = Conv(768, 512, activation=mid_act, resnet=resnet)
+        self.up_16_16_3 = Conv(1024, 512, activation=mid_act, resnet=resnet)
+
+        self.up_16_32   = Up(1024, 256, activation=mid_act, resnet=resnet)
+        self.up_32_32_1 = Conv(512, 256, activation=mid_act, resnet=resnet)
+
+        self.up_32_64   = Up(512, 128, activation=mid_act, resnet=resnet)
+        self.up_64_64_1 = Conv(256, 128, activation=mid_act, resnet=resnet)
+
+        self.up_64_128    = Up(256, 64, activation=mid_act, resnet=resnet)
+        self.up_128_128_1 = Conv(128, 64, activation=mid_act, resnet=resnet)
+
+        self.up_128_256 = Up(128, 32, activation=mid_act, resnet=resnet)
+        self.out_conv   = Conv(64, out_channels, activation=out_act)
 
 
-class Refine_Net(nn.Module):
-    def __init__(self, in_channels:int, layer_channels:list, out_channels:int, act='relu', norm_type='Batch', out_act=None):
-        if len(layer_channels)  == 0:
-            raise ValueError("Empty layer channels")
+    def forward(self, x, ibl):
+        x11, x10, x9, x8, x7, x6, x5, x4, x3, x2, x1 = x
 
-        super(Refine_Net, self).__init__()
+        h,w = x10.shape[2:]
+        y = ibl.view(-1, 512, 1, 1).repeat(1, 1, h, w)
 
-        refine_layers = [Conv(in_channels, layer_channels[0], stride=1, norm_type=norm_type)]
-        for i in range(1, len(layer_channels)):
-           refine_layers.append(Conv(layer_channels[i-1], layer_channels[i], stride=1, norm_type=norm_type))
+        y = self.up_16_16_1(y)  # 256 x 16 x 16
 
-        self.refine_layers = nn.Sequential(*refine_layers)
-        self.out_conv      = nn.Conv2d(layer_channels[-1], out_channels, kernel_size=3, stride=1, bias=True, padding=1, padding_mode='reflect')
-
-        if out_act is not None:
-            act_func      = get_activation(out_act)
-            self.out_conv = nn.Sequential(self.out_conv, act_func)
+        y = torch.cat((x10, y), dim=1)  # 768 x 16 x 16
+        y = self.up_16_16_2(y)  # 512 x 16 x 16
 
 
-    def forward(self, x):
-        return self.out_conv(self.refine_layers(x)), None
+        y = torch.cat((x9, y), dim=1)  # 1024 x 16 x 16
+        y = self.up_16_16_3(y)  # 512 x 16 x 16
 
+        y = torch.cat((x8, y), dim=1)  # 1024 x 16 x 16
+        y = self.up_16_32(y)  # 256 x 32 x 32
+
+        y = torch.cat((x7, y), dim=1)
+        y = self.up_32_32_1(y)  # 256 x 32 x 32
+
+        y = torch.cat((x6, y), dim=1)
+        y = self.up_32_64(y)
+
+        y = torch.cat((x5, y), dim=1)
+        y = self.up_64_64_1(y)  # 128 x 64 x 64
+
+        y = torch.cat((x4, y), dim=1)
+        y = self.up_64_128(y)
+
+        y = torch.cat((x3, y), dim=1)
+        y = self.up_128_128_1(y)  # 64 x 128 x 128
+
+        y = torch.cat((x2, y), dim=1)
+        y = self.up_128_256(y)  # 32 x 256 x 256
+
+        y = torch.cat((x1, y), dim=1)
+        y = self.out_conv(y)  # 3 x 256 x 256
+
+        return y
+
+
+class SSN_Model(nn.Module):
+    """ Implementation of Relighting Net """
+
+    def __init__(self,
+                 in_channels=3,
+                 out_channels=3,
+                 mid_act='leaky',
+                 out_act='sigmoid',
+                 resnet=True):
+        super(SSN_Model, self).__init__()
+        self.encoder = Encoder(in_channels, mid_act=mid_act, resnet=resnet)
+        self.decoder = Decoder(out_channels, mid_act=mid_act, out_act=out_act, resnet=resnet)
+
+
+    def forward(self, x, ibl):
+        """
+            Input is (source image, target light, source light, )
+            Output is: predicted new image, predicted source light, self-supervision image
+        """
+        latent  = self.encoder(x)
+        pred    = self.decoder(latent, ibl)
+
+        return pred
 
 
 if __name__ == '__main__':
-    net   = Conv(3,3)
-    dnet  = Conv(3, 3, stride=2)
-    dconv = DConv(3, 64)
-    unet  = Unet(3,3)
+    x = torch.randn(5,1,256,256)
+    ibl = torch.randn(5, 1, 32, 16)
+    model = SSN_Model(1,1)
 
-    test_input = torch.rand(1, 3, 256, 256)
-    out        = net(test_input)
-    print("Before Conv",test_input.shape)
-    print("After Conv",out.shape)
-    print("")
+    y = model(x, ibl)
 
-    out = dnet(test_input)
-    print("Before conv stride 2",test_input.shape)
-    print("After conv stride 2",out.shape)
-    print("")
-
-    out = dconv(test_input)
-    print("-------------")
-    print(dconv)
-    print("-------------")
-    print("Before DConv",test_input.shape)
-    print("After DConv",out.shape)
-    print("")
-
-    import pdb; pdb.set_trace()
-    out = unet(test_input)
-    print("-------------")
-    print(unet)
-    print("-------------")
-    print("Before Unet",test_input.shape)
-    print("After Unet",out.shape)
-    print("")
-
-    refine_model = Refine_Net(1, [64, 64, 64], 1)
-    test_input   = torch.randn(5, 1, 256, 256)
-    out, vis     = refine_model(test_input)
-
-    print("-------------")
-    print(refine_model)
-    print("-------------")
-    print("Before refinement", test_input.shape)
-    print("After Unet",out.shape)
-    print("")
+    print('Output: ', y.shape)
