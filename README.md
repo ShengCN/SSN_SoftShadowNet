@@ -54,10 +54,23 @@ python render.py --cpus=$cpus --gpus 0 2 --model_root=$model_root --out_folder=$
 python build_hdf5.py --cache=$cache --width=$width --height=$height --out_hdf5=$out_hdf5
 ```
 4. Run ./render.sh
+The output will be a hdf5 file, which composed of all the data. The file structure for this hdf5: 
 
+``` Bash
+x/scene_name          # Input for training    
+rgb/scene_name        # Rendered RGB for testing
+base_32_8/scene_name  # Shadow base in 32 x 8 IBL resolution. 
+base_64_16/scene_name # Shadow base in 64 x 16 IBL resolution
+```
+To see how to use this hdf5 file, please refer to *Train/datasets/SSN_Dataset.py*.
 
+## Training
+We prepared a training script. After rendering the dataset, please modify the **hdf5_file** entry in *Train/configs/ssn.yaml* accordingly. Run *Train/train.sh* will begin the training for SSN.
 
+### Bonus
+I implemented a general training framework in the *Train/* folder. It is YAML driven. The minimal work to use this framework for your experiment is to write a dataloader and define the model architectures. 
 
+### About 
 # License
 SSN may be used non-commercially, meaning for research or evaluation purposes only. 
 
