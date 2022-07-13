@@ -1,5 +1,5 @@
 # SSN: Soft Shadow Network for Image Composition
-Remember to recusive git clone this repo. 
+Remember to recursively git clone this repository. 
 ```Bash
 git clone --recurse-submodules -j8 https://github.com/ShengCN/SSN_SoftShadowNet.git
 ```
@@ -28,37 +28,35 @@ make -j16
 ```
 
 ### Command Interface
-```Bash
-Give me parameters for camera and model rotation
-Usage:
-  shadow rendering [OPTION...]
+1. Change directory to Data/src
+2. Put obj/off files to models folder 
+3. Check the parameters in the render.sh, e.g. gpus(support multiple gpu), random pitch range, random model rotation?
 
-      --cam_pitch arg   A list of camera pitches
-      --model_rot arg   A list of model rotations
-      --resume          Skip those rendered images? (default: true)
-      --verbose         verbose time?  (default: true)
-      --base_avg        Averageing patch shadows 
-      --gpu arg         graphics card (default: 0)
-      --model_id arg    random seed (default: 0)
-      --width arg       output image width (default: 256)
-      --height arg      output image height (default: 256)
-      --ibl_h arg       ibl height (default: 128)
-      --ibl_w arg       ibl width (default: 512)
-      --patch_size arg  patch size (default: 8)
-      --model arg       model file path
-      --output arg      output folder
-      --render_shadow   do you need to render shadow
-      --render_mask     do you need to render mask
-      --render_normal   do you need to render normal
-      --render_depth    do you need to render depth
-      --render_touch    do you need to render touch
-      --render_height   do you need to render height
-  -h, --help            Print usage
+``` Bash
+# File render.sh
+model_root="models"
+cache="Dataset/human_data/cache"
+start_id=0
+end_id=-1 # -1 means all models
+width=512
+height=512
+cpus=6
+out_hdf5="Dataset/human_data/all_base.hdf5"
+cam_pitch_min=0
+cam_pitch_max=45
+model_rot_min=-90
+model_rot_max=90
+samples=2
+
+rm tmp/scene_cache.bin
+
+python render.py --cpus=$cpus --gpus 0 2 --model_root=$model_root --out_folder=$cache --start_id=$start_id --end_id=$end_id --width=$width --height=$height --samples=$samples --cam_pitch_min=$cam_pitch_min --cam_pitch_max=$cam_pitch_max --model_rot_min=$model_rot_min --model_rot_max=$model_rot_max &&
+python build_hdf5.py --cache=$cache --width=$width --height=$height --out_hdf5=$out_hdf5
 ```
-***Example***
-```
-./shadow_base --model="../test_model.off" --output="airplane" --cam_pitch=0,15,30 --model_rot=0,-45,45 --render_mask --render_shadow --render_touch --gpu=2 --width=512 --height=512 --ibl_w=256 --ibl_h=512 --resume=0  --patch_size=8
-```
+4. Run ./render.sh
+
+
+
 
 # License
 SSN may be used non-commercially, meaning for research or evaluation purposes only. 
