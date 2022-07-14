@@ -1,4 +1,4 @@
-# SSN: Soft Shadow Network for Image Composition
+# SSN: Soft Shadow Network for Image Composition (CVPR 2021 Oral)
 Remember to recursively git clone this repository. 
 ```Bash
 git clone --recurse-submodules -j8 https://github.com/ShengCN/SSN_SoftShadowNet.git
