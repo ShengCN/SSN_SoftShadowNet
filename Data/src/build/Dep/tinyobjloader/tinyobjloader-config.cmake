@@ -14,7 +14,7 @@ endmacro()
 
 ####################################################################################
 
-set(TINYOBJLOADER_VERSION "2.0.0-rc.9")
+set(TINYOBJLOADER_VERSION "2.0.0-rc.8")
 
 set_and_check(TINYOBJLOADER_INCLUDE_DIRS "${PACKAGE_PREFIX_DIR}/include")
 set_and_check(TINYOBJLOADER_LIBRARY_DIRS "${PACKAGE_PREFIX_DIR}/lib")

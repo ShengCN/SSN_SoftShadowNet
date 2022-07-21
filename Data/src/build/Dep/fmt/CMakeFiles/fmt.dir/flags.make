@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_FLAGS =   -std=gnu++11
 
-CXX_DEFINES = 
+CXX_DEFINES = -DFMT_LOCALE
 
-CXX_INCLUDES = -I/home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src/Dep/fmt/include 
+CXX_INCLUDES = -I/home/ysheng/Documents/Research/SSN_SoftShadowNet/Data/src/Dep/fmt/include 
 

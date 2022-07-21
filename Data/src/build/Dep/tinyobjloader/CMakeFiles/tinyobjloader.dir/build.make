@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src
+CMAKE_SOURCE_DIR = /home/ysheng/Documents/Research/SSN_SoftShadowNet/Data/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src/build
+CMAKE_BINARY_DIR = /home/ysheng/Documents/Research/SSN_SoftShadowNet/Data/src/build
 
 # Include any dependencies generated for this target.
 include Dep/tinyobjloader/CMakeFiles/tinyobjloader.dir/depend.make
@@ -59,16 +59,16 @@ include Dep/tinyobjloader/CMakeFiles/tinyobjloader.dir/flags.make
 
 Dep/tinyobjloader/CMakeFiles/tinyobjloader.dir/tiny_obj_loader.cc.o: Dep/tinyobjloader/CMakeFiles/tinyobjloader.dir/flags.make
 Dep/tinyobjloader/CMakeFiles/tinyobjloader.dir/tiny_obj_loader.cc.o: ../Dep/tinyobjloader/tiny_obj_loader.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object Dep/tinyobjloader/CMakeFiles/tinyobjloader.dir/tiny_obj_loader.cc.o"
-	cd /home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src/build/Dep/tinyobjloader && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/tinyobjloader.dir/tiny_obj_loader.cc.o -c /home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src/Dep/tinyobjloader/tiny_obj_loader.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ysheng/Documents/Research/SSN_SoftShadowNet/Data/src/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object Dep/tinyobjloader/CMakeFiles/tinyobjloader.dir/tiny_obj_loader.cc.o"
+	cd /home/ysheng/Documents/Research/SSN_SoftShadowNet/Data/src/build/Dep/tinyobjloader && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/tinyobjloader.dir/tiny_obj_loader.cc.o -c /home/ysheng/Documents/Research/SSN_SoftShadowNet/Data/src/Dep/tinyobjloader/tiny_obj_loader.cc
 
 Dep/tinyobjloader/CMakeFiles/tinyobjloader.dir/tiny_obj_loader.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/tinyobjloader.dir/tiny_obj_loader.cc.i"
-	cd /home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src/build/Dep/tinyobjloader && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src/Dep/tinyobjloader/tiny_obj_loader.cc > CMakeFiles/tinyobjloader.dir/tiny_obj_loader.cc.i
+	cd /home/ysheng/Documents/Research/SSN_SoftShadowNet/Data/src/build/Dep/tinyobjloader && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ysheng/Documents/Research/SSN_SoftShadowNet/Data/src/Dep/tinyobjloader/tiny_obj_loader.cc > CMakeFiles/tinyobjloader.dir/tiny_obj_loader.cc.i
 
 Dep/tinyobjloader/CMakeFiles/tinyobjloader.dir/tiny_obj_loader.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/tinyobjloader.dir/tiny_obj_loader.cc.s"
-	cd /home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src/build/Dep/tinyobjloader && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src/Dep/tinyobjloader/tiny_obj_loader.cc -o CMakeFiles/tinyobjloader.dir/tiny_obj_loader.cc.s
+	cd /home/ysheng/Documents/Research/SSN_SoftShadowNet/Data/src/build/Dep/tinyobjloader && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ysheng/Documents/Research/SSN_SoftShadowNet/Data/src/Dep/tinyobjloader/tiny_obj_loader.cc -o CMakeFiles/tinyobjloader.dir/tiny_obj_loader.cc.s
 
 # Object files for target tinyobjloader
 tinyobjloader_OBJECTS = \
@@ -80,9 +80,9 @@ tinyobjloader_EXTERNAL_OBJECTS =
 Dep/tinyobjloader/libtinyobjloader.a: Dep/tinyobjloader/CMakeFiles/tinyobjloader.dir/tiny_obj_loader.cc.o
 Dep/tinyobjloader/libtinyobjloader.a: Dep/tinyobjloader/CMakeFiles/tinyobjloader.dir/build.make
 Dep/tinyobjloader/libtinyobjloader.a: Dep/tinyobjloader/CMakeFiles/tinyobjloader.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libtinyobjloader.a"
-	cd /home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src/build/Dep/tinyobjloader && $(CMAKE_COMMAND) -P CMakeFiles/tinyobjloader.dir/cmake_clean_target.cmake
-	cd /home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src/build/Dep/tinyobjloader && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/tinyobjloader.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ysheng/Documents/Research/SSN_SoftShadowNet/Data/src/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libtinyobjloader.a"
+	cd /home/ysheng/Documents/Research/SSN_SoftShadowNet/Data/src/build/Dep/tinyobjloader && $(CMAKE_COMMAND) -P CMakeFiles/tinyobjloader.dir/cmake_clean_target.cmake
+	cd /home/ysheng/Documents/Research/SSN_SoftShadowNet/Data/src/build/Dep/tinyobjloader && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/tinyobjloader.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 Dep/tinyobjloader/CMakeFiles/tinyobjloader.dir/build: Dep/tinyobjloader/libtinyobjloader.a
@@ -90,10 +90,10 @@ Dep/tinyobjloader/CMakeFiles/tinyobjloader.dir/build: Dep/tinyobjloader/libtinyo
 .PHONY : Dep/tinyobjloader/CMakeFiles/tinyobjloader.dir/build
 
 Dep/tinyobjloader/CMakeFiles/tinyobjloader.dir/clean:
-	cd /home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src/build/Dep/tinyobjloader && $(CMAKE_COMMAND) -P CMakeFiles/tinyobjloader.dir/cmake_clean.cmake
+	cd /home/ysheng/Documents/Research/SSN_SoftShadowNet/Data/src/build/Dep/tinyobjloader && $(CMAKE_COMMAND) -P CMakeFiles/tinyobjloader.dir/cmake_clean.cmake
 .PHONY : Dep/tinyobjloader/CMakeFiles/tinyobjloader.dir/clean
 
 Dep/tinyobjloader/CMakeFiles/tinyobjloader.dir/depend:
-	cd /home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src /home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src/Dep/tinyobjloader /home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src/build /home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src/build/Dep/tinyobjloader /home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src/build/Dep/tinyobjloader/CMakeFiles/tinyobjloader.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ysheng/Documents/Research/SSN_SoftShadowNet/Data/src/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ysheng/Documents/Research/SSN_SoftShadowNet/Data/src /home/ysheng/Documents/Research/SSN_SoftShadowNet/Data/src/Dep/tinyobjloader /home/ysheng/Documents/Research/SSN_SoftShadowNet/Data/src/build /home/ysheng/Documents/Research/SSN_SoftShadowNet/Data/src/build/Dep/tinyobjloader /home/ysheng/Documents/Research/SSN_SoftShadowNet/Data/src/build/Dep/tinyobjloader/CMakeFiles/tinyobjloader.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : Dep/tinyobjloader/CMakeFiles/tinyobjloader.dir/depend
 

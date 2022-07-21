@@ -28,7 +28,7 @@ struct render_param {
 	ppc cur_ppc; 		/* render camera */
 	vec3 light_pos, render_target_center;
 
-	int ibl_h, ibl_w, patch_size;
+	int ibl_h, ibl_w, patch_size, base_samples;
 	float camera_pitch, target_rot;
 };
 
@@ -40,7 +40,7 @@ struct output_param {
 };
 
 struct pixel_pos {
-	int x, y;
+	float x, y;
 
 	std::string to_string() {
 		std::ostringstream oss;

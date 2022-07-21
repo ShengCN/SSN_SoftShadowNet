@@ -5,7 +5,7 @@ struct exp_params {
 	std::vector<float> cam_pitch, model_rot;
 	bool resume, verbose, render_shadow, render_mask, render_normal, render_depth, render_touch, render_height;
 	bool base_avg;
-	int gpu, model_id, w, h, ibl_w, ibl_h, patch_size;
+	int gpu, model_id, w, h, ibl_w, ibl_h, patch_size, base_samples;
 	std::string model, output;
 
 	exp_params() {
@@ -19,6 +19,7 @@ struct exp_params {
 		ibl_h = 128;
 		patch_size = 8;
 		base_avg = false;
+		base_samples = 2;
 
 		/* Used for indexing some random numbers */
 		model_id = 0;

@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src
+CMAKE_SOURCE_DIR = /home/ysheng/Documents/Research/SSN_SoftShadowNet/Data/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src/build
+CMAKE_BINARY_DIR = /home/ysheng/Documents/Research/SSN_SoftShadowNet/Data/src/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -126,14 +126,14 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src/build/CMakeFiles /home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src/build/Dep/tinyobjloader/CMakeFiles/progress.marks
-	cd /home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src/build && $(MAKE) -f CMakeFiles/Makefile2 Dep/tinyobjloader/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src/build/CMakeFiles 0
+	cd /home/ysheng/Documents/Research/SSN_SoftShadowNet/Data/src/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/ysheng/Documents/Research/SSN_SoftShadowNet/Data/src/build/CMakeFiles /home/ysheng/Documents/Research/SSN_SoftShadowNet/Data/src/build/Dep/tinyobjloader/CMakeFiles/progress.marks
+	cd /home/ysheng/Documents/Research/SSN_SoftShadowNet/Data/src/build && $(MAKE) -f CMakeFiles/Makefile2 Dep/tinyobjloader/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ysheng/Documents/Research/SSN_SoftShadowNet/Data/src/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src/build && $(MAKE) -f CMakeFiles/Makefile2 Dep/tinyobjloader/clean
+	cd /home/ysheng/Documents/Research/SSN_SoftShadowNet/Data/src/build && $(MAKE) -f CMakeFiles/Makefile2 Dep/tinyobjloader/clean
 .PHONY : clean
 
 # The main clean target
@@ -143,22 +143,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src/build && $(MAKE) -f CMakeFiles/Makefile2 Dep/tinyobjloader/preinstall
+	cd /home/ysheng/Documents/Research/SSN_SoftShadowNet/Data/src/build && $(MAKE) -f CMakeFiles/Makefile2 Dep/tinyobjloader/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src/build && $(MAKE) -f CMakeFiles/Makefile2 Dep/tinyobjloader/preinstall
+	cd /home/ysheng/Documents/Research/SSN_SoftShadowNet/Data/src/build && $(MAKE) -f CMakeFiles/Makefile2 Dep/tinyobjloader/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/ysheng/Documents/Research/SSN_SoftShadowNet/Data/src/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 Dep/tinyobjloader/CMakeFiles/tinyobjloader.dir/rule:
-	cd /home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src/build && $(MAKE) -f CMakeFiles/Makefile2 Dep/tinyobjloader/CMakeFiles/tinyobjloader.dir/rule
+	cd /home/ysheng/Documents/Research/SSN_SoftShadowNet/Data/src/build && $(MAKE) -f CMakeFiles/Makefile2 Dep/tinyobjloader/CMakeFiles/tinyobjloader.dir/rule
 .PHONY : Dep/tinyobjloader/CMakeFiles/tinyobjloader.dir/rule
 
 # Convenience name for target.
@@ -168,7 +168,7 @@ tinyobjloader: Dep/tinyobjloader/CMakeFiles/tinyobjloader.dir/rule
 
 # fast build rule for target.
 tinyobjloader/fast:
-	cd /home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src/build && $(MAKE) -f Dep/tinyobjloader/CMakeFiles/tinyobjloader.dir/build.make Dep/tinyobjloader/CMakeFiles/tinyobjloader.dir/build
+	cd /home/ysheng/Documents/Research/SSN_SoftShadowNet/Data/src/build && $(MAKE) -f Dep/tinyobjloader/CMakeFiles/tinyobjloader.dir/build.make Dep/tinyobjloader/CMakeFiles/tinyobjloader.dir/build
 .PHONY : tinyobjloader/fast
 
 tiny_obj_loader.o: tiny_obj_loader.cc.o
@@ -177,7 +177,7 @@ tiny_obj_loader.o: tiny_obj_loader.cc.o
 
 # target to build an object file
 tiny_obj_loader.cc.o:
-	cd /home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src/build && $(MAKE) -f Dep/tinyobjloader/CMakeFiles/tinyobjloader.dir/build.make Dep/tinyobjloader/CMakeFiles/tinyobjloader.dir/tiny_obj_loader.cc.o
+	cd /home/ysheng/Documents/Research/SSN_SoftShadowNet/Data/src/build && $(MAKE) -f Dep/tinyobjloader/CMakeFiles/tinyobjloader.dir/build.make Dep/tinyobjloader/CMakeFiles/tinyobjloader.dir/tiny_obj_loader.cc.o
 .PHONY : tiny_obj_loader.cc.o
 
 tiny_obj_loader.i: tiny_obj_loader.cc.i
@@ -186,7 +186,7 @@ tiny_obj_loader.i: tiny_obj_loader.cc.i
 
 # target to preprocess a source file
 tiny_obj_loader.cc.i:
-	cd /home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src/build && $(MAKE) -f Dep/tinyobjloader/CMakeFiles/tinyobjloader.dir/build.make Dep/tinyobjloader/CMakeFiles/tinyobjloader.dir/tiny_obj_loader.cc.i
+	cd /home/ysheng/Documents/Research/SSN_SoftShadowNet/Data/src/build && $(MAKE) -f Dep/tinyobjloader/CMakeFiles/tinyobjloader.dir/build.make Dep/tinyobjloader/CMakeFiles/tinyobjloader.dir/tiny_obj_loader.cc.i
 .PHONY : tiny_obj_loader.cc.i
 
 tiny_obj_loader.s: tiny_obj_loader.cc.s
@@ -195,7 +195,7 @@ tiny_obj_loader.s: tiny_obj_loader.cc.s
 
 # target to generate assembly for a file
 tiny_obj_loader.cc.s:
-	cd /home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src/build && $(MAKE) -f Dep/tinyobjloader/CMakeFiles/tinyobjloader.dir/build.make Dep/tinyobjloader/CMakeFiles/tinyobjloader.dir/tiny_obj_loader.cc.s
+	cd /home/ysheng/Documents/Research/SSN_SoftShadowNet/Data/src/build && $(MAKE) -f Dep/tinyobjloader/CMakeFiles/tinyobjloader.dir/build.make Dep/tinyobjloader/CMakeFiles/tinyobjloader.dir/tiny_obj_loader.cc.s
 .PHONY : tiny_obj_loader.cc.s
 
 # Help Target
@@ -225,6 +225,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/ysheng/Documents/Research/SSN_SoftShadowNet/Data/src/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

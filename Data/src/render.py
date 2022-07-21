@@ -10,7 +10,7 @@ import random
 
 
 def worker(input):
-    gpu, model_path, out_path, w, h, cam_pitch, model_rot = input
+    gpu, model_path, out_path, w, h, cam_pitch, model_rot, base_samples = input
     os.makedirs(out_path, exist_ok=True)
 
     cam_pitch_str = '{}'.format(cam_pitch)
@@ -25,7 +25,7 @@ def worker(input):
     # cam_pitch_str = cam_pitch_str[1:]
     # model_rot_str = model_rot_str[1:]
 
-    cmd = 'build/shadow_base --verbose=0 --model={} --output={} --cam_pitch={} --model_rot={} --gpu={} --render_mask --render_shadow --render_touch --width={} --height={} --ibl_w=512 --ibl_h=256 --base_avg'.format(model_path, out_path, cam_pitch_str, model_rot_str, gpu, w, h)
+    cmd = 'build/shadow_base --verbose=0 --model={} --output={} --cam_pitch={} --model_rot={} --gpu={} --render_mask --render_shadow --render_touch --width={} --height={} --ibl_w=512 --ibl_h=256 --base_avg --base_samples={}'.format(model_path, out_path, cam_pitch_str, model_rot_str, gpu, w, h, base_samples)
     print(cmd)
     os.system(cmd)
 
@@ -44,6 +44,7 @@ def render_raw_imgs(params):
     model_rot_min = params.model_rot_min
     model_rot_max = params.model_rot_max
     output_folder = params.out_folder
+    base_samples  = params.base_samples
 
     random.seed(19920208)
 
@@ -64,7 +65,7 @@ def render_raw_imgs(params):
             rand_model_pitch  = random.uniform(model_rot_min, model_rot_max)
 
             cur_ind = i * samples + si
-            inputs.append([gpus[cur_ind%len(gpus)], model, model_output, width, height, rand_camera_pitch, rand_model_pitch])
+            inputs.append([gpus[cur_ind%len(gpus)], model, model_output, width, height, rand_camera_pitch, rand_model_pitch, base_samples])
 
 
     import pdb; pdb.set_trace()
@@ -84,7 +85,7 @@ if __name__ == '__main__':
     parser.add_argument('--out_folder', type=str, help='output folder')
     parser.add_argument('--start_id', type=int, help='start index')
     parser.add_argument('--end_id', type=int, help='end index')
-
+    parser.add_argument('--base_samples', type=int, help='how many samples per IBL patch?')
     parser.add_argument('--width', type=int, help='base width')
     parser.add_argument('--height', type=int, help='base height')
 

@@ -18,6 +18,7 @@ exp_params parse(int argc, char *argv[]) {
 		("ibl_h","ibl height",cxxopts::value<int>()->default_value("128"))
 		("ibl_w","ibl width",cxxopts::value<int>()->default_value("512"))
 		("patch_size","patch size",cxxopts::value<int>()->default_value("8"))
+		("base_samples","base samples per patch",cxxopts::value<int>()->default_value("2"))
 		("model","model file path",cxxopts::value<std::string>())
 		("output","output folder",cxxopts::value<std::string>())
 		("render_shadow", "do you need to render shadow", cxxopts::value<bool>()->default_value("false"))
@@ -46,6 +47,7 @@ exp_params parse(int argc, char *argv[]) {
 		parse_by_key(result, "gpu", ret.gpu);
 		parse_by_key(result, "base_avg", ret.base_avg);
 		parse_by_key(result, "patch_size", ret.patch_size);
+		parse_by_key(result, "base_samples", ret.base_samples);
 		parse_by_key(result, "model_id", ret.model_id);
 		parse_by_key(result, "model", ret.model);
 		parse_by_key(result, "output", ret.output);

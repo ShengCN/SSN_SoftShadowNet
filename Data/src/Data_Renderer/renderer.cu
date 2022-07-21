@@ -15,7 +15,7 @@ std::vector<pixel_pos> ibl_map;
 
 // given an ibl map and light center position
 // return the 3D light position
-vec3 compute_light_pos(int x, int y, int w = 512, int h = 256) {
+vec3 compute_light_pos(float x, float y, int w = 512, int h = 256) {
 	//todo
 	float x_fract = (float)x / w, y_fract = (float)y / h;
 	purdue::deg alpha, beta;
@@ -250,29 +250,30 @@ void shadow_render(scene &cur_scene, render_param &cur_rp, output_param &out) {
 					tmp_img.clear();
 					cuda_container<glm::vec3> dtmp_img(tmp_img.pixels);
 
-					pixel_pos light_pixel_pos = {begin_pixel_pos.x + patch_i, begin_pixel_pos.y + patch_j};
-					cur_rp.light_pos = compute_light_pos(light_pixel_pos.x, light_pixel_pos.y, cur_rp.ibl_w, cur_rp.ibl_h) * 400000.0f 
-					+ cur_rp.render_target_center;
-					
-					raster_hard_shadow<<<grid, block>>>(
-						cur_scene.ground_plane.get_d(), 
-						cur_scene.world_verts.get_d(),
-						cur_scene.world_verts.get_n(),
-						cur_scene.world_AABB.get_d(),
-						cur_rp.cur_ppc, 
-						cur_rp.light_pos, 
-						dtmp_img.get_d());
-					GC(cudaPeekAtLastError());
-					GC(cudaDeviceSynchronize());
+					for (int si = 0; si < cur_rp.base_samples; ++si) {
+						pixel_pos light_pixel_pos = {begin_pixel_pos.x + patch_i + pd::random_float(), begin_pixel_pos.y + patch_j + pd::random_float()};
 
-					dtmp_img.mem_copy_back();
+						cur_rp.light_pos = compute_light_pos(light_pixel_pos.x, light_pixel_pos.y, cur_rp.ibl_w, cur_rp.ibl_h) * 400000.0f + cur_rp.render_target_center;
 
-					float weight = 1.0f;
-					if (out.base_avg) {
-						weight = 1.0f/(cur_rp.patch_size * cur_rp.patch_size);
-					} 
-					
-					out.img = out.img + tmp_img * weight;
+						raster_hard_shadow<<<grid, block>>>(
+							cur_scene.ground_plane.get_d(),
+							cur_scene.world_verts.get_d(),
+							cur_scene.world_verts.get_n(),
+							cur_scene.world_AABB.get_d(),
+							cur_rp.cur_ppc,
+							cur_rp.light_pos,
+							dtmp_img.get_d());
+						GC(cudaPeekAtLastError());
+						GC(cudaDeviceSynchronize());
+
+						dtmp_img.mem_copy_back();
+
+						float weight = 1.0f;
+						if (out.base_avg) {
+							weight = 1.0f/(cur_rp.patch_size * cur_rp.patch_size * cur_rp.base_samples);
+						}
+						out.img = out.img + tmp_img * weight;
+					}
 			}
 			profiling.toc();
 
@@ -360,7 +361,7 @@ void render_scenes(const exp_params &params,
 				render_target->compute_world_center(),
 				cur_plane);
 			render_param cur_rp = {*render_camera, vec3(0.0f), render_target_center, 
-				params.ibl_h, params.ibl_w, params.patch_size, camera_pitch, target_rot};
+				params.ibl_h, params.ibl_w, params.patch_size, params.base_samples, camera_pitch, target_rot};
 			output_param oparam = {params.resume, params.verbose, params.base_avg, params.output, "", image()};
 
 			/* Refine the camera orientation to leave enough shadow space */

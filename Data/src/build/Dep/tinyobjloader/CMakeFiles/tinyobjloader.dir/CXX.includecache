@@ -6,23 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src/Dep/tinyobjloader/mapbox/earcut.hpp
-algorithm
--
-cassert
--
-cmath
--
-memory
--
-vector
--
-
-/home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src/Dep/tinyobjloader/tiny_obj_loader.cc
+/home/ysheng/Documents/Research/SSN_SoftShadowNet/Data/src/Dep/tinyobjloader/tiny_obj_loader.cc
 tiny_obj_loader.h
-/home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src/Dep/tinyobjloader/tiny_obj_loader.h
+/home/ysheng/Documents/Research/SSN_SoftShadowNet/Data/src/Dep/tinyobjloader/tiny_obj_loader.h
 
-/home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src/Dep/tinyobjloader/tiny_obj_loader.h
+/home/ysheng/Documents/Research/SSN_SoftShadowNet/Data/src/Dep/tinyobjloader/tiny_obj_loader.h
 map
 -
 string
@@ -45,14 +33,8 @@ fstream
 -
 limits
 -
-set
--
 sstream
 -
 utility
 -
-array
--
-mapbox/earcut.hpp
-/home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src/Dep/tinyobjloader/mapbox/earcut.hpp
 

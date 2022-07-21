@@ -45,14 +45,14 @@ unset(_expectedTargets)
 add_library(tinyobjloader STATIC IMPORTED)
 
 set_target_properties(tinyobjloader PROPERTIES
-  INTERFACE_INCLUDE_DIRECTORIES "/home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src/Dep/tinyobjloader"
+  INTERFACE_INCLUDE_DIRECTORIES "/home/ysheng/Documents/Research/SSN_SoftShadowNet/Data/src/Dep/tinyobjloader"
 )
 
 # Import target "tinyobjloader" for configuration ""
 set_property(TARGET tinyobjloader APPEND PROPERTY IMPORTED_CONFIGURATIONS NOCONFIG)
 set_target_properties(tinyobjloader PROPERTIES
   IMPORTED_LINK_INTERFACE_LANGUAGES_NOCONFIG "CXX"
-  IMPORTED_LOCATION_NOCONFIG "/home/sheng30/Documents/Research/SSN_SoftShadowNet/Data/src/build/Dep/tinyobjloader/libtinyobjloader.a"
+  IMPORTED_LOCATION_NOCONFIG "/home/ysheng/Documents/Research/SSN_SoftShadowNet/Data/src/build/Dep/tinyobjloader/libtinyobjloader.a"
   )
 
 # This file does not depend on other imported targets which have
