@@ -10,7 +10,7 @@ import random
 
 
 def worker(input):
-    gpu, model_path, out_path, w, h, cam_pitch, model_rot, base_samples = input
+    gpu, model_path, out_path, w, h, cam_pitch, model_rot, base_samples, render_base = input
     os.makedirs(out_path, exist_ok=True)
 
     cam_pitch_str = '{}'.format(cam_pitch)
@@ -25,7 +25,11 @@ def worker(input):
     # cam_pitch_str = cam_pitch_str[1:]
     # model_rot_str = model_rot_str[1:]
 
-    cmd = 'build/shadow_base --verbose=0 --model={} --output={} --cam_pitch={} --model_rot={} --gpu={} --render_mask --render_shadow --render_touch --width={} --height={} --ibl_w=512 --ibl_h=256 --base_avg --base_samples={}'.format(model_path, out_path, cam_pitch_str, model_rot_str, gpu, w, h, base_samples)
+    if render_base > 0:
+        cmd = 'build/shadow_base --verbose=0 --model={} --output={} --cam_pitch={} --model_rot={} --gpu={} --render_mask --render_shadow --render_touch --width={} --height={} --ibl_w=512 --ibl_h=256 --base_avg --base_samples={}'.format(model_path, out_path, cam_pitch_str, model_rot_str, gpu, w, h, base_samples)
+    else:
+        cmd = 'build/shadow_base --verbose=0 --model={} --output={} --cam_pitch={} --model_rot={} --gpu={} --render_mask --render_shadow=0 --render_touch --width={} --height={} --ibl_w=512 --ibl_h=256 --base_avg --base_samples={}'.format(model_path, out_path, cam_pitch_str, model_rot_str, gpu, w, h, base_samples)
+
     print(cmd)
     os.system(cmd)
 
@@ -45,6 +49,7 @@ def render_raw_imgs(params):
     model_rot_max = params.model_rot_max
     output_folder = params.out_folder
     base_samples  = params.base_samples
+    render_base   = params.render_base
 
     random.seed(19920208)
 
@@ -65,7 +70,7 @@ def render_raw_imgs(params):
             rand_model_pitch  = random.uniform(model_rot_min, model_rot_max)
 
             cur_ind = i * samples + si
-            inputs.append([gpus[cur_ind%len(gpus)], model, model_output, width, height, rand_camera_pitch, rand_model_pitch, base_samples])
+            inputs.append([gpus[cur_ind%len(gpus)], model, model_output, width, height, rand_camera_pitch, rand_model_pitch, base_samples, render_base])
 
 
     import pdb; pdb.set_trace()
@@ -95,6 +100,7 @@ if __name__ == '__main__':
     parser.add_argument('--model_rot_min', type=float,  help='minimum model rotation')
     parser.add_argument('--model_rot_max', type=float, help='maximum model rotation')
 
+    parser.add_argument('--render_base', type=int, help='Do we need to render base? 0: ignore render base, 1: render base')
 
     params = parser.parse_args()
 
