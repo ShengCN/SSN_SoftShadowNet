@@ -1604,13 +1604,9 @@ Utilities/cxxopts.hpp
 arg_parse.h
 -
 
-/home/ysheng/Documents/Research/SSN_SoftShadowNet/Data/src/Data_Renderer/Data_Renderer.h
+/home/ysheng/Documents/Research/SSN_SoftShadowNet/Data/src/Data_Renderer/data_rasterizer.cu
 data_rasterizer.h
 /home/ysheng/Documents/Research/SSN_SoftShadowNet/Data/src/Data_Renderer/data_rasterizer.h
-renderer.h
-/home/ysheng/Documents/Research/SSN_SoftShadowNet/Data/src/Data_Renderer/renderer.h
-ray_intersect.h
-/home/ysheng/Documents/Research/SSN_SoftShadowNet/Data/src/Data_Renderer/ray_intersect.h
 
 /home/ysheng/Documents/Research/SSN_SoftShadowNet/Data/src/Data_Renderer/data_rasterizer.h
 common.h
@@ -1621,22 +1617,6 @@ ray_intersect.h
 /home/ysheng/Documents/Research/SSN_SoftShadowNet/Data/src/Data_Renderer/ray_intersect.h
 
 /home/ysheng/Documents/Research/SSN_SoftShadowNet/Data/src/Data_Renderer/ray_intersect.h
-common.h
--
-Render_DS/Render_DS.h
--
-
-/home/ysheng/Documents/Research/SSN_SoftShadowNet/Data/src/Data_Renderer/render_helper.h
-common.h
--
-
-/home/ysheng/Documents/Research/SSN_SoftShadowNet/Data/src/Data_Renderer/renderer.cu
-Data_Renderer.h
-/home/ysheng/Documents/Research/SSN_SoftShadowNet/Data/src/Data_Renderer/Data_Renderer.h
-render_helper.h
-/home/ysheng/Documents/Research/SSN_SoftShadowNet/Data/src/Data_Renderer/render_helper.h
-
-/home/ysheng/Documents/Research/SSN_SoftShadowNet/Data/src/Data_Renderer/renderer.h
 common.h
 -
 Render_DS/Render_DS.h

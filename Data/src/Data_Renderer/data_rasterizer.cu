@@ -240,7 +240,7 @@ void raster_touch(glm::vec3 *world_verts, int N, AABB* aabb,plane *ground_plane,
 		
 		float vis = 0.0f;
 		for(int si = 0; si < sn; ++si) {
-			r.rd = samples[si];
+			r.rd = glm::normalize(samples[si]);
 			r.ro = intersect;
 			
 			ret = false;
@@ -257,17 +257,16 @@ void raster_touch(glm::vec3 *world_verts, int N, AABB* aabb,plane *ground_plane,
 				ret = false;
 				ray_triangle_intersect(r, p0, p1, p2, ret);
 				if(ret) {
-					vis += 1;
+					vis += 1.0 * glm::dot(r.rd, vec3(0.0f,1.0f,0.0f))/pd::pi;
 					break;
 				}
 			}
 		}
-		vis = vis / (float)sn * 4.0 * pd::pi;
+		vis = vis / (float)sn;
 		
-		if (vis > 1.0f) vis = 1.0f;
-		vis = vis * vis * vis;
+		// if (vis > 1.0f) vis = 1.0f;
+		// vis = vis * vis * vis;
 
-		// if (vis < 0.5f) vis = 0.0f;
 		pixels[cur_ind] = vec3(vis);
 	}
 }
