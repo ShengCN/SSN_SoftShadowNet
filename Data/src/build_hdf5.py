@@ -99,7 +99,7 @@ def build_scene_hdf5_worker(inputs):
             x_dset[:,:,0] = plt.imread(mask_name)[:,:,0]
             x_dset[:,:,1] = plt.imread(ao_name)[:,:,0]
 
-            input_name = 'rgb/{}'.format(scene_basename)
+            input_name = 'rgba/{}'.format(scene_basename)
             rgb_dset   = f.create_dataset(input_name, (width, height, 4), chunks=(width, height, 4), dtype='f', compression="gzip")
             rgb_dset[:,:,:]   = plt.imread(rgb_name)[...]
 
