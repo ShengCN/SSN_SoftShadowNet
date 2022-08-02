@@ -257,15 +257,16 @@ void raster_touch(glm::vec3 *world_verts, int N, AABB* aabb,plane *ground_plane,
 				ret = false;
 				ray_triangle_intersect(r, p0, p1, p2, ret);
 				if(ret) {
-					vis += 1.0 * glm::dot(r.rd, vec3(0.0f,1.0f,0.0f));
+					vis += 1.0 * glm::dot(r.rd, vec3(0.0f,1.0f,0.0f)) / pd::pi;
 					break;
 				}
 			}
 		}
-		vis = vis / (float)sn;
+		vis = vis / (float)sn * 2.0 * pd::pi;
 		
 		// if (vis > 1.0f) vis = 1.0f;
 		// vis = vis * vis * vis;
+
 		pixels[cur_ind] = vec3(vis);
 	}
 }
