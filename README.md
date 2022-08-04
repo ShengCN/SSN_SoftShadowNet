@@ -1,8 +1,14 @@
 # SSN: Soft Shadow Network for Image Composition (CVPR 2021 Oral)
+![Results](imgs/more_results.png)
+
+[Paper](https://openaccess.thecvf.com/content/CVPR2021/papers/Sheng_SSN_Soft_Shadow_Network_for_Image_Compositing_CVPR_2021_paper.pdf)
+
+## Preparation 
 Remember to recursively git clone this repository. 
 ```Bash
 git clone --recurse-submodules -j8 https://github.com/ShengCN/SSN_SoftShadowNet.git
 ```
+
 
 ## Data Render
 The renderer for the data is in `Data` folder. This renderer is accelerated by CUDA. The computation time will be proportional to final image dimension and triangle numbers. 
