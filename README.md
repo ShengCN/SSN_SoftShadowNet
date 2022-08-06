@@ -1,5 +1,5 @@
 # SSN: Soft Shadow Network for Image Composition (CVPR 2021 Oral)
-![Results](imgs/more_results.png)
+![Results](imgs/main_teaser.png)
 
 [Paper](https://openaccess.thecvf.com/content/CVPR2021/papers/Sheng_SSN_Soft_Shadow_Network_for_Image_Compositing_CVPR_2021_paper.pdf)
 
